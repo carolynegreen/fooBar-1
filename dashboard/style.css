@@ -3,10 +3,36 @@
 }
 
 main {
-  background-color: yellow;
+  margin-right: 8rem;
+  margin-left: 8rem;
 }
 
-.beerList {
+.about {
+  display: flex;
+  justify-content: center;
+}
+
+.beerlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
   background-color: var(--color-1);
   width: 100%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  color: white;
+  background-color: var(--color-1);
+}
+
+footer,
+div.beerlist {
+  border-radius: 10px;
 }
