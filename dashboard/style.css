@@ -2,9 +2,8 @@
   --color-1: #6a3030;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 1fr;
+body {
+  margin: 0;
 }
 
 .about {
@@ -12,11 +11,30 @@ main {
   justify-content: center;
 }
 
+section.beerlist {
+  width: 40rem;
+}
+
 .beerlist {
+  border-radius: 10px;
   padding: 1rem;
   display: flex;
   color: white;
   background-color: var(--color-1);
+  gap: 1rem;
+}
+
+.beerimg {
+  width: 15%;
+  height: auto;
+}
+
+.beerinfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.beertype {
+  justify-content: left;
 }
 
 footer {
@@ -28,9 +46,4 @@ footer {
   padding-bottom: 2rem;
   color: white;
   background-color: var(--color-1);
-}
-
-footer,
-section.beerlist {
-  border-radius: 10px;
 }
