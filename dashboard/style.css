@@ -1,0 +1,12 @@
+:root {
+  --color-1: #6a3030;
+}
+
+main {
+  background-color: yellow;
+}
+
+.beerList {
+  background-color: var(--color-1);
+  width: 100%;
+}
