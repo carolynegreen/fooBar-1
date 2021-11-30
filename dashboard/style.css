@@ -1,0 +1,36 @@
+:root {
+  --color-1: #6a3030;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+}
+
+.beerlist {
+  padding: 1rem;
+  display: flex;
+  color: white;
+  background-color: var(--color-1);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  color: white;
+  background-color: var(--color-1);
+}
+
+footer,
+section.beerlist {
+  border-radius: 10px;
+}
