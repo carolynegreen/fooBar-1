@@ -9,22 +9,22 @@
 </head>
 <body>
     <section id="main">
-        <button type="button" id="statusBtn">Status</button>
+        <button type="button" id="statusBtn" class="btn-primary">STATUS</button>
         <a id="selection">0</a>
-        <button type="button" id="orderBtn">Order</button>
+        <button type="button" id="orderBtn" class="btn-primary">ORDER</button>
         <div id="beerTypes"></div>
     </section>
 
     <section id="form">
         <form id="orderForm" autocomplete="off">
-            <button type="button" id="editBtn">Edit order</button>
+            <button type="button" id="editBtn" class="btn-secondary">Edit order</button>
             <h1>ORDER DETAILS</h1>
             <div id="orderInfo"></div>
 
             <div>
                 <h2>Name</h2>
                 <input type="text" id="name" placeholder="Enter your name here" maxlength="20">
-                <p type="text" class="error" id="nameError">Please enter a name to be called</p>
+                <span type="text" class="error" id="nameError">Please enter a name to be called</span>
             </div>
 
             <div>
@@ -37,7 +37,7 @@
                     <option value="4">Table 4</option>
                     <option value="5">Table 5</option>
                 </select>
-                <p type="text" class="error" id="tableError">Please select your table name</p>
+                <span type="text" class="error" id="tableError">Please select your table name</span>
             </div>
 
             <div>
@@ -56,13 +56,13 @@
                     <div>
                         <h2>Card number</h2>
                         <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16" oninput="onlyNumbers(this)">
-                        <p type="text" class="error" id="cardNumberError">Card number must have 16 digits</p>
+                        <span type="text" class="error" id="cardNumberError">Card number must have 16 digits</span>
                     </div>
             
                     <div>
                         <h2>Card holder</h2>
                         <input type="text" id="cardHolder" placeholder="Your Name">
-                        <p type="text" class="error" id="cardHolderError">Invalid card holder</p>
+                        <span type="text" class="error" id="cardHolderError">Invalid card holder</span>
                     </div>
             
                     <div>
@@ -70,28 +70,29 @@
                         <input type="number" id="cardExpiryMonth" placeholder="MM" min="01" max="12" onchange="checkDate(this)" oninput="onlyNumbers(this)">
                         <a>/</a>
                         <input type="number" id="cardExpiryYear" placeholder="YY" min="21" max="99" onchange="checkDate(this)" oninput="onlyNumbers(this)">
-                        <p type="text" class="error" id="cardExpiryMonthError">Invalid expiry month</p>
-                        <p type="text" class="error" id="cardExpiryYearError">Invalid expiry year</p>
+                        <span type="text" class="error" id="cardExpiryMonthError">Invalid expiry month</span>
+                        <span type="text" class="error" id="cardExpiryYearError">Invalid expiry year</span>
                     </div>
             
                     <div>
                         <h2>Security number</h2>
                         <input type="text" id="cardSecurityNumber" maxlength="3" oninput="onlyNumbers(this)">
-                        <p type="text" class="error" id="cardSecurityNumberError">Please enter a valid security number of 3 digits</p>
+                        <span type="text" class="error" id="cardSecurityNumberError">Please enter a valid security number of 3 digits</p>
                     </div>
                 </section>
             </div>
 
-            <button type="button" id="confirmBtn">Confirm</button>
+            <button type="button" id="confirmBtn" class="btn-primary">CONFIRM</button>
         </form>
 
         <section id="confirmMessage">
             <h1>YOUR ORDER HAS BEEN CONFIRMED</h1>
-            <p>Go back to order and log in the status form <br> to check the evolution of your order</p>
-            <button type="button" id="returnBtn">Return to order</button>
+            <div>Go back to order and log in the status form <br> to check the evolution of your order</div>
+            <button type="button" id="returnBtn" class="btn-primary">RETURN</button>
         </section>
     </section>
 
+    <script src="orderLoad.js"></script>
     <script src="orderValidate.js"></script>
     <script src="orderScript.js"></script>
 </body>
