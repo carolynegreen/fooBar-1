@@ -5,8 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="orderStyle.css">
 </head>
 <body>
-    <script src="script.js"></script>
+    <section id="main">
+        <button type="button" id="statusBtn">Status</button>
+        <a id="selection">0</a>
+        <button type="button" id="orderBtn">Order</button>
+        <div id="beerTypes"></div>
+    </section>
+
+    <section id="form">
+        <form id="orderForm" autocomplete="off">
+            <button type="button" id="editBtn">Edit order</button>
+            <h1>ORDER DETAILS</h1>
+            <div id="orderInfo"></div>
+
+            <div>
+                <h2>Name</h2>
+                <input type="text" id="name" placeholder="Enter your name here" maxlength="20">
+                <p type="text" class="error" id="nameError">Please enter a name to be called</p>
+            </div>
+
+            <div>
+                <h2>Table</h2>
+                <select id="table">
+                    <option selected disabled value="0">Select a table</option>
+                    <option value="1">Table 1</option>
+                    <option value="2">Table 2</option>
+                    <option value="3">Table 3</option>
+                    <option value="4">Table 4</option>
+                    <option value="5">Table 5</option>
+                </select>
+                <p type="text" class="error" id="tableError">Please select your table name</p>
+            </div>
+
+            <div>
+                <h2>Payment</h2>
+                <input type="checkbox" class="paymentType" id="cash" value="cash" onclick="selectPaymentType(this)" checked disabled><a>Cash</a>
+                <input type="checkbox" class="paymentType" id="card" value="card" onclick="selectPaymentType(this)"><a>Card</a>
+
+                <section id="cardInfo">
+                    <div id="cards">
+                        <div>Visa</div>
+                        <div>Mastercard</div>
+                        <div>JCB</div>
+                        <div>American Express</div>
+                    </div>
+            
+                    <div>
+                        <h2>Card number</h2>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16" oninput="onlyNumbers(this)">
+                        <p type="text" class="error" id="cardNumberError">Card number must have 16 digits</p>
+                    </div>
+            
+                    <div>
+                        <h2>Card holder</h2>
+                        <input type="text" id="cardHolder" placeholder="Your Name">
+                        <p type="text" class="error" id="cardHolderError">Invalid card holder</p>
+                    </div>
+            
+                    <div>
+                        <h2>Expiry date</h2>
+                        <input type="number" id="cardExpiryMonth" placeholder="MM" min="01" max="12" onchange="checkDate(this)" oninput="onlyNumbers(this)">
+                        <a>/</a>
+                        <input type="number" id="cardExpiryYear" placeholder="YY" min="21" max="99" onchange="checkDate(this)" oninput="onlyNumbers(this)">
+                        <p type="text" class="error" id="cardExpiryMonthError">Invalid expiry month</p>
+                        <p type="text" class="error" id="cardExpiryYearError">Invalid expiry year</p>
+                    </div>
+            
+                    <div>
+                        <h2>Security number</h2>
+                        <input type="text" id="cardSecurityNumber" maxlength="3" oninput="onlyNumbers(this)">
+                        <p type="text" class="error" id="cardSecurityNumberError">Please enter a valid security number of 3 digits</p>
+                    </div>
+                </section>
+            </div>
+
+            <button type="button" id="confirmBtn">Confirm</button>
+        </form>
+
+        <section id="confirmMessage">
+            <h1>YOUR ORDER HAS BEEN CONFIRMED</h1>
+            <p>Go back to order and log in the status form <br> to check the evolution of your order</p>
+            <button type="button" id="returnBtn">Return to order</button>
+        </section>
+    </section>
+
+    <script src="orderValidate.js"></script>
+    <script src="orderScript.js"></script>
 </body>
 </html>
