@@ -40,7 +40,7 @@ function createBeerPannel() {
         panel.appendChild(title);
 
         const image = document.createElement("img");
-        image.src = beerTypes[i].image;
+        // image.src = beerTypes[i].image;
         panel.appendChild(image);
 
         const price = document.createElement("div");

@@ -53,11 +53,11 @@ img {
 }
 
 input[type=text], select {
-    padding-inline: 0.5%;
+    padding-inline: 1.5%;
     border-radius: 10px;
     border: none;
     height: 2vh;
-    width: 20vw;
+    width: 30vw;
 }
 
 input[type=number], #cardSecurityNumber {
