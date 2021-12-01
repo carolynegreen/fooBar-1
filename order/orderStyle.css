@@ -1,18 +1,43 @@
 :root {
+    --color-0: #000000;
     --color-1: #ffffff;
-    --color-2: #6A3030;
-    --color-3: #F5CF6B;
-    --color-4: #DCA413;
-    --color-5: #ECE8E3;
+    --color-2: #ECE8E3;
+    --color-3: #E3DBD1;
+    --color-4: #6A3030;
+    --color-5: #F5CF6B;
+    --color-6: #DCA413;
 }
 
 body {
     background-color: var(--color-5);
 }
 
+#header {
+    margin: 3vh;
+}
+
+#beerPanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 2vh;
+}
+
+.beerType {
+    height: 42vh;
+    background-color: var(--color-4);
+    border-radius: 25px;
+    color: var(--color-1);
+    text-align: center;
+}
+
+img {
+    width: 75%;
+    height: 25vh;
+}
+
 #form {
     transform: translateX(50%);
-    background-color: var(--color-2);
+    background-color: var(--color-4);
     color: var(--color-1);
     width: 50vw;
     display: none;
@@ -46,18 +71,22 @@ input[type=number], #cardSecurityNumber {
 .error {
     padding-inline: 5px;
     visibility: hidden;
-    color: var(--color-3);
+    color: var(--color-5);
 }
 
 .btn-primary {
     height: 5vh;
     width: 10vw;
-    background-color: var(--color-3);
+    background-color: var(--color-5);
     border: none;
     border-radius: 25px;
 }
 .btn-primary:hover {
-    background-color: var(--color-4);
+    background-color: var(--color-6);
+}
+
+#orderBtn:disabled {
+    background-color: var(--color-3);
 }
 
 .btn-secondary {
@@ -67,6 +96,14 @@ input[type=number], #cardSecurityNumber {
     font-weight: bold;
 }
 
-
-
+.btn-sign {
+    height: 3vh;
+    width: 3vh;
+    background-color: var(--color-5);
+    border: none;
+    border-radius: 10%;
+}
+.btn-sign:hover {
+    background-color: var(--color-6);
+}
 
