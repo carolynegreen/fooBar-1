@@ -1,5 +1,22 @@
+:root {
+    --color-1: #ffffff;
+    --color-2: #6A3030;
+    --color-3: #F5CF6B;
+    --color-4: #DCA413;
+    --color-5: #ECE8E3;
+}
+
+body {
+    background-color: var(--color-5);
+}
+
 #form {
+    transform: translateX(50%);
+    background-color: var(--color-2);
+    color: var(--color-1);
+    width: 50vw;
     display: none;
+    padding: 2vw;
 }
 
 #cardInfo {
@@ -9,6 +26,47 @@
 #confirmMessage {
     display: none;
 }
+
+input[type=text], select {
+    padding-inline: 0.5%;
+    border-radius: 10px;
+    border: none;
+    height: 2vh;
+    width: 20vw;
+}
+
+input[type=number], #cardSecurityNumber {
+    padding-inline: 0.5%;
+    border-radius: 10px;
+    border: none;
+    height: 2vh;
+    width: 4vw;
+}
+
+.error {
+    padding-inline: 5px;
+    visibility: hidden;
+    color: var(--color-3);
+}
+
+.btn-primary {
+    height: 5vh;
+    width: 10vw;
+    background-color: var(--color-3);
+    border: none;
+    border-radius: 25px;
+}
+.btn-primary:hover {
+    background-color: var(--color-4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
 
 
 

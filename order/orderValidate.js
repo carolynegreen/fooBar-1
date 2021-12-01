@@ -15,13 +15,13 @@ function orderValidation() {
 function showError(name) {
     // Show an error message and change the border color
     document.getElementById(name).style.border = "4px solid #DCA413";
-    document.getElementById(name+"Error").style.display = "block";
+    document.getElementById(name+"Error").style.visibility = "visible";
 }
 
 function hideError(name) {
     // Hide an error message and reset the border color
     document.getElementById(name).style.border = "none";
-    document.getElementById(name+"Error").style.display = "none";
+    document.getElementById(name+"Error").style.visibility = "hidden";
 }
 
 function checkName() {
