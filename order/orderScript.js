@@ -120,11 +120,8 @@ function reset() {
     }
     
     // Reset form inputs
-    document.querySelectorAll("input:not([type=checkbox])").forEach(function(e) {
+    document.querySelectorAll(".field").forEach(function(e) {
         e.value = "";
-    });
-    document.querySelectorAll("select").forEach(function(e) {
-        e.value = "0";
     });
 
     // Reset checkboxes

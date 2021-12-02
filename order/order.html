@@ -25,14 +25,14 @@
 
             <div>
                 <h2>Name</h2>
-                <input type="text" id="name" placeholder="Enter your name here" maxlength="20">
+                <input type="text" id="name" class="field" placeholder="Enter your name here" maxlength="20">
                 <span type="text" class="error" id="nameError">Please enter a name to be called</span>
             </div>
 
             <div>
                 <h2>Table</h2>
-                <select id="table">
-                    <option selected disabled value="0">Select a table</option>
+                <select id="table" class="field">
+                    <option selected disabled value="">Select a table</option>
                     <option value="1">Table 1</option>
                     <option value="2">Table 2</option>
                     <option value="3">Table 3</option>
@@ -57,28 +57,28 @@
             
                     <div>
                         <h2>Card number</h2>
-                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16" oninput="onlyNumbers(this)">
+                        <input type="text" id="cardNumber" class="field" placeholder="1234 5678 9012 3456" maxlength="16" oninput="onlyNumbers(this)">
                         <span type="text" class="error" id="cardNumberError">Card number must have 16 digits</span>
                     </div>
             
                     <div>
                         <h2>Card holder</h2>
-                        <input type="text" id="cardHolder" placeholder="Your Name">
+                        <input type="text" id="cardHolder" class="field" placeholder="Your Name">
                         <span type="text" class="error" id="cardHolderError">Invalid card holder</span>
                     </div>
             
                     <div>
                         <h2>Expiry date</h2>
-                        <input type="number" id="cardExpiryMonth" placeholder="MM" min="01" max="12" onchange="checkDate(this)" oninput="onlyNumbers(this)">
+                        <input type="number" id="cardExpiryMonth" class="field" placeholder="MM" min="01" max="12" onchange="checkDate(this)" oninput="onlyNumbers(this)">
                         <a>/</a>
-                        <input type="number" id="cardExpiryYear" placeholder="YY" min="21" max="99" onchange="checkDate(this)" oninput="onlyNumbers(this)">
+                        <input type="number" id="cardExpiryYear" class="field" placeholder="YY" min="21" max="99" onchange="checkDate(this)" oninput="onlyNumbers(this)">
                         <span type="text" class="error" id="cardExpiryMonthError">Invalid expiry month</span>
                         <span type="text" class="error" id="cardExpiryYearError">Invalid expiry year</span>
                     </div>
             
                     <div>
                         <h2>Security number</h2>
-                        <input type="text" id="cardSecurityNumber" maxlength="3" oninput="onlyNumbers(this)">
+                        <input type="text" id="cardSecurityNumber" class="field" maxlength="3" oninput="onlyNumbers(this)">
                         <span type="text" class="error" id="cardSecurityNumberError">Please enter a valid security number of 3 digits</p>
                     </div>
                 </section>

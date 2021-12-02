@@ -1,6 +1,8 @@
 "use-strict";
 
 function orderValidation() {
+    // Hide errors on change
+    changeError();
     // Check all form inputs
     const check1 = checkName();
     const check2 = checkTable();
@@ -24,6 +26,14 @@ function hideError(name) {
     document.getElementById(name+"Error").style.visibility = "hidden";
 }
 
+function changeError() {
+    document.querySelectorAll(".field").forEach(function(e) {
+        e.addEventListener('change', function () {
+            hideError(e.id);
+        });
+    });
+}
+
 function checkName() {
     // Check that the name input is not empty
     const input = document.getElementById("name");
@@ -39,7 +49,7 @@ function checkName() {
 function checkTable() {
     // Check that the user has selected a table
     const input = document.getElementById("table");
-    if(input.value === "0") {
+    if(input.value === "") {
         showError("table");
         return false;
     }else {
