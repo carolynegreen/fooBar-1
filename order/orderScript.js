@@ -9,6 +9,8 @@ function start() {
     loadData();
     // Make an order
     goToOrder();
+    // Show the status
+    showStatus();
 }
 
 function goToOrder() {
