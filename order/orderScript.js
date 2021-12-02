@@ -3,6 +3,8 @@
 start();
 
 function start() {
+    // Reset page visual
+    resetVisual();
     // Get and display the data
     loadData();
     // Make an order
@@ -129,12 +131,20 @@ function reset() {
     document.getElementById("card").checked = false;
     document.getElementById("card").disabled = false;
 
+    // Reset page visual
+    resetVisual();
+}
+
+
+function resetVisual() {
     // Reset visual
+    document.getElementById("statusForm").style.display = "block";
+    document.getElementById("statusMessage").style.display = "none";
+    document.getElementById("status").style.display = "none";
     document.getElementById("orderForm").style.display = "block";
     document.getElementById("confirmMessage").style.display = "none";
     document.getElementById("form").style.display = "none";
     document.getElementById("main").style.display = "block";
 }
-
 
 

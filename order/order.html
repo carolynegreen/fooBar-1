@@ -98,6 +98,29 @@
         </section>
     </section>
 
+    <section id="status">
+        <form id="statusForm" autocomplete="off">
+            <button type="button" id="backBtn" class="btn-secondary">Back to order</button>
+            <h1>STATUS LOGIN</h1>
+
+            <div>
+                <h2>Code Number</h2>
+                <input type="text" id="code" placeholder="Enter the provided code here">
+                <span type="text" class="error" id="codeError">Invalid code</span>
+            </div>
+
+            <button type="button" id="logInBtn" class="btn-primary">LOG IN</button>
+        </form>
+
+        <section id="statusMessage">
+            <h1>YOUR ORDER IS BEING PREPARED</h1>
+            <div>Count down</div>
+            <div>Your assigned bartender is Jonas</div>
+            <div>There are 3 people before you</div>
+            <button type="button" id="exitBtn" class="btn-primary">EXIT</button>
+        </section>
+    </section>
+
     <script src="orderLoad.js"></script>
     <script src="orderValidate.js"></script>
     <script src="orderPost.js"></script>
