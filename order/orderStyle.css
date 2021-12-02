@@ -107,3 +107,13 @@ input[type=number], #cardSecurityNumber {
     background-color: var(--color-6);
 }
 
+#status {
+    transform: translateX(50%);
+    background-color: var(--color-4);
+    color: var(--color-1);
+    width: 50vw;
+    padding: 2vw;
+}
+
+
+
