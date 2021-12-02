@@ -27,6 +27,7 @@ function createOrderObject(beerOrder) {
     }else {
         order.paymentMethod = "card";
     }
+    order.codeNumber = document.getElementById("codeNumber").innerHTML;
     console.log(order);
 }
   
@@ -51,19 +52,3 @@ function randomBartender() {
     let bartender = bartenders[Math.floor(Math.random()*bartenders.length)];
     return bartender;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

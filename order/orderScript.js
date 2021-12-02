@@ -72,11 +72,22 @@ function confirmPayment(beerOrder) {
     // On click check the form values
     document.getElementById("confirmBtn").addEventListener('click', function() {
         if(orderValidation()) {
+            generateCode();
             postOrder(beerOrder);
             document.getElementById("orderForm").style.display = "none";
             document.getElementById("confirmMessage").style.display = "block";
         }
     });
+}
+
+// Generate a random code for each order (lacks validation part)
+function generateCode() {
+    document.getElementById("codeNumber").innerHTML = Math.floor(1000 + Math.random() * 9000);
+}
+
+// Clipboard API implementation
+async function copyCode() {
+    await navigator.clipboard.writeText(document.getElementById("codeNumber").innerHTML);
 }
 
 function returnToMain() {
