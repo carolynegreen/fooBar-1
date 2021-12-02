@@ -10,8 +10,9 @@ const Order = {
 }
 
 function postOrder(beerOrder) {
-    createOrderObject(beerOrder);
+    const order = createOrderObject(beerOrder);
     // POST order to restdb / json file / other
+    post(order);
 }
 
 function createOrderObject(beerOrder) {
@@ -28,7 +29,7 @@ function createOrderObject(beerOrder) {
         order.paymentMethod = "card";
     }
     order.codeNumber = document.getElementById("codeNumber").innerHTML;
-    console.log(order);
+    return order;
 }
   
 function getOrderTime() {
@@ -52,3 +53,27 @@ function randomBartender() {
     let bartender = bartenders[Math.floor(Math.random()*bartenders.length)];
     return bartender;
 }
+
+
+function post(order) {
+    const postData = JSON.stringify(order);
+    fetch("https://foobar-0910.restdb.io/rest/order", {
+    method: "post",
+    headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "x-apikey": "61a85d22c7048f219d10f87b",
+        "cache-control": "no-cache"
+    },
+    body: postData
+    })
+    .then(res => res.json())
+    .then(data => {console.log(order);});
+}
+
+
+
+
+
+
+
+

@@ -73,7 +73,7 @@ function editOrder() {
 }
 
 function confirmPayment(beerOrder) {
-    // On click check the form values
+    // On click check the form values, post the orders and show a confirm message
     document.getElementById("confirmBtn").addEventListener('click', function() {
         if(orderValidation()) {
             generateCode();
