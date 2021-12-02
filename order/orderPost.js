@@ -72,6 +72,26 @@ function post(order) {
 
 
 
+function get() {
+    fetch("https://foobar-0910.restdb.io/rest/order", {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "x-apikey": "61a85d22c7048f219d10f87b",
+          "cache-control": "no-cache"
+        } })
+        .then(e => e.json())
+        .then(e => {database = e;});
+}
+
+function getCodeNumbers() {
+    let usedCodeNumbers = [];
+    for(let i=0; i < database.length; i++) {
+        usedCodeNumbers.push(database[i].codeNumber);
+    }
+    return usedCodeNumbers;
+}
+
 
 
 

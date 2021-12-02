@@ -7,6 +7,8 @@ function start() {
     resetVisual();
     // Get and display the data
     loadData();
+    // Get the data from the database
+    get();
     // Make an order
     goToOrder();
     // Show the status
@@ -76,7 +78,7 @@ function confirmPayment(beerOrder) {
     // On click check the form values, post the orders and show a confirm message
     document.getElementById("confirmBtn").addEventListener('click', function() {
         if(orderValidation()) {
-            generateCode();
+            generateCodeNumber();
             postOrder(beerOrder);
             document.getElementById("orderForm").style.display = "none";
             document.getElementById("confirmMessage").style.display = "block";
@@ -84,9 +86,16 @@ function confirmPayment(beerOrder) {
     });
 }
 
-// Generate a random code for each order (lacks validation part)
-function generateCode() {
-    document.getElementById("codeNumber").innerHTML = Math.floor(1000 + Math.random() * 9000);
+function generateCodeNumber() {
+    // Get all the used code numbers from the database
+    let usedCodeNumbers = getCodeNumbers();
+    // Create a unique code number
+    let num;
+    do {
+        num = Math.floor(1000 + Math.random() * 9000);
+    } while(usedCodeNumbers.includes(num));
+    // Display the new code number
+    document.getElementById("codeNumber").innerHTML = num;
 }
 
 // Clipboard API implementation
