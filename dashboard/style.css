@@ -1,9 +1,30 @@
 :root {
-  --color-1: #6a3030;
+  --color-0: #000000;
+  --color-1: #ffffff;
+  --color-2: #ece8e3;
+  --color-3: #e3dbd1;
+  --color-4: #6a3030;
+  --color-5: #f5cf6b;
+  --color-6: #dca413;
 }
 
 body {
   margin: 0;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 4rem;
+  margin-left: 1rem;
+}
+
+.nav_right ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
+  list-style: none;
 }
 
 #beerlistheader {
@@ -16,16 +37,29 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 60%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .single-product {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1px;
   padding: 1rem;
-  background-color: var(--color-1);
+  background-color: var(--color-4);
   border-radius: 20px;
   color: white;
+}
+
+.info_right {
+  display: flex;
+  justify-content: right;
+  padding-right: 1rem;
+}
+
+img {
+  width: 50%;
 }
 
 footer {
@@ -36,5 +70,5 @@ footer {
   padding: 1rem;
   padding-bottom: 2rem;
   color: white;
-  background-color: var(--color-1);
+  background-color: var(--color-4);
 }

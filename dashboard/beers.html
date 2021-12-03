@@ -8,7 +8,20 @@
     <title>Beers on Tap</title>
   </head>
   <body>
-    <nav>Navigation</nav>
+    <nav>
+      <div class="nav_left">
+        <h1>FooBar</h1>
+      </div>
+
+      <div class="nav_right">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Our Beers</a></li>
+          <li><a href="#">Order Now</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <main>
       <div id="beerlistheader">
         <h1>Beers on Tap</h1>
@@ -21,9 +34,12 @@
         <template class="single-product-template">
           <article class="single-product">
             <img src="" alt="" />
-            <div class="info">
+            <div class="info_left">
               <h2></h2>
               <p></p>
+            </div>
+            <div class="info_right">
+              <h3></h3>
             </div>
           </article>
         </template>

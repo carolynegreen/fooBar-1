@@ -26,6 +26,7 @@ function showProduct(product) {
     copy.querySelector("img").src = `${product.BeerImg}`;
     copy.querySelector("h2").textContent = `${product.BeerName}`;
     copy.querySelector("p").textContent = product.BeerDescription;
+    copy.querySelector("h3").textContent = `${product.BeerType}`;
     document.querySelector("section").appendChild(copy);
   });
 }
