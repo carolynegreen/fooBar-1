@@ -85,7 +85,7 @@ function getOrderInfo() {
     }
 }
 
-function showOrderInfo() {
+function showOrderInfo(order) {
     // Display the user order info
     const userInfo = document.getElementById("userInfo");
     userInfo.querySelector(".name").innerHTML = order.name;

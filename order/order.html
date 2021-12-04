@@ -111,7 +111,7 @@
                 <button type="button" class="btn-secondary" id="copyBtn">📋</button>
                 <a id="codeNumber"></a>
             </div>
-            <button type="button" id="returnBtn" class="btn-primary">RETURN</button>
+            <button type="button" id="returnBtn" class="btn-primary" onclick="copyCode()">RETURN</button>
         </section>
     </section>
 
@@ -122,7 +122,7 @@
 
             <div>
                 <h2>Code Number</h2>
-                <input type="text" id="code" placeholder="Enter the provided code here">
+                <input type="text" id="code" placeholder="Enter the provided code here" maxlength="4" oninput="onlyNumbers(this)">
                 <span type="text" class="error" id="codeError">Invalid code</span>
             </div>
 

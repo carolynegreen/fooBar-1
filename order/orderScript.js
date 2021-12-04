@@ -137,7 +137,7 @@ function goToOrder(beerTypes) {
     });
 }
 
-function manageForm() {
+function manageOrderForm(beerTypes) {
     // Hide the main page and show the form
     document.getElementById("main").style.display = "none";
     document.getElementById("form").style.display = "block";

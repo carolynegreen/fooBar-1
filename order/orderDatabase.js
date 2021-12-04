@@ -67,7 +67,7 @@ function post(order) {
     body: postData
     })
     .then(res => res.json())
-    .then(data => {console.log(order);});
+    .then(data => {});
 }
 
 function get() {
