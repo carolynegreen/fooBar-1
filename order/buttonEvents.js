@@ -44,3 +44,8 @@ function checkDate(input) {
 async function copyCode() {
     await navigator.clipboard.writeText(document.getElementById("codeNumber").innerHTML);
 }
+
+async function pasteCode() {
+    const read = await navigator.clipboard.readText();
+    document.getElementById("code").value = read;
+}
