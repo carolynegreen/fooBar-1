@@ -5,21 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Beers on Tap</title>
   </head>
   <body>
-    <nav>navigation</nav>
-    <main class="beerlist">
-      <div class="about">
-        <p>blah blah blah</p>
+    <nav>
+      <div class="nav_left">
+        <h1>FooBar</h1>
       </div>
-      <section class="beers">
-        <img class="beerimg" src="/images/elhefe.png" />
-        <section class="beerinfo">
-          <div class="beername"><h2>Beer Name</h2></div>
-          <div class="beertype"><h3>Beer Type</h3></div>
-          <div class="beerdescript"><p>about the beer</p></div>
-        </section>
+
+      <div class="nav_right">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Our Beers</a></li>
+          <li><a href="#" class="ordernow">Order Now</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div id="beerlistheader">
+        <h1>Beers on Tap</h1>
+        <p>
+          At FooBar, we've got an unbelievable selection of the best craft beers
+          in Denmark
+        </p>
+      </div>
+      <section id="product-list">
+        <template class="single-product-template">
+          <article class="single-product">
+            <img src="" alt="" />
+            <div class="info_left">
+              <h2></h2>
+              <p></p>
+            </div>
+            <div class="info_right">
+              <h3></h3>
+            </div>
+          </article>
+        </template>
       </section>
     </main>
     <footer>
