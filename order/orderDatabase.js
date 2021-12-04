@@ -70,8 +70,6 @@ function post(order) {
     .then(data => {console.log(order);});
 }
 
-
-
 function get() {
     fetch("https://foobar-0910.restdb.io/rest/order", {
         method: "get",

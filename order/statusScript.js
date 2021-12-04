@@ -1,22 +1,61 @@
 "use-strict";
 
-function showStatus() {
+function manageStatus() {
+    // Reset status
+    resetStatus();
+    // Show status
+    goToStatus();
+    // Exit status
+    exitStatus();
+}
+
+function goToStatus() {
+    // On click show the status log in
     document.getElementById("statusBtn").addEventListener('click', function() {
-        document.getElementById("main").style.display = "none";
-        document.getElementById("status").style.display = "block";
-        logIn();
+        manageStatusForm();
     });
+}
+
+function exitStatus() {
+    // On click return to the main page
+    document.querySelectorAll(".exitBtn").forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            resetStatus();
+        })
+    });
+}
+
+function resetStatus() {
+    // Reset the code field
+    document.getElementById("code").value = "";
+    // Reset the page visual
+    document.getElementById("statusMessage").style.display = "none";
+    document.getElementById("statusForm").style.display = "block";
+    document.getElementById("status").style.display = "none";
+    document.getElementById("main").style.display = "block";
+}
+
+function manageStatusForm() {
+    document.getElementById("status").style.display = "block";
+    document.getElementById("main").style.display = "none";
+    // Validate status form and show status message
+    logIn();
 }
 
 function logIn() {
     document.getElementById("logInBtn").addEventListener('click', function() {
         if(statusValidation()) {
-            getOrderInfo();
-            document.getElementById("statusForm").style.display = "none";
-            document.getElementById("statusMessage").style.display = "block";
-            exitStatus();
+            manageStatusMessage();
         }
     });
+}
+
+function manageStatusMessage() {
+    // Show the status message
+    document.getElementById("statusMessage").style.display = "block";
+    document.getElementById("statusForm").style.display = "none";
+    // Get the information for the user
+    getOrderInfo();
 }
 
 function statusValidation() {
@@ -41,26 +80,22 @@ function getOrderInfo() {
     const input = document.getElementById("code");
     for(let i=0; i < database.length; i++) {
         if(parseInt(input.value) === database[i].codeNumber) {
-            text = "Welcome " + database[i].name + "!" + 
-            "<br>" + "Your bartender for today is " + database[i].bartender;
+            showOrderInfo(database[i]);
         }
     }
-    // Display the user information
-    document.getElementById("userInfo").innerHTML = text;
 }
 
-function exitStatus() {
-    document.getElementById("exitBtn").addEventListener('click', function() {
-        document.getElementById("code").value = "";
-        resetVisual();
-    });
+function showOrderInfo() {
+    // Display the user order info
+    const userInfo = document.getElementById("userInfo");
+    userInfo.querySelector(".name").innerHTML = order.name;
+    let beers = "You have ordered ";
+    for(let i=0; i < order.beers.length; i++) {
+        beers += "<br>" + order.beers[i].type + " x " + order.beers[i].number;
+    }
+    userInfo.querySelector(".order").innerHTML = beers;
+    userInfo.querySelector(".table").innerHTML = "To table " + order.table;
+    userInfo.querySelector(".timer").innerHTML = "TIMER";
+    userInfo.querySelector(".bartender").innerHTML = "Your order is being prepared by " + order.bartender;
+    userInfo.querySelector(".queue").innerHTML = "There are 3 orders before you";
 }
-
-
-
-
-
-
-
-
-

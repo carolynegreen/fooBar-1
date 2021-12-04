@@ -14,14 +14,31 @@
             <a id="selection">0</a>
             <button type="button" id="orderBtn" class="btn-primary" disabled>ORDER</button>
         </div>
-        <div id="beerPanel"></div>
+        <template id="beerType-template">
+            <div class="beerType">
+                <h1 class="title"></h1>
+                <img></img>
+                <div class="price"></div>
+                <button type="button" id="decreaseBtn" class="btn-sign">-</button>
+                <a></a>
+                <button type="button" id="increaseBtn" class="btn-sign">+</button>
+            </div>
+        </template>
+        <section id="beerPanel"></section>
     </section>
 
     <section id="form">
         <form id="orderForm" autocomplete="off">
             <button type="button" id="editBtn" class="btn-secondary">Edit order</button>
             <h1>ORDER DETAILS</h1>
-            <div id="orderInfo"></div>
+            
+            <template id="order-beerType-template">
+                <div class="beerOrder">
+                    <a class="type"></a>
+                    <span class="price"></span>
+                </div>
+            </template>
+            <section id="orderPanel"></section>
 
             <div>
                 <h2>Name</h2>
@@ -100,7 +117,7 @@
 
     <section id="status">
         <form id="statusForm" autocomplete="off">
-            <button type="button" id="backBtn" class="btn-secondary">Back to order</button>
+            <button type="button" class="exitBtn btn-secondary">Back to order</button>
             <h1>STATUS LOGIN</h1>
 
             <div>
@@ -114,14 +131,21 @@
 
         <section id="statusMessage">
             <h1>YOUR ORDER IS BEING PREPARED</h1>
-            <div id="userInfo"></div>
-            <button type="button" id="exitBtn" class="btn-primary">EXIT</button>
+            <div id="userInfo">
+                <h2 class="name"></h2>
+                <div class="order"></div>
+                <div class="table"></div>
+                <div class="timer"></div>
+                <div class="bartender"></div>
+                <div class="queue"></div>
+            </div>
+            <button type="button" class="exitBtn btn-primary">EXIT</button>
         </section>
     </section>
 
-    <script src="orderLoad.js"></script>
-    <script src="orderValidate.js"></script>
+    <script src="buttonEvents.js"></script>
     <script src="orderPost.js"></script>
+    <script src="orderValidate.js"></script>
     <script src="statusScript.js"></script>
     <script src="orderScript.js"></script>
 </body>
