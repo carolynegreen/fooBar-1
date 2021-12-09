@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dropdown.css"/>
     <title>Beers on Tap</title>
   </head>
   <body>
@@ -30,9 +31,49 @@
           in Denmark that actually don't exist. 
         </p>
       </div>
+      
+        <div id="dropdown">
+          <p>
+            <div class="dropdown">
+              <button onclick="dropDown()" class="dropbtn">Beer Types</button>
+              <div id="myDropdown" class="dropdown-content">
+                <button
+              id="ipa"
+              class="filter"
+              data-action="filter"
+              data-filter="ipa"
+            >IPA
+              </button>
+              <button
+              id="lager"
+              class="filter"
+              data-action="filter"
+              data-filter="lager"
+            >Lager
+              </button>
+              <button
+              id="stout"
+              class="filter"
+              data-action="filter"
+              data-filter="stout"
+            >Stout
+              </button>
+              </div>
+            </div>
+            <button
+              id="all_filter"
+              class="filter"
+              data-action="filter"
+              data-filter="*"
+            >
+              All Beers
+            </button>
+          </p>
+        </div>
+
       <section id="product-list">
-        <template class="single-product-template">
-          <article class="single-product">
+        <template class="single-product-template hidden">
+          <article class="single-product hidden">
             <img src="" alt="" class="image"></img>
             <h2 class="name"></h2>
             <h3 class="label"></h3>
