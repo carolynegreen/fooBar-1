@@ -1,36 +1,14 @@
 "use strict";
+let url = "https://kea2sem-4cc6.restdb.io/rest/foobar";
 
-window.addEventListener("DOMContentLoaded", start);
-
-let allBeers = [];
-const Beers = {
-  BeerName: "",
-  BeerType: "",
-  BeerDescription: "",
-  alc: "",
-  filter: "",
-};
-const settings = {
-  filter: "all",
-};
-
-function start() {
-  console.log("ready");
-  registerButtons();
-}
-
-function registerButtons() {
-  document
-    .querySelectorAll("[data-action='filter']")
-    .forEach((button) => button.addEventListener("click", selectFilter));
-}
-
-fetch("https://kea2sem-4cc6.restdb.io/rest/foobar", {
+const options = {
   method: "GET",
   headers: {
     "x-apikey": "61aa0b02c7048f219d10f8de",
   },
-})
+};
+
+fetch(url, options)
   .then((res) => res.json())
   .then((response) => {
     showProduct(response);
@@ -61,40 +39,6 @@ function showProduct(product) {
 toggle between hiding and showing the dropdown content */
 function dropDown() {
   document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function selectFilter(event) {
-  const filter = event.target.dataset.filter;
-  console.log(`Show ${filter}`);
-  setFilter(filter);
-}
-
-function setFilter(filter) {
-  settings.filterBy = filter;
-  buildList();
-}
-
-function buildList() {
-  const currentList = filterList(allBeers);
-  displayList(currentList);
-}
-
-function filterList(filteredList) {
-  //let filteredList = allStudents;
-
-  if (settings.filterBy === "ipa") {
-    filteredList = allBeers.filter(isGryffindor);
-  }
-  return filteredList;
-}
-
-function isGryffindor(product) {
-  return product.filter === "ipa";
-}
-
-function displayList(product) {
-  product.forEach(showProduct);
-  console.log(product);
 }
 
 // function start() {

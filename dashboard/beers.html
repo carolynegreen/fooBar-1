@@ -33,7 +33,6 @@
       </div>
       
         <div id="dropdown">
-          <p>
             <div class="dropdown">
               <button onclick="dropDown()" class="dropbtn">Beer Types</button>
               <div id="myDropdown" class="dropdown-content">
@@ -44,35 +43,10 @@
               data-filter="ipa"
             >IPA
               </button>
-              <button
-              id="lager"
-              class="filter"
-              data-action="filter"
-              data-filter="lager"
-            >Lager
-              </button>
-              <button
-              id="stout"
-              class="filter"
-              data-action="filter"
-              data-filter="stout"
-            >Stout
-              </button>
-              </div>
-            </div>
-            <button
-              id="all_filter"
-              class="filter"
-              data-action="filter"
-              data-filter="*"
-            >
-              All Beers
-            </button>
-          </p>
         </div>
 
       <section id="product-list">
-        <template class="single-product-template hidden">
+        <template class="single-product-template">
           <article class="single-product hidden">
             <img src="" alt="" class="image"></img>
             <h2 class="name"></h2>
