@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="StyleDash.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <header>
-   <nav>
-    <h2>FooBar</h2>
-    <p>Home</p>
-    <p>Our Beers</p>
-    <p>Order Now</p>
+    <nav>
+      <div class="nav_left">
+        <h1>FooBar</h1>
+      </div>
+
+      <div class="nav_right">
+        <ul>
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="beers.html" class="ourbeers">Our Beers</a></li>
+          <li><a href="/order/order.html" class="ordernow">Order Now</a></li>
+        </ul>
+      </div>
     </nav>
 </header>
 <body>
   <section id="section_1">
-      <img alt="" width="0" height="0" src="">
+      <img alt="" width="80%" height="50%" src="FooBar_Dash.png">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor error assumenda libero ipsa aliquam excepturi sint ad doloribus, alias, numquam mollitia dolore praesentium nesciunt ut aspernatur fugiat nostrum, sit quod.</p>
   </section>
   
@@ -62,41 +70,43 @@
        <div class="row">
   <div class="column">
       <h3>What others are ordering</h3>
+      
       <div id="order_1">
-          <img alt="" width="40px" height="40px" src="/images/elhefe.png">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-      <img alt="" width="40px" height="40px" src="/images/fairytaleale.png">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+          <img id="order_img" alt="" width="" height="" src="/images/elhefe.png">
+      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <img id="order_img" alt="" width="40px" height="40px" src="/images/fairytaleale.png">
+      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
       <br>
       </div>
     <div id="order_2">
-        <img alt="" width="40px" height="40px" src="/images/elhefe.png">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+        <img id="order_img" alt="" width="40px" height="40px" src="/images/elhefe.png">
+      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
       <br>
     </div>     
     <div id="order_3">
-        <img alt="" width="40px" height="40px" src="/images/elhefe.png">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-      <img alt="" width="40px" height="40px" src="/images/fairytaleale.png">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-      <img alt="" width="40px" height="40px" src="/images/githop.png">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-      <br>
-    </div>     
-        <a href="beers.html">Order now</a>      
-      
+        <img id="order_img" alt="" width="40px" height="40px" src="/images/elhefe.png">
+      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <img id="order_img" alt="" width="40px" height="40px" src="/images/fairytaleale.png">
+      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <img id="order_img" alt="" width="40px" height="40px" src="/images/githop.png">
+      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <br> <br>
+
+    </div>  
+                  <a href="beers.html" class="ordernow">Order now</a>      
+   
   </div>
   <div class="column">
       <div id="OrderBar">
           <h3>People ahead of you</h3>
           <p id="People"></p>
           
-                  <a href="beers.html">Order now</a>      
+                  <a href="beers.html" class="ordernow">Order now</a>      
       </div>
       
       <div id="bartensers">
           <h3>Your bartenders tonight</h3>
-          <p>
+          <p id="bar_ten">
               Jonas <br> Peter <br> klaus <br>
           </p>
       </div>
