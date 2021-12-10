@@ -1,0 +1,79 @@
+#waiting {
+    z-index: 2;
+    pointer-events: all;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#waiting #background {
+    height: 100%;
+    width: 100%;
+    background-color: #ECE8E3;
+    opacity: 80%;
+}
+
+#waiting section {
+    height: 300px;
+    width: 250px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+#waiting #glass {
+    background-image: url('beers/glass.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 50%;
+    position: absolute;
+    height: 300px;
+    width: 250px;
+}
+
+#waiting #beer {
+    background-image: url('beers/beer0.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 50%;
+    height: 300px;
+    width: 250px;
+}
+
+.beerAni {
+    animation: fill 5s ease-in-out forwards;
+}
+
+@keyframes fill {
+    0% {background-image: url('beers/beer0.png')}
+    10% {background-image: url('beers/beer1.png')}
+    20% {background-image: url('beers/beer2.png')}
+    30% {background-image: url('beers/beer3.png')}
+    40% {background-image: url('beers/beer4.png')}
+    50% {background-image: url('beers/beer5.png')}
+    60% {background-image: url('beers/beer6.png')}
+    70% {background-image: url('beers/beer7.png')}
+    80% {background-image: url('beers/beer8.png')}
+    90% {background-image: url('beers/beer9.png')}
+    100% {background-image: url('beers/beer10.png')}
+}
+
+#waiting h2 {
+    color: #fbbc35;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

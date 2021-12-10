@@ -1,5 +1,6 @@
 "use-strict";
 
+
 function manageStatus() {
     // Reset status
     resetStatus();
@@ -9,7 +10,7 @@ function manageStatus() {
     exitStatus();
 }
 
-function goToStatus() {
+function goToStatus() { 
     // On click show the status log in
     document.getElementById("statusBtn").addEventListener('click', function() {
         manageStatusForm();
@@ -76,7 +77,6 @@ function statusValidation() {
 
 function getOrderInfo() {
     // Get the user information
-    let text = "";
     const input = document.getElementById("code");
     for(let i=0; i < database.length; i++) {
         if(parseInt(input.value) === database[i].codeNumber) {
@@ -86,6 +86,7 @@ function getOrderInfo() {
 }
 
 function showOrderInfo(order) {
+    waitingAnimation();
     // Display the user order info
     const userInfo = document.getElementById("userInfo");
     userInfo.querySelector(".name").innerHTML = order.name;
@@ -99,3 +100,5 @@ function showOrderInfo(order) {
     userInfo.querySelector(".bartender").innerHTML = "Your order is being prepared by " + order.bartender;
     userInfo.querySelector(".queue").innerHTML = "There are 3 orders before you";
 }
+
+

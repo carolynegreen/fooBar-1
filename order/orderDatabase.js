@@ -1,5 +1,7 @@
 "use-strict";
 
+let database;
+
 const Order = {
     name: "",
     table: "",
@@ -7,6 +9,7 @@ const Order = {
     bartender: "",
     beers: [],
     paymentMethod: "",
+    codeNumber: 0
 }
 
 function postOrder(beerOrder) {
@@ -20,7 +23,7 @@ function createOrderObject(beerOrder) {
     let order = new Object(Order);
     order.name = document.getElementById("name").value;
     order.table = document.getElementById("table").value;
-    order.time = getOrderTime();
+    order.time = getCurrentTime();
     order.bartender = randomBartender();
     order.beers = beerOrder;
     if(document.getElementById("cash").checked) {
@@ -32,7 +35,7 @@ function createOrderObject(beerOrder) {
     return order;
 }
   
-function getOrderTime() {
+function getCurrentTime() {
     // Get the current time in hours, minutes and seconds
     let date = new Date();
     var time = date.getHours() + ":" + checkTime(date.getMinutes()) + ":" + checkTime(date.getSeconds());
@@ -54,7 +57,6 @@ function randomBartender() {
     return bartender;
 }
 
-
 function post(order) {
     const postData = JSON.stringify(order);
     fetch("https://foobar-0910.restdb.io/rest/order", {
@@ -67,7 +69,7 @@ function post(order) {
     body: postData
     })
     .then(res => res.json())
-    .then(data => {});
+    .then(data => {console.log("order submitted");});
 }
 
 function get() {
@@ -83,13 +85,13 @@ function get() {
 }
 
 function getCodeNumbers() {
-    let usedCodeNumbers = [];
-    for(let i=0; i < database.length; i++) {
-        usedCodeNumbers.push(database[i].codeNumber);
-    }
-    return usedCodeNumbers;
+  // Get all code number from the database
+  let usedCodeNumbers = [];
+  for(let i=0; i < database.length; i++) {
+      usedCodeNumbers.push(database[i].codeNumber);
+  }
+  return usedCodeNumbers;
 }
-
 
 
 

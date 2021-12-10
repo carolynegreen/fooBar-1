@@ -8,23 +8,32 @@ const BeerType = {
 }
 
 function start() {
-    // Reset the page
+    // Waiting animation
+    setTimeout(function() {
+        document.getElementById("waiting").style.display = "none";
+        document.getElementById("waiting").style.pointerEvents = "none";
+        document.getElementById("beer").classList.remove("beerAni");
+    }, 6000);
+
+    // Reset everything
     reset();
+
+    // Manage the status process
+    manageStatus();
 
     // Get the data from the database
     get();
 
-    // Get and display the data
+    // Get the data from the json and manage the ordering process
     manageOrder();
-
-    // Show the status
-    manageStatus();
 }
 
 async function manageOrder() {
     // Fetch data
     const response = await fetch('https://foo-bar-3.herokuapp.com/');
     const data = await response.json();
+
+    console.log(data);
 
     // Map the beer types in an array
     let beerTypes = "";
@@ -41,7 +50,7 @@ function createBeerTypeObject(data) {
     // Create a beer type object with the fetched data
     const beerType = Object.create(BeerType);
     beerType.name = data.name;
-    beerType.image = '../images/' + data.name.split(' ').join('').toLowerCase() + '.png';
+    beerType.image = 'images/' + data.name.split(' ').join('').toLowerCase() + '.png';
     beerType.price = 40;
     beerType.selected = 0;
     return beerType;
@@ -66,7 +75,7 @@ function createBeerPannel(beerTypes) {
         increaseBeers(panel, beerTypes);
 
         document.getElementById("beerPanel").appendChild(panel);
-    }
+    };
 }
 
 function decreaseBeers(panel, beerTypes) {
@@ -140,7 +149,7 @@ function goToOrder(beerTypes) {
 function manageOrderForm(beerTypes) {
     // Hide the main page and show the form
     document.getElementById("main").style.display = "none";
-    document.getElementById("form").style.display = "block";
+    document.getElementById("order").style.display = "block";
 
     // Return to the main page
     editOrder();
@@ -155,7 +164,7 @@ function manageOrderForm(beerTypes) {
 function editOrder() {
     // On click return to the main page
     document.getElementById("editBtn").addEventListener('click', function() {
-        document.getElementById("form").style.display = "none";
+        document.getElementById("order").style.display = "none";
         document.getElementById("main").style.display = "block";
     });
 }
@@ -183,9 +192,9 @@ function showBeerOrder(beerOrder) {
     for(let i=0; i < beerOrder.length; i++) {
         const panel = template.cloneNode(true);
         panel.querySelector(".type").innerHTML = beerOrder[i].type;
-        panel.querySelector(".price").innerHTML = "(" + beerOrder[i].number + "x" + beerOrder[i].singlePrice + ") " + beerOrder[i].totalPrice;
+        panel.querySelector(".price").innerHTML = "&nbsp;&nbsp;&nbsp;" + beerOrder[i].totalPrice + " dkk&nbsp;&nbsp;(" + beerOrder[i].number + "x" + beerOrder[i].singlePrice + ")&nbsp;";
         document.getElementById("orderPanel").appendChild(panel);
-    }
+    };
 }
 
 function removeAllNodes(parent) {
@@ -204,6 +213,7 @@ function confirmPayment(beerOrder) {
 }
 
 function manageConfirmMessage(beerOrder) {
+    waitingAnimation();
     // Hide the order form and show the confirm message
     document.getElementById("orderForm").style.display = "none";
     document.getElementById("confirmMessage").style.display = "block";
@@ -252,10 +262,23 @@ function reset() {
     document.getElementById("cash").disabled = true;
     document.getElementById("card").checked = false;
     document.getElementById("card").disabled = false;
+    document.getElementById("cardInfo").style.display = "none";
 
     // Reset visual
     document.getElementById("orderForm").style.display = "block";
     document.getElementById("confirmMessage").style.display = "none";
-    document.getElementById("form").style.display = "none";
+    document.getElementById("order").style.display = "none";
     document.getElementById("main").style.display = "block";
 }
+
+function waitingAnimation() {
+    document.getElementById("waiting").style.display = "block";
+    document.getElementById("waiting").style.pointerEvents = "all";
+    document.getElementById("beer").classList.add("beerAni");
+    setTimeout(function() {
+        document.getElementById("waiting").style.display = "none";
+        document.getElementById("waiting").style.pointerEvents = "none";
+        document.getElementById("beer").classList.remove("beerAni");
+    }, 6000);
+}
+

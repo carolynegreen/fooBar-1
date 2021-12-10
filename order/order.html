@@ -8,30 +8,43 @@
     <link rel="stylesheet" href="orderStyle.css">
 </head>
 <body>
+    <div id="waiting">
+        <div id="background"></div>
+        <section>
+            <div id="glass"></div>
+            <div id="beer" class="beerAni"></div>
+            <h2>LOADING   ...</h2>
+        </section>
+    </div>
+
+    <div id="countdown"></div>
     <section id="main">
         <div id="header">
-            <button type="button" id="statusBtn" class="btn-primary">STATUS</button>
-            <a id="selection">0</a>
-            <button type="button" id="orderBtn" class="btn-primary" disabled>ORDER</button>
+            <button type="button" id="statusBtn" class="btnPrimary">STATUS</button>
+            <div id="container">
+                <a id="selection">0</a>
+                <button type="button" id="orderBtn" class="btnPrimary" disabled>ORDER</button>
+            </div>
         </div>
+
         <template id="beerType-template">
             <div class="beerType">
-                <h1 class="title"></h1>
+                <h1></h1>
                 <img></img>
                 <div class="price"></div>
-                <button type="button" id="decreaseBtn" class="btn-sign">-</button>
-                <a></a>
-                <button type="button" id="increaseBtn" class="btn-sign">+</button>
+                <button type="button" id="decreaseBtn">-</button>
+                <a class="num"></a>
+                <button type="button" id="increaseBtn">+</button>
             </div>
         </template>
         <section id="beerPanel"></section>
     </section>
 
-    <section id="form">
+    <div id="order" class="secondaryPage">
         <form id="orderForm" autocomplete="off">
-            <button type="button" id="editBtn" class="btn-secondary">Edit order</button>
-            <h1>ORDER DETAILS</h1>
-            
+            <button type="button" id="editBtn" class="btnSecondary">Edit<br>order</button>
+            <h1 class="title">ORDER DETAILS</h1>
+
             <template id="order-beerType-template">
                 <div class="beerOrder">
                     <a class="type"></a>
@@ -61,15 +74,15 @@
 
             <div>
                 <h2>Payment</h2>
-                <input type="checkbox" class="paymentType" id="cash" value="cash" onclick="selectPaymentType(this)" checked disabled><a>Cash</a>
-                <input type="checkbox" class="paymentType" id="card" value="card" onclick="selectPaymentType(this)"><a>Card</a>
+                <input type="checkbox" class="paymentType" id="cash" value="cash" onclick="selectPaymentType(this)" checked disabled><a class="method">Cash</a>
+                <input type="checkbox" class="paymentType" id="card" value="card" onclick="selectPaymentType(this)"><a class="method">Card</a>
 
                 <section id="cardInfo">
                     <div id="cards">
-                        <div>Visa</div>
-                        <div>Mastercard</div>
-                        <div>JCB</div>
-                        <div>American Express</div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
             
                     <div>
@@ -101,37 +114,38 @@
                 </section>
             </div>
 
-            <button type="button" id="confirmBtn" class="btn-primary">CONFIRM</button>
+            <button type="button" id="confirmBtn" class="btnPrimary">CONFIRM</button>
         </form>
 
         <section id="confirmMessage">
-            <h1>YOUR ORDER HAS BEEN CONFIRMED</h1>
-            <div>Go back to order and log in the status form <br> to check the evolution of your order</div>
+            <h1 class="title">YOUR ORDER HAS BEEN CONFIRMED</h1>
             <div>
-                <button type="button" class="btn-secondary" id="copyBtn" onclick="copyCode()">📋</button>
                 <a id="codeNumber"></a>
+                <button type="button" class="btnSymbol" id="copyBtn" onclick="copyCode()"></button>
             </div>
-            <button type="button" id="returnBtn" class="btn-primary">RETURN</button>
-        </section>
-    </section>
 
-    <section id="status">
+            <div>Go back to order and log in the status form <br> to check the evolution of your order</div>
+            <button type="button" id="returnBtn" class="btnPrimary">RETURN</button>
+        </section>
+    </div>
+
+    <div id="status" class="secondaryPage">
         <form id="statusForm" autocomplete="off">
-            <button type="button" class="exitBtn btn-secondary">Back to order</button>
-            <h1>STATUS LOGIN</h1>
+            <button type="button" class="exitBtn btnSecondary">Back to<br>order</button>
+            <h1 class="title">STATUS LOGIN</h1>
 
             <div>
                 <h2>Code Number</h2>
                 <input type="text" id="code" placeholder="Enter the provided code here" maxlength="4" oninput="onlyNumbers(this)">
-                <button type="button" class="btn-secondary" id="pasteBtn" onclick="pasteCode()">📋</button>
+                <button type="button" class="btnSymbol" id="pasteBtn" onclick="pasteCode()"></button>
                 <span type="text" class="error" id="codeError">Invalid code</span>
             </div>
 
-            <button type="button" id="logInBtn" class="btn-primary">LOG IN</button>
+            <button type="button" id="logInBtn" class="btnPrimary">LOG IN</button>
         </form>
 
         <section id="statusMessage">
-            <h1>YOUR ORDER IS BEING PREPARED</h1>
+            <h1 class="title">YOUR ORDER IS BEING PREPARED</h1>
             <div id="userInfo">
                 <h2 class="name"></h2>
                 <div class="order"></div>
@@ -140,9 +154,9 @@
                 <div class="bartender"></div>
                 <div class="queue"></div>
             </div>
-            <button type="button" class="exitBtn btn-primary">EXIT</button>
+            <button type="button" class="exitBtn btnPrimary">EXIT</button>
         </section>
-    </section>
+    </div>
 
     <script src="buttonEvents.js"></script>
     <script src="orderDatabase.js"></script>
