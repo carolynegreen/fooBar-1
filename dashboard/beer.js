@@ -35,6 +35,9 @@ function showProduct(product) {
   });
 }
 
+//Show beer percentages
+function showBeerPercent() {}
+
 // function start() {
 //   console.log(beers);
 //   displayBeers();
