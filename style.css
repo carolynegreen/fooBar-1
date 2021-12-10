@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  --color-0: #000000;
+  --color-1: #ffffff;
+  --color-2: #ece8e3;
+  --color-3: #e3dbd1;
+  --color-4: #6a3030;
+  --color-5: #f5cf6b;
+  --color-6: #dca413;
+
+  --header-font: "Grenze Gotisch", cursive;
+  --h2-font: "Special Elite", cursive;
+  --h3-font: ;
+  --p-font: "Open Sans", sans-serif;
+
+  --header-size: 4rem;
+  --h2-size: 2rem;
+  --p-size: 1rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-2);
+}
