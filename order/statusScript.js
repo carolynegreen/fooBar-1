@@ -1,31 +1,5 @@
 "use-strict";
 
-
-function manageStatus() {
-    // Reset status
-    resetStatus();
-    // Show status
-    goToStatus();
-    // Exit status
-    exitStatus();
-}
-
-function goToStatus() { 
-    // On click show the status log in
-    document.getElementById("statusBtn").addEventListener('click', function() {
-        manageStatusForm();
-    });
-}
-
-function exitStatus() {
-    // On click return to the main page
-    document.querySelectorAll(".exitBtn").forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            resetStatus();
-        })
-    });
-}
-
 function resetStatus() {
     // Reset the code field
     document.getElementById("code").value = "";
@@ -36,27 +10,15 @@ function resetStatus() {
     document.getElementById("main").style.display = "block";
 }
 
-function manageStatusForm() {
+function showStatusForm() {
     document.getElementById("status").style.display = "block";
     document.getElementById("main").style.display = "none";
-    // Validate status form and show status message
-    logIn();
 }
 
 function logIn() {
-    document.getElementById("logInBtn").addEventListener('click', function() {
-        if(statusValidation()) {
-            manageStatusMessage();
-        }
-    });
-}
-
-function manageStatusMessage() {
-    // Show the status message
-    document.getElementById("statusMessage").style.display = "block";
-    document.getElementById("statusForm").style.display = "none";
-    // Get the information for the user
-    getOrderInfo();
+    if(statusValidation()) {
+        manageStatusMessage();
+    }
 }
 
 function statusValidation() {
@@ -66,13 +28,25 @@ function statusValidation() {
     const input = document.getElementById("code");
     if(input.value.length === 0 || !(usedCodeNumbers.includes(parseInt(input.value)))) {
         input.style.border = "4px solid #DCA413";
-        document.getElementById("codeError").style.visibility = "visible";
+        document.querySelector(".codeError").style.visibility = "visible";
         return false;
     }else {
         input.style.border = "none";
-        document.getElementById("codeError").style.visibility = "hidden";
+        document.querySelector(".codeError").style.visibility = "hidden";
         return true;
     }
+}
+
+function manageStatusMessage() {
+    // Show waiting animation
+    waitingAnimation();
+
+    // Show the status message
+    document.getElementById("statusMessage").style.display = "block";
+    document.getElementById("statusForm").style.display = "none";
+
+    // Get the information for the user
+    getOrderInfo();
 }
 
 function getOrderInfo() {
@@ -86,7 +60,6 @@ function getOrderInfo() {
 }
 
 function showOrderInfo(order) {
-    waitingAnimation();
     // Display the user order info
     const userInfo = document.getElementById("userInfo");
     userInfo.querySelector(".name").innerHTML = order.name;
@@ -100,5 +73,7 @@ function showOrderInfo(order) {
     userInfo.querySelector(".bartender").innerHTML = "Your order is being prepared by " + order.bartender;
     userInfo.querySelector(".queue").innerHTML = "There are 3 orders before you";
 }
+
+
 
 

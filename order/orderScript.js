@@ -1,49 +1,94 @@
 "use-strict";
 window.addEventListener('load', start);
 
-const BeerType = {
-    name: "",
-    price: 0,
-    selected: 0
-}
-
 function start() {
-    // Waiting animation
+    // Hide waiting animation
     setTimeout(function() {
         document.getElementById("waiting").style.display = "none";
         document.getElementById("waiting").style.pointerEvents = "none";
         document.getElementById("beer").classList.remove("beerAni");
     }, 6000);
 
-    // Reset everything
-    reset();
-
-    // Manage the status process
-    manageStatus();
-
     // Get the data from the database
     get();
 
-    // Get the data from the json and manage the ordering process
+    // Manage the ordering process
     manageOrder();
+
+    // Reset the status
+    resetStatus();
 }
 
+/**
+ * OBJECTS AND GLOBAL VARIABLES
+ */
+
+const BeerType = {
+    name: "",
+    price: 0,
+    selected: 0
+}
+
+const Order = {
+    name: "",
+    table: "",
+    time: "",
+    bartender: "",
+    beers: [],
+    paymentMethod: "",
+    codeNumber: 0
+}
+
+let beerTypes = [];
+let beerOrder = [];
+
+let database;
+
+
+/**
+ * GET ORDERS DATA FROM DATABASE
+ */
+
+ function get() {
+    fetch("https://foobar-0910.restdb.io/rest/order", {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "x-apikey": "61a85d22c7048f219d10f87b",
+          "cache-control": "no-cache"
+        } })
+        .then(e => e.json())
+        .then(e => {database = e;});
+}
+
+function getCodeNumbers() {
+  // Get all code number from the database
+  let usedCodeNumbers = [];
+  for(let i=0; i < database.length; i++) {
+      usedCodeNumbers.push(database[i].codeNumber);
+  }
+  return usedCodeNumbers;
+}
+
+
+/**
+ * CREATE MAIN PAGE
+ */
+
 async function manageOrder() {
+    // Reset everything
+    reset();
+
     // Fetch data
     const response = await fetch('https://foo-bar-3.herokuapp.com/');
     const data = await response.json();
 
-    console.log(data);
-
     // Map the beer types in an array
-    let beerTypes = "";
+    beerTypes = [];
     beerTypes = data.storage.map(createBeerTypeObject);
     
     // Display the beer panel
-    createBeerPannel(beerTypes);
-
-    // Go to the order form
-    goToOrder(beerTypes);
+    createBeerPannel();
 }
 
 function createBeerTypeObject(data) {
@@ -56,7 +101,7 @@ function createBeerTypeObject(data) {
     return beerType;
 }
 
-function createBeerPannel(beerTypes) {
+function createBeerPannel() {
     removeAllNodes(document.getElementById("beerPanel"));
     // Fill the beerPanel section with a template
     const template = document.getElementById("beerType-template").content;
@@ -70,15 +115,21 @@ function createBeerPannel(beerTypes) {
         panel.querySelector("a").innerHTML = 0;
 
         panel.getElementById("decreaseBtn").value = i;
-        decreaseBeers(panel, beerTypes);
+        decreaseBeers(panel);
         panel.getElementById("increaseBtn").value = i;
-        increaseBeers(panel, beerTypes);
+        increaseBeers(panel);
 
         document.getElementById("beerPanel").appendChild(panel);
     };
 }
 
-function decreaseBeers(panel, beerTypes) {
+function removeAllNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.lastChild);
+    }
+}
+
+function decreaseBeers(panel) {
     // On click decrease the number of beers in the correct array position while it is over 0
     const input = panel.getElementById("decreaseBtn");
     const numBeers = panel.querySelector("a");
@@ -89,11 +140,11 @@ function decreaseBeers(panel, beerTypes) {
                 numBeers.innerHTML = beerTypes[i].selected;
             }
         }
-        changeBeerAmount(beerTypes);
+        changeBeerAmount();
     });
 }
 
-function increaseBeers(panel, beerTypes) {
+function increaseBeers(panel) {
     // On click increase the number of beers in the correct array position
     const input = panel.getElementById("increaseBtn");
     const numBeers = panel.querySelector("a");
@@ -104,13 +155,13 @@ function increaseBeers(panel, beerTypes) {
                 numBeers.innerHTML = beerTypes[i].selected;
             }
         }
-        changeBeerAmount(beerTypes);
+        changeBeerAmount();
     });
 }
 
-function changeBeerAmount(beerTypes) {
+function changeBeerAmount() {
     // Calculate the total amount of selected beers
-    const total = sumSelectedBeers(beerTypes);
+    const total = sumSelectedBeers();
     // Change the number of total beers
     document.getElementById("selection").innerHTML = total;
     // Able and disable the order button
@@ -121,7 +172,7 @@ function changeBeerAmount(beerTypes) {
     }
 }
 
-function sumSelectedBeers(beerTypes) {
+function sumSelectedBeers() {
     // Sum all the selected beers
     let total = 0;
     for(let i=0; i < beerTypes.length; i++) {
@@ -130,47 +181,21 @@ function sumSelectedBeers(beerTypes) {
     return total;
 }
 
+/**
+ * BUTTON EVENTS
+ */
 
-
-
-
-
-
-
-
-
-function goToOrder(beerTypes) {
-    // On click go to the order form
-    document.getElementById("orderBtn").addEventListener('click', function() {
-        manageOrderForm(beerTypes);
-    });
-}
-
-function manageOrderForm(beerTypes) {
+function showOrderForm() {
     // Hide the main page and show the form
     document.getElementById("main").style.display = "none";
     document.getElementById("order").style.display = "block";
-
-    // Return to the main page
-    editOrder();
-
     // Get and show the selected beers
-    const beerOrder = getBeerOrder(beerTypes);
-
-    // Confirm the payment
-    confirmPayment(beerOrder);
+    getBeerOrder();
+    showBeerOrder();
 }
 
-function editOrder() {
-    // On click return to the main page
-    document.getElementById("editBtn").addEventListener('click', function() {
-        document.getElementById("order").style.display = "none";
-        document.getElementById("main").style.display = "block";
-    });
-}
-
-function getBeerOrder(beerTypes) {
-    let beerOrder = [];
+function getBeerOrder() {
+    beerOrder = [];
     for(let i=0; i < beerTypes.length; i++) {
         if(beerTypes[i].selected > 0) {
             const beer = {};
@@ -181,11 +206,9 @@ function getBeerOrder(beerTypes) {
             beerOrder.push(beer);
         }
     }
-    showBeerOrder(beerOrder);
-    return beerOrder;
 }
 
-function showBeerOrder(beerOrder) {
+function showBeerOrder() {
     removeAllNodes(document.getElementById("orderPanel"));
     // Insert the order in orderPanel with a template
     const template = document.getElementById("order-beerType-template").content;
@@ -197,23 +220,23 @@ function showBeerOrder(beerOrder) {
     };
 }
 
-function removeAllNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.lastChild);
+function editOrder() {
+    // Return to main page
+    document.getElementById("order").style.display = "none";
+    document.getElementById("main").style.display = "block";
+}
+
+function confirmPayment() {
+    // Check the form values
+    if(orderValidation()) {
+        manageConfirmMessage(beerOrder);
     }
 }
 
-function confirmPayment(beerOrder) {
-    // On click check the form values, post the orders and show a confirm message
-    document.getElementById("confirmBtn").addEventListener('click', function() {
-        if(orderValidation()) {
-            manageConfirmMessage(beerOrder);
-        }
-    });
-}
-
-function manageConfirmMessage(beerOrder) {
+function manageConfirmMessage() {
+    // Show waiting animation
     waitingAnimation();
+
     // Hide the order form and show the confirm message
     document.getElementById("orderForm").style.display = "none";
     document.getElementById("confirmMessage").style.display = "block";
@@ -222,10 +245,7 @@ function manageConfirmMessage(beerOrder) {
     generateCodeNumber();
 
     // Post the order to the database
-    postOrder(beerOrder);
-
-    // Return to the main page
-    returnToMain();
+    postOrder();
 }
 
 function generateCodeNumber() {
@@ -240,14 +260,129 @@ function generateCodeNumber() {
     document.getElementById("codeNumber").innerHTML = num;
 }
 
-function returnToMain() {
-    // On click reset page and return to the main page
-    document.getElementById("returnBtn").addEventListener('click', function() {
-        start();
+// Manage payment checkboxes
+function selectPaymentType(input) {
+    // On checkbox click disable the checkbox
+    input.disabled = true;
+    // Uncheck the other checkboxes
+    const checkboxes = document.querySelectorAll(".paymentType");
+    checkboxes.forEach(function(checkbox) {
+        if(checkbox != input) {
+            checkbox.checked = false;
+            checkbox.disabled = false;
+        }
     });
+    // Show or hide the card info form
+    if(input.value === "card") {
+        document.getElementById("cardInfo").style.display = "block";
+    }else {
+        document.getElementById("cardInfo").style.display = "none";
+    }
 }
 
-function reset() {
+// Force an input text to only admit numbers
+function onlyNumbers(input) {
+    input.value = input.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+}
+
+function checkDate(input) {
+    // Add a leading 0 to the date
+    if(!isNaN(input.value) && input.value.length === 1) {
+        input.value = "0" + input.value;
+    }
+    // Check that the date is not bigger than the max value
+    if(input.value > input.max) {
+        input.value = input.max;
+    }
+    // Check that the date is not smaller that the min value
+    if(input.value < input.min) {
+        input.value = input.min;
+    }
+}
+
+// Clipboard API implementation
+async function copyCode() {
+    await navigator.clipboard.writeText(document.getElementById("codeNumber").innerHTML);
+}
+
+async function pasteCode() {
+    const read = await navigator.clipboard.readText();
+    document.getElementById("code").value = read;
+}
+
+
+
+
+/** 
+ * POST ORDER
+ */
+
+ function postOrder() {
+    const order = createOrderObject();
+    // POST order to restdb / json file / other
+    post(order);
+}
+
+function createOrderObject() {
+    // Create an Order object with the provided user info
+    let order = new Object(Order);
+    order.name = document.getElementById("name").value;
+    order.table = document.getElementById("table").value;
+    order.time = getCurrentTime();
+    order.bartender = randomBartender();
+    order.beers = beerOrder;
+    if(document.getElementById("cash").checked) {
+        order.paymentMethod = "cash";
+    }else {
+        order.paymentMethod = "card";
+    }
+    order.codeNumber = document.getElementById("codeNumber").innerHTML;
+    return order;
+}
+  
+function getCurrentTime() {
+    // Get the current time in hours, minutes and seconds
+    let date = new Date();
+    var time = date.getHours() + ":" + checkTime(date.getMinutes()) + ":" + checkTime(date.getSeconds());
+    return time;
+}
+
+function checkTime(num) {
+    // Add a leading 0
+    if (num < 10) {
+        num = "0" + num;
+    }
+    return num;
+}
+
+function randomBartender() {
+    // Return a random value from the bartenders array
+    const bartenders = ["Jonas", "Dannie", "Peter", "Klaus"];
+    let bartender = bartenders[Math.floor(Math.random()*bartenders.length)];
+    return bartender;
+}
+
+function post(order) {
+    const postData = JSON.stringify(order);
+    fetch("https://foobar-0910.restdb.io/rest/order", {
+    method: "post",
+    headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "x-apikey": "61a85d22c7048f219d10f87b",
+        "cache-control": "no-cache"
+    },
+    body: postData
+    })
+    .then(res => res.json())
+    .then(data => {console.log("order submitted");});
+}
+
+
+/**
+ * RESET PAGE
+ */
+
+ function reset() {
     // Reset the number of beers selected
     document.getElementById("selection").innerHTML = "0";
     document.getElementById("orderBtn").disabled = true;
@@ -269,7 +404,16 @@ function reset() {
     document.getElementById("confirmMessage").style.display = "none";
     document.getElementById("order").style.display = "none";
     document.getElementById("main").style.display = "block";
+
+    document.getElementById("statusMessage").style.display = "none";
+    document.getElementById("statusForm").style.display = "block";
+    document.getElementById("status").style.display = "none";
 }
+
+
+/**
+ * ANIMATIONS
+ */
 
 function waitingAnimation() {
     document.getElementById("waiting").style.display = "block";
@@ -281,4 +425,5 @@ function waitingAnimation() {
         document.getElementById("beer").classList.remove("beerAni");
     }, 6000);
 }
+
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="animations.css">
 </head>
 <body>
-    <div id="waiting">
+    <div id="waiting" class="column">
         <div id="background"></div>
         <section>
             <div id="glass"></div>
@@ -18,13 +18,13 @@
         </section>
     </div>
 
-    <div id="countdown"></div>
-    <section id="main">
+    <section id="main" class="column">
         <div id="header">
-            <button type="button" id="statusBtn" class="btnPrimary">STATUS</button>
+            <button type="button" id="statusBtn" class="btnPrimary" onclick="showStatusForm()">STATUS</button>
+            <a>Return</a>
             <div id="container">
                 <a id="selection">0</a>
-                <button type="button" id="orderBtn" class="btnPrimary" disabled>ORDER</button>
+                <button type="button" id="orderBtn" class="btnPrimary" disabled onclick="showOrderForm()">ORDER</button>
             </div>
         </div>
 
@@ -41,10 +41,12 @@
         <section id="beerPanel"></section>
     </section>
 
-    <div id="order" class="secondaryPage">
+    <div id="order" class="secondaryPage column">
         <form id="orderForm" autocomplete="off">
-            <button type="button" id="editBtn" class="btnSecondary">Edit<br>order</button>
-            <h1 class="title">ORDER DETAILS</h1>
+            <div class="secondaryHeader">
+                <button type="button" id="editBtn" class="btnSecondary" onclick="editOrder()">Edit order</button>
+                <h1 class="title">ORDER DETAILS</h1>
+            </div>
 
             <template id="order-beerType-template">
                 <div class="beerOrder">
@@ -57,7 +59,7 @@
             <div>
                 <h2>Name</h2>
                 <input type="text" id="name" class="field" placeholder="Enter your name here" maxlength="20">
-                <span type="text" class="error" id="nameError">Please enter a name to be called</span>
+                <span type="text" class="error nameError">Please enter a name to be called</span>
             </div>
 
             <div>
@@ -70,7 +72,7 @@
                     <option value="4">Table 4</option>
                     <option value="5">Table 5</option>
                 </select>
-                <span type="text" class="error" id="tableError">Please select your table name</span>
+                <span type="text" class="error tableError">Please select your table name</span>
             </div>
 
             <div>
@@ -89,13 +91,13 @@
                     <div>
                         <h2>Card number</h2>
                         <input type="text" id="cardNumber" class="field" placeholder="1234 5678 9012 3456" maxlength="16" oninput="onlyNumbers(this)">
-                        <span type="text" class="error" id="cardNumberError">Card number must have 16 digits</span>
+                        <span type="text" class="error cardNumberError">Card number must have 16 digits</span>
                     </div>
             
                     <div>
                         <h2>Card holder</h2>
                         <input type="text" id="cardHolder" class="field" placeholder="Your Name">
-                        <span type="text" class="error" id="cardHolderError">Invalid card holder</span>
+                        <span type="text" class="error cardHolderError">Invalid card holder</span>
                     </div>
             
                     <div>
@@ -103,19 +105,18 @@
                         <input type="number" id="cardExpiryMonth" class="field" placeholder="MM" min="01" max="12" onchange="checkDate(this)" oninput="onlyNumbers(this)">
                         <a>/</a>
                         <input type="number" id="cardExpiryYear" class="field" placeholder="YY" min="21" max="99" onchange="checkDate(this)" oninput="onlyNumbers(this)">
-                        <span type="text" class="error" id="cardExpiryMonthError">Invalid expiry month</span>
-                        <span type="text" class="error" id="cardExpiryYearError">Invalid expiry year</span>
+                        <span type="text" class="error cardExpiryMonthError cardExpiryYearError">Invalid expiry date</span>
                     </div>
             
                     <div>
                         <h2>Security number</h2>
                         <input type="text" id="cardSecurityNumber" class="field" maxlength="3" oninput="onlyNumbers(this)">
-                        <span type="text" class="error" id="cardSecurityNumberError">Please enter a valid security number of 3 digits</p>
+                        <span type="text" class="error cardSecurityNumberError">Please enter a valid security number of 3 digits</p>
                     </div>
                 </section>
             </div>
 
-            <button type="button" id="confirmBtn" class="btnPrimary">CONFIRM</button>
+            <button type="button" id="confirmBtn" class="btnPrimary" onclick="confirmPayment()">CONFIRM</button>
         </form>
 
         <section id="confirmMessage">
@@ -126,23 +127,25 @@
             </div>
 
             <div>Go back to order and log in the status form <br> to check the evolution of your order</div>
-            <button type="button" id="returnBtn" class="btnPrimary">RETURN</button>
+            <button type="button" id="returnBtn" class="btnPrimary" onclick="start()">RETURN</button>
         </section>
     </div>
 
-    <div id="status" class="secondaryPage">
+    <div id="status" class="secondaryPage column">
         <form id="statusForm" autocomplete="off">
-            <button type="button" class="exitBtn btnSecondary">Back to<br>order</button>
-            <h1 class="title">STATUS LOGIN</h1>
+            <div class="secondaryHeader">
+                <button type="button" class="exitBtn btnSecondary" onclick="resetStatus()">Exit status</button>
+                <h1 class="title">STATUS LOGIN</h1>
+            </div>
 
             <div>
                 <h2>Code Number</h2>
                 <input type="text" id="code" placeholder="Enter the provided code here" maxlength="4" oninput="onlyNumbers(this)">
                 <button type="button" class="btnSymbol" id="pasteBtn" onclick="pasteCode()"></button>
-                <span type="text" class="error" id="codeError">Invalid code</span>
+                <span type="text" class="error codeError">Invalid code</span>
             </div>
 
-            <button type="button" id="logInBtn" class="btnPrimary">LOG IN</button>
+            <button type="button" id="logInBtn" class="btnPrimary" onclick="logIn()">LOG IN</button>
         </form>
 
         <section id="statusMessage">
@@ -155,14 +158,12 @@
                 <div class="bartender"></div>
                 <div class="queue"></div>
             </div>
-            <button type="button" class="exitBtn btnPrimary">EXIT</button>
+            <button type="button" class="exitBtn btnPrimary" onclick="resetStatus()">EXIT</button>
         </section>
     </div>
 
-    <script src="buttonEvents.js"></script>
-    <script src="orderDatabase.js"></script>
-    <script src="orderValidate.js"></script>
     <script src="statusScript.js"></script>
+    <script src="orderValidate.js"></script>
     <script src="orderScript.js"></script>
 </body>
 </html>
