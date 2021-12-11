@@ -29,17 +29,14 @@ function showProduct(product) {
     copy.querySelector("img").src = `${product.BeerImg}`;
     copy.querySelector("h2").textContent = `${product.BeerName}`;
     copy.querySelector("p").textContent = `${product.BeerDescription}`;
-    copy.querySelector("h3").textContent = `${product.BeerType}`;
-    copy.querySelector(".alc").textContent = `${product.alc}` + " ABV";
+    copy.querySelector(".label").textContent = `${product.BeerType}`;
+    copy.querySelector(".alc").textContent = "ABV" + `${product.alc}` + "%";
     document.querySelector("section").appendChild(copy);
   });
 }
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function dropDown() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+//Show beer percentages
+function showBeerPercent() {}
 
 // function start() {
 //   console.log(beers);
