@@ -51,12 +51,13 @@ function createBeerPercentage() {
     .catch(function (err) {
       console.log("error: " + err);
     });
+
   function appendData(data) {
-    var mainContainer = document.getElementById("myData");
+    const template = document.querySelector(".keg").content;
     for (var i = 0; i < data.length; i++) {
-      var div = document.createElement("div");
-      div.innerHTML = "Name: " + data[i].firstName + " " + data[i].lastName;
-      mainContainer.appendChild(div);
+      let copy = document.querySelector(".keg");
+      copy.querySelector(".keg").textContent = `${data.storage.amount}`;
+      template.appendChild(copy);
     }
   }
 }
