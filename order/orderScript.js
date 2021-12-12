@@ -1,6 +1,32 @@
 "use-strict";
 window.addEventListener('load', start);
 
+/**
+ * OBJECTS AND GLOBAL VARIABLES
+ */
+
+const BeerType = {
+    name: "",
+    price: 0,
+    selected: 0
+}
+
+const Order = {
+    name: "",
+    table: "",
+    time: "",
+    date: "",
+    bartender: "",
+    beers: [],
+    paymentMethod: "",
+    codeNumber: 0
+}
+
+let beerTypes = [];
+let beerOrder = [];
+
+let database;
+
 function start() {
     // Hide waiting animation
     // setTimeout(function() {
@@ -18,32 +44,6 @@ function start() {
     // Reset the status
     resetStatus();
 }
-
-/**
- * OBJECTS AND GLOBAL VARIABLES
- */
-
-const BeerType = {
-    name: "",
-    price: 0,
-    selected: 0
-}
-
-const Order = {
-    name: "",
-    table: "",
-    time: "",
-    bartender: "",
-    beers: [],
-    paymentMethod: "",
-    codeNumber: 0
-}
-
-let beerTypes = [];
-let beerOrder = [];
-
-let database;
-
 
 /**
  * GET ORDERS DATA FROM DATABASE
@@ -227,7 +227,6 @@ function editOrder() {
 }
 
 function confirmPayment() {
-    console.log("j");
     // Check the form values
     if(orderValidation()) {
         manageConfirmMessage(beerOrder);
@@ -330,6 +329,7 @@ function createOrderObject() {
     order.name = document.getElementById("name").value;
     order.table = document.getElementById("table").value;
     order.time = getCurrentTime();
+    order.date = getCurrentDate();
     order.bartender = randomBartender();
     order.beers = beerOrder;
     if(document.getElementById("cash").checked) {
@@ -354,6 +354,12 @@ function leadingZero(num) {
         num = "0" + num;
     }
     return num;
+}
+
+function getCurrentDate() {
+    // Get the current date in day, month and year
+    let date = new Date();
+    return date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
 }
 
 function randomBartender() {

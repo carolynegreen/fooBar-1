@@ -65,16 +65,51 @@ function showOrderInfo(order) {
     // Display the user order info
     const userInfo = document.getElementById("userInfo");
     userInfo.querySelector(".name").innerHTML = order.name;
-    let beers = "You have ordered ";
-    for(let i=0; i < order.beers.length; i++) {
-        beers += "<br>" + order.beers[i].type + " x " + order.beers[i].number;
-    }
-    userInfo.querySelector(".order").innerHTML = beers;
-    userInfo.querySelector(".table").innerHTML = "To table " + order.table;
-    userInfo.querySelector(".bartender").innerHTML = "Your order is being prepared by " + order.bartender;
-    userInfo.querySelector(".queue").innerHTML = "There are 3 orders before you";
 
-    showTimeDifference(order);
+    if(compareDates(order.date)) {
+        let beers = "You have ordered ";
+        for(let i=0; i < order.beers.length; i++) {
+            beers += "<br>" + order.beers[i].type + " x " + order.beers[i].number;
+        }
+        userInfo.querySelector(".order").innerHTML = beers;
+        userInfo.querySelector(".table").innerHTML = "To table " + order.table;
+        userInfo.querySelector(".bartender").innerHTML = "Your order is being prepared by " + order.bartender;
+        showTimeDifference(order);
+    }else {
+        userInfo.querySelector(".order").innerHTML = "";
+        userInfo.querySelector(".table").innerHTML = "";
+        userInfo.querySelector(".bartender").innerHTML = "";
+        userInfo.querySelector(".timer").innerHTML = "";
+        userInfo.querySelector("h1").innerHTML = "RETURN ANOTHER TIME";
+    }
+}
+
+function compareDates(date) {
+    const currentDate = getCurrentDate();
+    let curr = currentDate.split("-");
+    let dd1 = parseInt(curr[0]);
+    let mm1 = parseInt(curr[1]);
+    let yy1 = parseInt(curr[2]);
+
+    let fin = date.split("-");
+    let dd2 = parseInt(fin[0]);
+    let mm2 = parseInt(fin[1]);
+    let yy2 = parseInt(fin[2]);
+
+    if(yy1 != yy2) {
+        return false;
+    }else {
+        if(mm1 != mm2) {
+            return false;
+        }else {
+            if(dd1 != dd2) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    }
 }
 
 function showTimeDifference(order) {    
