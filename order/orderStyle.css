@@ -1,13 +1,3 @@
-:root {
-    --color-0: #000000;
-    --color-1: #ffffff;
-    --color-2: #ECE8E3;
-    --color-3: #E3DBD1;
-    --color-4: #6A3030;
-    --color-5: #F5CF6B;
-    --color-6: #DCA413;
-}
-
 @media only screen 
   and (min-device-width: 414px) 
   and (max-device-width: 736px) 
@@ -17,6 +7,7 @@
         width: 100%;
     }
 }
+
 
 body {
     background-color: var(--color-2);
@@ -33,41 +24,63 @@ body {
 #header #container {
     float: right;
 }
+#header #container #selection{
+    margin-right: 1rem;
+}
+#header #container #beerIcon {
+    background-image: url('images/icon_beer.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    height: 3rem;
+    width: 2rem;
+    margin-right: 3rem;
+}
+
+
 
 #beerPanel {
-    margin-inline: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     margin-bottom: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
     grid-gap: 2rem;
 }
 
 .beerType {
     height: 30rem;
     background-color: var(--color-4);
+    color: var(--color-1);
     border-radius: 25px;
     text-align: center;
-    color: var(--color-2);
 }
 
-.beerType h1 {
-    font-size: 1.5rem;
+.beerType h2 {
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
 }
 
 .beerType img {
     width: 70%;
-    height: 60%;
+    height: 55%;
 }
 
 .beerType .price {
-    margin-block: 3%;
-    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--p-font);
+    font-size: var(--p-size);
+    font-size: 1.3rem;
 }
 
 .beerType .num {
-    margin-inline: 1.5rem;
-    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
 }
 
 .beerType button {
@@ -76,18 +89,13 @@ body {
     background-color: var(--color-5);
     border: none;
     border-radius: 5px;
-    font-size: 1.5rem;
+    font-family: var(--p-font);
+    font-size: 1.7rem;
     transition: background-color 1s, color 1.5s ease;
 }
 .beerType button:hover {
     background-color: var(--color-6);
     color: var(--color-4);
-}
-
-
-.title {
-    font-size: 2rem;
-    text-align: center;
 }
 
 .secondaryPage {
@@ -97,62 +105,99 @@ body {
     margin-top: 2rem;
     left: 50%;
     transform: translateX(-50%);
-
     background-color: var(--color-4);
-    color: var(--color-2);
+    color: var(--color-1);
     width: 30rem;
     padding-left: 12rem;
-    padding-right: 8rem;
+    padding-right: 10rem;
+    padding-bottom: 2rem;
     border-radius: 25px;
 }
 
-.secondaryPage span {
-    display: block;
-    margin-top: 0.3rem;
-}
-
-.secondaryHeader {
+.secondaryPage .title {
     margin-top: 3rem;
     width: 100%;
 }
-.secondaryHeader h1 {
+
+.secondaryPage .title h1 {
+    font-family: var(--header-font);
+    font-size: 3rem;
     text-align: center;
 }
-.secondaryHeader button {
+
+.secondaryPage .title button {
     float: right;
 }
 
-#order #orderPanel {
-    font-size: 1.2rem;
+.secondaryPage input, select {
+    font-family: var(--p-font);
+    font-size: var(--p-size);
+    padding-inline: 1rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
 }
 
-#order input[type=checkbox] {
-    margin-left: 1rem;
+.secondaryPage input[type=text]:not(.cardSecurityNumber) {
+    height: 2rem;
+    width: 20rem;
+}
+
+.secondaryPage select {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+    height: 2.1rem;
+    width: 22rem;
+}
+
+.secondaryPage input[type=number], .secondaryPage .cardSecurityNumber {
+    height: 2rem;
+    width: 5rem;
+}
+
+.secondaryPage input[type=checkbox] {
     height: 1.5rem;
     width: 1.5rem;
     vertical-align: middle;
 }
-#order .method {
-    vertical-align: middle;
+
+.secondaryPage h2 {
+    font-family: var(--p-bold-font);
+    font-size: var(--p-bold-size);
 }
 
+.secondaryPage .error {
+    padding-inline: 5px;
+    visibility: hidden;
+    color: var(--color-5);
+    display: block;
+    margin-top: 0.3rem;
+    font-family: var(--p-font);
+    font-size: var(--p-size);
+}
 
+#order #orderPanel {
+    font-family: var(--p-font);
+    font-size: var(--p-size);
+}
 
+#order .method {
+    margin-left: 0.5rem;
+    margin-right: 3rem;
+    vertical-align: middle;
+    font-family: var(--p-font);
+    font-size: var(--p-size);
+}
 
-
-
-
-
-
-#cardInfo {
+#order #cardInfo {
     display: none;
 }
 
-
-#cards {
+#order #cardInfo #cards {
     display: flex;
 }
-#cards div {
+#order #cardInfo #cards div {
     margin-top: 2vh;
     margin-left: 2vh;
     height: 3vh;
@@ -161,41 +206,7 @@ body {
     
 }
 
-
-input, select {
-    background-color: var(--color-2);
-    padding-inline: 1rem;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-}
-
-input[type=text] {
-    height: 2rem;
-    width: 20rem;
-}
-
-select {
-    -moz-appearance:none;
-    -webkit-appearance:none;
-    appearance:none;
-    height: 2.1rem;
-    width: 22rem;
-}
-
-input[type=number], #cardSecurityNumber {
-    height: 2rem;
-    width: 7rem;
-}
-
-.error {
-    padding-inline: 5px;
-    visibility: hidden;
-    color: var(--color-5);
-}
-
-
-#confirmMessage {
+#order #confirmMessage {
     text-align: center;
 }
 
@@ -205,15 +216,16 @@ input[type=number], #cardSecurityNumber {
     width: 7rem;
     background-color: var(--color-5);
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
+    font-family: var(--p-font);
+    font-size: var(--p-size);
     transition: background-color 0.5s, color 1.5s ease;
 }
 .btnPrimary:hover {
     background-color: var(--color-6);
     color: var(--color-4);
 }
-
-#orderBtn:disabled {
+.btnPrimary:disabled {
     background-color: var(--color-3);
 }
 
@@ -226,17 +238,17 @@ input[type=number], #cardSecurityNumber {
     font-size: 1rem;
     vertical-align: middle;
     color: var(--color-2);
+    font-family: var(--p-font);
+    font-size: var(--p-size);
     transition: color 0.5s ease;
 }
 .btnSecondary:hover {
     color: var(--color-5);
+    text-decoration: underline;
 }
-
-
-
-
-
-
+#homeBtn {
+    color: var(--color-0);
+}
 
 .btnSymbol {
     height: 2.5rem;
@@ -254,4 +266,23 @@ input[type=number], #cardSecurityNumber {
 #pasteBtn {
     background-image: url('images/icon_paste.png');
 }
+
+
+
+
+footer {
+    font-family: var(--h2-font);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    color: white;
+    background-color: var(--color-4);
+  }
+  
+  footer h1 {
+    font-family: var(--header-font);
+  }
 

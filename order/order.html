@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="orderStyle.css">
     <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <div id="waiting" class="column">
@@ -20,17 +21,18 @@
 
     <section id="main" class="column">
         <div id="header">
-            <button type="button" id="statusBtn" class="btnPrimary" onclick="showStatusForm()">STATUS</button>
-            <a>Return</a>
+            <a id="homeBtn" class="btnSecodary" href="/dashboard/dashboard.html">Home</a>
+            <button type="button" class="btnPrimary" onclick="showStatusForm()">STATUS</button>
             <div id="container">
                 <a id="selection">0</a>
+                <div id="beerIcon"></div>
                 <button type="button" id="orderBtn" class="btnPrimary" disabled onclick="showOrderForm()">ORDER</button>
             </div>
         </div>
 
         <template id="beerType-template">
             <div class="beerType">
-                <h1></h1>
+                <h2></h2>
                 <img></img>
                 <div class="price"></div>
                 <button type="button" id="decreaseBtn">-</button>
@@ -39,18 +41,25 @@
             </div>
         </template>
         <section id="beerPanel"></section>
+
+        <footer>
+            <div><h1>FooBar</h1></div>
+            <div>
+              KEA Multimedia Design | Zia Sira Carolyne | 3rd Semester Project
+            </div>
+        </footer>
     </section>
 
     <div id="order" class="secondaryPage column">
         <form id="orderForm" autocomplete="off">
-            <div class="secondaryHeader">
-                <button type="button" id="editBtn" class="btnSecondary" onclick="editOrder()">Edit order</button>
-                <h1 class="title">ORDER DETAILS</h1>
+            <div class="title">
+                <button type="button" class="btnSecondary" onclick="editOrder()">Edit order</button>
+                <h1>ORDER DETAILS</h1>
             </div>
 
             <template id="order-beerType-template">
                 <div class="beerOrder">
-                    <a class="type"></a>
+                    <span class="type"></span>
                     <span class="price"></span>
                 </div>
             </template>
@@ -116,26 +125,28 @@
                 </section>
             </div>
 
-            <button type="button" id="confirmBtn" class="btnPrimary" onclick="confirmPayment()">CONFIRM</button>
+            <button type="button" class="btnPrimary" onclick="confirmPayment()">CONFIRM</button>
         </form>
 
         <section id="confirmMessage">
-            <h1 class="title">YOUR ORDER HAS BEEN CONFIRMED</h1>
+            <div>
+                <h1>YOUR ORDER HAS BEEN CONFIRMED</h1>
+            </div>
             <div>
                 <a id="codeNumber"></a>
-                <button type="button" class="btnSymbol" id="copyBtn" onclick="copyCode()"></button>
+                <button type="button" id="copyBtn" class="btnSymbol" onclick="copyCode()"></button>
             </div>
 
             <div>Go back to order and log in the status form <br> to check the evolution of your order</div>
-            <button type="button" id="returnBtn" class="btnPrimary" onclick="start()">RETURN</button>
+            <button type="button" class="btnPrimary" onclick="start()">RETURN</button>
         </section>
     </div>
 
     <div id="status" class="secondaryPage column">
         <form id="statusForm" autocomplete="off">
-            <div class="secondaryHeader">
-                <button type="button" class="exitBtn btnSecondary" onclick="resetStatus()">Exit status</button>
-                <h1 class="title">STATUS LOGIN</h1>
+            <div class="title">
+                <button type="button" class="btnSecondary" onclick="resetStatus()">Exit status</button>
+                <h1>STATUS LOGIN</h1>
             </div>
 
             <div>
@@ -145,12 +156,12 @@
                 <span type="text" class="error codeError">Invalid code</span>
             </div>
 
-            <button type="button" id="logInBtn" class="btnPrimary" onclick="logIn()">LOG IN</button>
+            <button type="button" class="btnPrimary" onclick="logIn()">LOG IN</button>
         </form>
 
         <section id="statusMessage">
-            <h1 class="title">YOUR ORDER IS BEING PREPARED</h1>
             <div id="userInfo">
+                <h1 class="title"></h1>
                 <h2 class="name"></h2>
                 <div class="order"></div>
                 <div class="table"></div>
@@ -158,9 +169,16 @@
                 <div class="bartender"></div>
                 <div class="queue"></div>
             </div>
-            <button type="button" class="exitBtn btnPrimary" onclick="resetStatus()">EXIT</button>
+            <button type="button" class="btnPrimary" onclick="resetStatus()">EXIT</button>
         </section>
     </div>
+
+    <!-- <footer>
+        <div><h1>FooBar</h1></div>
+        <div>
+          KEA Multimedia Design | Zia Sira Carolyne | 3rd Semester Project
+        </div>
+    </footer> -->
 
     <script src="statusScript.js"></script>
     <script src="orderValidate.js"></script>

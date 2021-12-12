@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
 :root {
   --color-0: #000000;
   --color-1: #ffffff;
@@ -14,10 +16,12 @@
   --header-font: "Grenze Gotisch", cursive;
   --h2-font: "Special Elite", cursive;
   --p-font: "Open Sans", sans-serif;
+  --p-bold-font: "Open Sans", bold;
 
   --header-size: 4rem;
   --h2-size: 2rem;
   --p-size: 1rem;
+  --p-bold-size: 1.2rem;
 }
 
 body {

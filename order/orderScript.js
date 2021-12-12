@@ -3,11 +3,11 @@ window.addEventListener('load', start);
 
 function start() {
     // Hide waiting animation
-    setTimeout(function() {
+    // setTimeout(function() {
         document.getElementById("waiting").style.display = "none";
         document.getElementById("waiting").style.pointerEvents = "none";
         document.getElementById("beer").classList.remove("beerAni");
-    }, 6000);
+    // }, 6000);
 
     // Get the data from the database
     get();
@@ -107,7 +107,7 @@ function createBeerPannel() {
     const template = document.getElementById("beerType-template").content;
     for(let i=0; i < beerTypes.length; i++) {
         const panel = template.cloneNode(true);
-        panel.querySelector("h1").innerHTML = beerTypes[i].name;
+        panel.querySelector("h2").innerHTML = beerTypes[i].name;
         panel.querySelector("img").src = beerTypes[i].image;
         panel.querySelector(".price").innerHTML = beerTypes[i].price + " dkk";
 
@@ -227,6 +227,7 @@ function editOrder() {
 }
 
 function confirmPayment() {
+    console.log("j");
     // Check the form values
     if(orderValidation()) {
         manageConfirmMessage(beerOrder);
@@ -235,7 +236,7 @@ function confirmPayment() {
 
 function manageConfirmMessage() {
     // Show waiting animation
-    waitingAnimation();
+    // waitingAnimation();
 
     // Hide the order form and show the confirm message
     document.getElementById("orderForm").style.display = "none";
@@ -306,8 +307,8 @@ async function copyCode() {
 }
 
 async function pasteCode() {
-    const read = await navigator.clipboard.readText();
-    document.getElementById("code").value = read;
+    const text = await navigator.clipboard.readText();
+    document.getElementById("code").value = text;
 }
 
 
@@ -343,11 +344,11 @@ function createOrderObject() {
 function getCurrentTime() {
     // Get the current time in hours, minutes and seconds
     let date = new Date();
-    var time = date.getHours() + ":" + checkTime(date.getMinutes()) + ":" + checkTime(date.getSeconds());
+    var time = date.getHours() + ":" + leadingZero(date.getMinutes()) + ":" + leadingZero(date.getSeconds());
     return time;
 }
 
-function checkTime(num) {
+function leadingZero(num) {
     // Add a leading 0
     if (num < 10) {
         num = "0" + num;
