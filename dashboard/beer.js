@@ -1,6 +1,10 @@
 "use strict";
 let url = "https://kea2sem-4cc6.restdb.io/rest/foobar";
 
+const BeerType = {
+  amount: 0,
+};
+
 const options = {
   method: "GET",
   headers: {
@@ -30,13 +34,32 @@ function showProduct(product) {
     copy.querySelector("h2").textContent = `${product.BeerName}`;
     copy.querySelector("p").textContent = `${product.BeerDescription}`;
     copy.querySelector(".label").textContent = `${product.BeerType}`;
-    copy.querySelector(".alc").textContent = "ABV" + `${product.alc}` + "%";
+    copy.querySelector(".alc").textContent = "ABV " + `${product.alc}` + "%";
     document.querySelector("section").appendChild(copy);
   });
 }
 
 //Show beer percentages
-function showBeerPercent() {}
+function createBeerPercentage() {
+  fetch("https://foo-bar-3.herokuapp.com/")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      appendData(data);
+    })
+    .catch(function (err) {
+      console.log("error: " + err);
+    });
+  function appendData(data) {
+    var mainContainer = document.getElementById("myData");
+    for (var i = 0; i < data.length; i++) {
+      var div = document.createElement("div");
+      div.innerHTML = "Name: " + data[i].firstName + " " + data[i].lastName;
+      mainContainer.appendChild(div);
+    }
+  }
+}
 
 // function start() {
 //   console.log(beers);
