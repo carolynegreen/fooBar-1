@@ -1,17 +1,27 @@
- {
+body{
   box-sizing: border-box;
 }
 
 #section_1 {
   text-align: center;
 }
+
+#info_us {
+    font-size: 1.6rem;
+    overflow: hidden;    
+}
+
 #section_2 {
     background-color: #E3DBD1;
     width: 60%;
     align-content: center;
     text-align: center;
           margin:0 auto;
-
+      border-radius: 25px;
+    padding: 1rem;
+    padding-left: 2rem;    
+    padding-right: 2rem; 
+    padding-bottom: 2rem;
     
 }
 /* Slideshow container */
@@ -27,7 +37,23 @@
        text-align: center;
     align-content: center; 
     background-color: #6A3030;
+    border-radius: 25px;
+    padding-top: 5px;
+
     }
+#Footer {
+    margin-top: 1%;
+    width: 100%;
+    overflow: hidden;
+}
+#Seeourbeer {
+    margin: 5px;
+    
+}
+
+h3 {
+    font-size: 2rem;
+}
     
 }
 #section_3 {
@@ -35,41 +61,66 @@
     display: flex;
     background-color: white;
          margin:0 auto;
-    
+}
 
+#column_button {
+    float: left;
+    margin-left: 40%;
+    margin-bottom: 5%;
+    margin-top: 2%
 }
 #order_1 {
     display:inline-block;
         background-color: #5B2626;
-    width: 30rem;
-
+        width: 18rem;
+        border-radius: 25px;
+    padding-right: 0.4rem;
 }
 #order_2 {
     display:inline-block;
         background-color: #5B2626;
-    width: 30rem;
-
-    
+        width: 18rem;
+        border-radius: 25px;
+    padding-right: 0.4rem;
+    padding-top: 0.4rem;
+     
 }
 #order_3 {
     display:inline-block;
         background-color: #5B2626;
-        width: 30rem;
-
+        width: 18rem;
+        border-radius: 25px;
+     padding-right: 0.4rem;
+    padding-top: 0.4rem;
 }
 #order_img {
     width: 20%;
     height: 20%;
+    border-radius: 25px;
+    left: 5%;   
 
 }
 #order_text {
     float: right;
+    color: white;
+}
+#order_back {
+    background-color: #6A3030;
+    border-radius: 25px;
+    padding: 5px;    
+    text-align: center;
+    align-content: center;
+    width: 75%;
+    margin-left: 15%; 
+    font-size: 1rem;
 }
 
 #bartensers {
     background-color: white;
     text-align: center;
     align-content: center;
+                border-radius: 25px;
+
 
 }
 #bar_ten {
@@ -78,6 +129,9 @@
     text-align: center;
     align-content: center;
               margin:0 auto;
+            border-radius: 25px;
+color: white;
+    font-size: 1.6rem;
 
 }
 
@@ -85,7 +139,23 @@
     text-align: center;
     align-content: center;
         background-color: white;
+                border-radius: 25px;
 
+
+}
+#col_1_back {
+    margin-left: 10%;
+    background-color: white;
+                border-radius: 25px;
+    padding-bottom: 10%;
+    width: 80%
+
+}
+#col_2_back {
+    background-color: white;
+    border-radius: 25px;
+        width: 80%;
+        padding-bottom: 10%;
 }
 
 
@@ -93,7 +163,7 @@
 .prev,
 .next {
   cursor: pointer;
-  position: absolute;
+  position: relative;
   top: 50%;
   width: auto;
   margin-top: -22px;
@@ -127,6 +197,7 @@
   bottom: 8px;
   width: 100%;
   text-align: center;
+    font-size: 1.6rem;
 }
 
 /* Number text (1/3 etc) */
@@ -148,6 +219,7 @@
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+    margin-bottom: 30px;
 }
 
 .active,
@@ -183,10 +255,12 @@
 .column {
   float: left;
   width: 50%;
-    background-color: white;
     text-align: center;
     align-content: center;
-    display:block;        
+    display:block;
+    padding-bottom: 2%;
+    border-radius: 25px;
+    overflow: hidden;
     
 }
 
@@ -211,7 +285,6 @@
     width: 100%;
     text-align: center;
           align-content: center;
-
       
   }
     #order_1 {

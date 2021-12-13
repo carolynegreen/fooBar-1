@@ -1,6 +1,10 @@
 "use strict";
 let url = "https://kea2sem-4cc6.restdb.io/rest/foobar";
 
+const BeerType = {
+  amount: 0,
+};
+
 const options = {
   method: "GET",
   headers: {
@@ -12,6 +16,7 @@ fetch(url, options)
   .then((res) => res.json())
   .then((response) => {
     showProduct(response);
+    const data = setInterval(fetchData(), 60000);
   })
   .catch((err) => {
     console.error(err);
@@ -30,13 +35,37 @@ function showProduct(product) {
     copy.querySelector("h2").textContent = `${product.BeerName}`;
     copy.querySelector("p").textContent = `${product.BeerDescription}`;
     copy.querySelector(".label").textContent = `${product.BeerType}`;
-    copy.querySelector(".alc").textContent = "ABV" + `${product.alc}` + "%";
+    copy.querySelector(".alc").textContent = "ABV " + `${product.alc}` + "%";
+    // copy.querySelector(".keg").textContent = `${product.BeerName}`;
     document.querySelector("section").appendChild(copy);
   });
 }
 
 //Show beer percentages
-function showBeerPercent() {}
+async function fetchData() {
+  // Fetch data
+  const response = await fetch("https://foo-bar-3.herokuapp.com/");
+  const data = await response.json();
+  console.log(data);
+
+  const kegs = document.querySelectorAll(".keg");
+  console.log(kegs);
+  for (let i = 0; i < data.storage.length; i++) {
+    kegs[i].style.backgroundImage = setBeerPercentage(data.storage[i].amount);
+  }
+}
+
+function setBeerPercentage(numBeers) {
+  if (numBeers > 8) {
+    return "url(/assets/keg_full.png)";
+  } else if (numBeers > 6) {
+    return "url(/assets/keg_1.png)";
+  } else if (numBeers > 4) {
+    return "url(/assets/keg_2.png)";
+  } else {
+    return "url(/assets/keg_empty.png)";
+  }
+}
 
 // function start() {
 //   console.log(beers);
