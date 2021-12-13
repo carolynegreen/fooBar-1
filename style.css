@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
 
 :root {
   --color-0: #000000;
@@ -22,6 +21,8 @@
   --h2-size: 2rem;
   --p-size: 1rem;
   --p-bold-size: 1.2rem;
+
+  --mobilenav-size: 2rem;
 }
 
 body {

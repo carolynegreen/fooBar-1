@@ -42,7 +42,6 @@ function showProduct(product) {
 }
 
 //Show beer percentages
-
 async function fetchData() {
   // Fetch data
   const response = await fetch("https://foo-bar-3.herokuapp.com/");
