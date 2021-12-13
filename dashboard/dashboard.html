@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="StyleDash.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<header>
+    <link rel="stylesheet" href="StyleDash.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <header>
     <nav>
       <div class="nav_left">
-        <h1>FooBar</h1>
+        <h1><a href="dashboard.html">FooBar</a></h1>
       </div>
 
       <div class="nav_right">
@@ -21,112 +21,183 @@
         </ul>
       </div>
     </nav>
-</header>
-<body>
-  <section id="section_1">
-      <img alt="" width="80%" height="50%" src="FooBar_Dash.png">
-      <p id="info_us">We have new beers from small independent breweries. Lots of different taste and funny looking labels, <br> so if you want to try something new we are the bar for you.</p>
-  </section>
-  
-  <section id="section_2">
+  </header>
+  <body>
+    <section id="section_1">
+      <img alt="" width="80%" height="50%" src="FooBar_Dash.png" />
+      <p id="info_us">
+        We have new beers from small independent breweries. Lots of different
+        taste and funny looking labels, <br />
+        so if you want to try something new we are the bar for you.
+      </p>
+    </section>
+
+    <section id="section_2">
       <h3>What we're pouring</h3>
-      
+
       <div class="slideshow-container">
-          
-          <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="/images/elhefe.png" width="300px" height="400px">
-    <div class="text">Refreshing wheat or rye beers that can display more hop character and less yeast character than their German cousins.</div>
-  </div>
-         
-    <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="/images/fairytaleale.png" width="300px" height="400px">
-    <div class="text">A decidedly hoppy and bitter, moderately strong American pale ale.</div>
-  </div>   
-        
-     <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="/images/githop.png" width="300px" height="400px">
-    <div class="text">A decidedly hoppy and bitter, moderately strong American pale ale.</div>
-  </div>
-         
-</div>
-<br>                         
-          
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>      
-      
-    <a href="beers.html" class="ordernow" id="Seeourbeer">See all our beers</a>
-  </section>
-  
-  <section id="section_3">
-      
-       <div class="row">
-  <div class="column">
-     <div id="col_1_back">
-      <h3>What others are ordering</h3>
-      <div id="order_back">
-      <div id="order_1">
-          <img id="order_img" alt="" width="" height="" src="/images/elhefe.png">
-      <p id="order_text">El Hefe <br> Hefeweizen <br> IBV 13.2 </p>
-      <br><br>
-      <img id="order_img" alt="" width="40px" height="40px" src="/images/fairytaleale.png">
-      <p id="order_text">Fairy Tale Ale <br> IPA <br> 7.9 ABV </p>
-      
-      </div>
-      <br><br><br>
-    <div id="order_2">
-        <img id="order_img" alt="" width="40px" height="40px" src="/images/elhefe.png">
-      <p id="order_text">El Hefe <br> Hefeweizen <br> IBV 13.2 </p>
-      <br>
-    </div>  
-    <br><br><br>   
-    <div id="order_3">
-        <img id="order_img" alt="" width="40px" height="40px" src="/images/elhefe.png">
-      <p id="order_text">El Hefe <br> Hefeweizen <br> IBV 13.2 </p>
-      <br><br>
-      <img id="order_img" alt="" width="40px" height="40px" src="/images/fairytaleale.png">
-      <p id="order_text">Fairy Tale Ale <br> IPA <br> 7.9 ABV  </p>
-      <br><br>
-      <img id="order_img" alt="" width="40px" height="40px" src="/images/githop.png">
-      <p id="order_text">Githop <br> Venom Ale <br> IBV 14 </p>
-      <br> <br>
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="/images/elhefe.png" width="300px" height="400px" />
+          <div class="text">
+            Refreshing wheat or rye beers that can display more hop character
+            and less yeast character than their German cousins.
+          </div>
+        </div>
 
-    </div>  
-   </div>
-                                 <a href="beers.html" id="column_button" class="ordernow">Order now</a>      
-  </div>
-  </div>
-  <div class="column">
-     <div id="col_2_back">
-      <div id="OrderBar">
-          <h3>People ahead of you</h3>
-    <img alt="" width="100px" height="120px" src="People_ahead.png">          
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="/images/fairytaleale.png" width="300px" height="400px" />
+          <div class="text">
+            A decidedly hoppy and bitter, moderately strong American pale ale.
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="/images/githop.png" width="300px" height="400px" />
+          <div class="text">
+            A decidedly hoppy and bitter, moderately strong American pale ale.
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
       </div>
 
-      <div id="bartensers">
-          <h3>Your bartenders tonight</h3>
-          <p id="bar_ten">
-              Jonas <br> Peter <br> klaus <br>
-          </p>
+      <a href="beers.html" class="ordernow" id="Seeourbeer"
+        >See all our beers</a
+      >
+    </section>
+
+    <section id="section_3">
+      <div class="row">
+        <div class="column">
+          <div id="col_1_back">
+            <h3>What others are ordering</h3>
+            <div id="order_back">
+              <div id="order_1">
+                <img
+                  id="order_img"
+                  alt=""
+                  width=""
+                  height=""
+                  src="/images/elhefe.png"
+                />
+                <p id="order_text">
+                  El Hefe <br />
+                  Hefeweizen <br />
+                  IBV 13.2
+                </p>
+                <br /><br />
+                <img
+                  id="order_img"
+                  alt=""
+                  width="40px"
+                  height="40px"
+                  src="/images/fairytaleale.png"
+                />
+                <p id="order_text">
+                  Fairy Tale Ale <br />
+                  IPA <br />
+                  7.9 ABV
+                </p>
+              </div>
+              <br /><br /><br />
+              <div id="order_2">
+                <img
+                  id="order_img"
+                  alt=""
+                  width="40px"
+                  height="40px"
+                  src="/images/elhefe.png"
+                />
+                <p id="order_text">
+                  El Hefe <br />
+                  Hefeweizen <br />
+                  IBV 13.2
+                </p>
+                <br />
+              </div>
+              <br /><br /><br />
+              <div id="order_3">
+                <img
+                  id="order_img"
+                  alt=""
+                  width="40px"
+                  height="40px"
+                  src="/images/elhefe.png"
+                />
+                <p id="order_text">
+                  El Hefe <br />
+                  Hefeweizen <br />
+                  IBV 13.2
+                </p>
+                <br /><br />
+                <img
+                  id="order_img"
+                  alt=""
+                  width="40px"
+                  height="40px"
+                  src="/images/fairytaleale.png"
+                />
+                <p id="order_text">
+                  Fairy Tale Ale <br />
+                  IPA <br />
+                  7.9 ABV
+                </p>
+                <br /><br />
+                <img
+                  id="order_img"
+                  alt=""
+                  width="40px"
+                  height="40px"
+                  src="/images/githop.png"
+                />
+                <p id="order_text">
+                  Githop <br />
+                  Venom Ale <br />
+                  IBV 14
+                </p>
+                <br />
+                <br />
+              </div>
+            </div>
+            <a href="beers.html" id="column_button" class="ordernow"
+              >Order now</a
+            >
+          </div>
+        </div>
+        <div class="column">
+          <div id="col_2_back">
+            <div id="OrderBar">
+              <h3>People ahead of you</h3>
+              <img alt="" width="100px" height="120px" src="People_ahead.png" />
+            </div>
+
+            <div id="bartensers">
+              <h3>Your bartenders tonight</h3>
+              <p id="bar_ten">
+                Jonas <br />
+                Peter <br />
+                klaus <br />
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-           </div>
-  </div>
-</div> 
-      
-  </section>
-   
-   
-   <footer id="Footer">
+    </section>
+
+    <footer id="Footer">
       <div><h1>FooBar</h1></div>
       <div>
         KEA Multimedia Design | Zia Sira Carolyne | 3rd Semester Project
       </div>
     </footer>
     <script src="JavaDash.js"></script>
-</body>
+  </body>
 </html>

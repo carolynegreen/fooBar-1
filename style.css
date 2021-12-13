@@ -29,3 +29,77 @@ body {
   margin: 0;
   background-color: var(--color-2);
 }
+
+/* Navigation */
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+#myNav,
+.openbtn {
+  display: none;
+}
+
+h1 a {
+  color: var(--color-0);
+  font-family: var(--header-font);
+  font-size: var(--header-size);
+  list-style: none;
+  text-decoration: none;
+  line-height: 1.5rem;
+}
+
+.nav_right ul {
+  font-family: var(--p-font);
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav_right a,
+#bottombtn a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav_right a:hover,
+#bottombtn a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.ordernow {
+  background-color: var(--color-5);
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 20px;
+  transition: background-color 1s, color 1.5s ease;
+}
+
+.ordernow:hover {
+  color: var(--color-2);
+  background-color: var(--color-6);
+}
+
+/* Footer */
+footer {
+  font-family: var(--h2-font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  color: white;
+  background-color: var(--color-4);
+}
+
+footer h1 {
+  font-family: var(--header-font);
+}

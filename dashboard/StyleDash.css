@@ -1,16 +1,16 @@
-body {
-} 
-{
+body{
   box-sizing: border-box;
 }
 
 #section_1 {
   text-align: center;
 }
+
 #info_us {
     font-size: 1.6rem;
     overflow: hidden;    
 }
+
 #section_2 {
     background-color: #E3DBD1;
     width: 60%;
