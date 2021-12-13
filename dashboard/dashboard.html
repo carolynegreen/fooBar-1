@@ -25,7 +25,7 @@
 <body>
   <section id="section_1">
       <img alt="" width="80%" height="50%" src="FooBar_Dash.png">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor error assumenda libero ipsa aliquam excepturi sint ad doloribus, alias, numquam mollitia dolore praesentium nesciunt ut aspernatur fugiat nostrum, sit quod.</p>
+      <p id="info_us">We have new beers from small independent breweries. Lots of different taste and funny looking labels, <br> so if you want to try something new we are the bar for you.</p>
   </section>
   
   <section id="section_2">
@@ -35,24 +35,22 @@
           
           <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="/images/elhefe.png" style="width:40%">
-    <div class="text">Caption Text</div>
+    <img src="/images/elhefe.png" width="300px" height="400px">
+    <div class="text">Refreshing wheat or rye beers that can display more hop character and less yeast character than their German cousins.</div>
   </div>
          
     <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="/images/fairytaleale.png" style="width:40%">
-    <div class="text">Caption Two</div>
+    <img src="/images/fairytaleale.png" width="300px" height="400px">
+    <div class="text">A decidedly hoppy and bitter, moderately strong American pale ale.</div>
   </div>   
         
      <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="/images/githop.png" style="width:40%">
-    <div class="text">Caption Three</div>
+    <img src="/images/githop.png" width="300px" height="400px">
+    <div class="text">A decidedly hoppy and bitter, moderately strong American pale ale.</div>
   </div>
          
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 <br>                         
           
@@ -62,61 +60,68 @@
   <span class="dot" onclick="currentSlide(3)"></span>
 </div>      
       
-    <a href="beers.html">See all our beers</a>
+    <a href="beers.html" class="ordernow" id="Seeourbeer">See all our beers</a>
   </section>
   
   <section id="section_3">
       
        <div class="row">
   <div class="column">
+     <div id="col_1_back">
       <h3>What others are ordering</h3>
-      
+      <div id="order_back">
       <div id="order_1">
           <img id="order_img" alt="" width="" height="" src="/images/elhefe.png">
-      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <p id="order_text">El Hefe <br> Hefeweizen <br> IBV 13.2 </p>
+      <br><br>
       <img id="order_img" alt="" width="40px" height="40px" src="/images/fairytaleale.png">
-      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-      <br>
+      <p id="order_text">Fairy Tale Ale <br> IPA <br> 7.9 ABV </p>
+      
       </div>
+      <br><br><br>
     <div id="order_2">
         <img id="order_img" alt="" width="40px" height="40px" src="/images/elhefe.png">
-      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <p id="order_text">El Hefe <br> Hefeweizen <br> IBV 13.2 </p>
       <br>
-    </div>     
+    </div>  
+    <br><br><br>   
     <div id="order_3">
         <img id="order_img" alt="" width="40px" height="40px" src="/images/elhefe.png">
-      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <p id="order_text">El Hefe <br> Hefeweizen <br> IBV 13.2 </p>
+      <br><br>
       <img id="order_img" alt="" width="40px" height="40px" src="/images/fairytaleale.png">
-      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <p id="order_text">Fairy Tale Ale <br> IPA <br> 7.9 ABV  </p>
+      <br><br>
       <img id="order_img" alt="" width="40px" height="40px" src="/images/githop.png">
-      <p id="order_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+      <p id="order_text">Githop <br> Venom Ale <br> IBV 14 </p>
       <br> <br>
 
     </div>  
-                  <a href="beers.html" class="ordernow">Order now</a>      
-   
+   </div>
+                                 <a href="beers.html" id="column_button" class="ordernow">Order now</a>      
+  </div>
   </div>
   <div class="column">
+     <div id="col_2_back">
       <div id="OrderBar">
           <h3>People ahead of you</h3>
-          <p id="People"></p>
-          
-                  <a href="beers.html" class="ordernow">Order now</a>      
+    <img alt="" width="100px" height="120px" src="People_ahead.png">          
       </div>
-      
+
       <div id="bartensers">
           <h3>Your bartenders tonight</h3>
           <p id="bar_ten">
               Jonas <br> Peter <br> klaus <br>
           </p>
       </div>
+           </div>
   </div>
 </div> 
       
   </section>
    
    
-   <footer>
+   <footer id="Footer">
       <div><h1>FooBar</h1></div>
       <div>
         KEA Multimedia Design | Zia Sira Carolyne | 3rd Semester Project
