@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="beerliststyle.css" />
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="mobilenav.css">
     <title>Beers on Tap</title>
   </head>
   <body>
@@ -14,13 +15,27 @@
         <h1><a href="dashboard.html">FooBar</a></h1>
       </div>
 
-      <div class="nav_right">
+      <div class="nav_right ">
         <ul>
           <li><a href="dashboard.html">Home</a></li>
           <li><a href="beers.html" class="ourbeers">Our Beers</a></li>
           <li><a href="/order/order.html" class="ordernow">Order Now</a></li>
         </ul>
       </div>
+
+      <!-- The overlay -->
+<div id="myNav" class="overlay">
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <li><a href="dashboard.html">Home</a></li>
+    <li><a href="beers.html" class="ourbeers">Our Beers</a></li>
+    <li><a href="/order/order.html" class="ordernow">Order Now</a></li>
+  </div>
+</div>
+<!-- Use any element to open/show the overlay navigation menu -->
+<span onclick="openNav()">&times;</span>
     </nav>
 
     <main>
@@ -42,7 +57,7 @@
             <h3 class="label"></h3>
             <h3 class="alc"></h3>
             <p class="description"></p>
-            <img src="" alt="" class="keg"></img>
+            <div class="keg"></div>
           </article>
         </template>
       </section>
@@ -56,4 +71,5 @@
     </footer>
   </body>
   <script src="beer.js"></script>
+  <script src="mobilenav.js"></script>
 </html>

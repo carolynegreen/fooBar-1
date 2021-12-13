@@ -2,8 +2,12 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 2rem;
-  margin-right: 4rem;
+  margin-right: 1rem;
   margin-left: 1rem;
+}
+
+#myNav {
+  display: none;
 }
 
 h1 a {
@@ -39,7 +43,7 @@ h1 a {
 
 .ordernow {
   background-color: var(--color-5);
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 1rem 1rem 1rem;
   border-radius: 20px;
   transition: background-color 1s, color 1.5s ease;
 }
@@ -91,7 +95,7 @@ h1 a {
   grid-template-areas:
     "image name label keg"
     "image p p keg"
-    "image alc . .";
+    "image alc . keg";
 }
 
 .image {
@@ -120,9 +124,13 @@ h1 a {
   grid-area: p;
   font-family: var(--p-font);
 }
+
 .keg {
+  background-image: url(/assets/keg_full.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
   grid-area: keg;
-  width: 40%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -175,5 +183,11 @@ footer h1 {
       "alc ."
       "p p"
       "keg keg";
+  }
+  .nav_right {
+    display: none;
+  }
+  #myNav {
+    display: block;
   }
 }
