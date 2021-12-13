@@ -88,6 +88,17 @@
   justify-content: center;
 }
 
+#bottombtn a:hover {
+  color: var(--color-2);
+  background-color: var(--color-6);
+  text-decoration: underline;
+}
+
+#myNav,
+.openbtn {
+  display: none;
+}
+
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
   .column {
     width: 100%;
