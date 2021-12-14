@@ -1,163 +1,211 @@
-body{
-  box-sizing: border-box;
-}
-
 #section_1 {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-#info_us {
-    font-size: 1.6rem;
-    overflow: hidden;    
-}
-
-#section_2 {
-    background-color: #E3DBD1;
-    width: 60%;
-    align-content: center;
-    text-align: center;
-          margin:0 auto;
-      border-radius: 25px;
-    padding: 1rem;
-    padding-left: 2rem;    
-    padding-right: 2rem; 
-    padding-bottom: 2rem;
-    
-}
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
+/* header image and text */
+.coverimg {
   position: relative;
-  margin: auto;
-    text-align: center;
-    align-content: center;
-      margin:0 auto;
-}
-    .mySlides {
-       text-align: center;
-    align-content: center; 
-    background-color: #6A3030;
-    border-radius: 25px;
-    padding-top: 5px;
-
-    }
-#Footer {
-    margin-top: 1%;
-    width: 100%;
-    overflow: hidden;
-}
-#Seeourbeer {
-    margin: 5px;
-    
+  text-align: center;
+  color: rgb(255, 255, 255);
 }
 
-h3 {
-    font-size: 2rem;
+.coverimg img {
+  object-fit: cover;
+  width: 80%;
+  height: 50vh;
+  filter: brightness(60%);
 }
-    
+
+.top-left {
+  font-family: var(--p-font);
+  font-size: 2rem;
+  position: absolute;
+  top: 8px;
+  left: 175px;
 }
+
+.centered {
+  font-family: var(--header-font);
+  font-size: 4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bottom-right {
+  font-family: var(--p-font);
+  font-size: 2rem;
+  position: absolute;
+  bottom: 8px;
+  right: 175px;
+}
+
+/* bar info */
+#info_us {
+  background-color: var(--color-3);
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+  padding: 1rem;
+}
+
+/* Slideshow Container What we're pouring*/
+#section_2 {
+  background-color: #6a3030;
+  width: 60%;
+  align-content: center;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 25px;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+
+#section_2 h2 {
+  font-family: var(--h2-font);
+  color: white;
+}
+
+.slideshow-container {
+  background-color: #6a3030;
+  max-width: 600px;
+  height: 250px;
+  position: relative;
+  text-align: center;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.mySlides img {
+  width: 10rem;
+  height: auto;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  font-family: var(--h2-font);
+  color: white;
+  position: absolute;
+}
+
+/* Beer Caption text */
+.text {
+  color: white;
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin-bottom: 30px;
+}
+
+a#seeOurBeer.button {
+  font-family: var(--p-font);
+  color: black;
+  text-decoration: none;
+  background-color: var(--color-5);
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 20px;
+  transition: background-color 1s, color 1.5s ease;
+}
+
+a#seeOurBeer.button:hover {
+  text-decoration: underline;
+  color: var(--color-2);
+  background-color: var(--color-6);
+}
+
+/* bottom half of page*/
 #section_3 {
-    text-align: center;
-    display: flex;
-    background-color: white;
-         margin:0 auto;
+  margin: 3rem;
+  gap: 2rem;
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 1fr 0fr;
+  grid-auto-flow: row;
+  grid-template-areas: "col1 col2";
 }
 
-#column_button {
-    float: left;
-    margin-left: 40%;
-    margin-bottom: 5%;
-    margin-top: 2%
+.column_1 {
+  grid-area: col1;
+  background-color: var(--color-4);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#order_1 {
-    display:inline-block;
-        background-color: #5B2626;
-        width: 18rem;
-        border-radius: 25px;
-    padding-right: 0.4rem;
-}
-#order_2 {
-    display:inline-block;
-        background-color: #5B2626;
-        width: 18rem;
-        border-radius: 25px;
-    padding-right: 0.4rem;
-    padding-top: 0.4rem;
-     
-}
-#order_3 {
-    display:inline-block;
-        background-color: #5B2626;
-        width: 18rem;
-        border-radius: 25px;
-     padding-right: 0.4rem;
-    padding-top: 0.4rem;
-}
-#order_img {
-    width: 20%;
-    height: 20%;
-    border-radius: 25px;
-    left: 5%;   
 
+.column_1 h2 {
+  font-family: var(--h2-font);
+  color: white;
 }
+
+.column_2 {
+  grid-area: col2;
+}
+
+.column_2 h2 {
+  grid-area: col2;
+  font-family: var(--h2-font);
+  color: white;
+}
+
+.orders {
+  background-color: var(--color-7);
+  width: 18rem;
+  border-radius: 25px;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  row-gap: 1rem;
+  grid-auto-flow: row;
+  grid-template-areas: "img txt";
+}
+
 #order_text {
-    float: right;
-    color: white;
-}
-#order_back {
-    background-color: #6A3030;
-    border-radius: 25px;
-    padding: 5px;    
-    text-align: center;
-    align-content: center;
-    width: 75%;
-    margin-left: 15%; 
-    font-size: 1rem;
+  grid-area: txt;
 }
 
-#bartensers {
-    background-color: white;
-    text-align: center;
-    align-content: center;
-                border-radius: 25px;
-
-
-}
-#bar_ten {
-    background-color: #6A3030;
-        width: 20rem;
-    text-align: center;
-    align-content: center;
-              margin:0 auto;
-            border-radius: 25px;
-color: white;
-    font-size: 1.6rem;
-
+#order_img {
+  grid-area: img;
+  width: 20%;
+  height: 20%;
 }
 
 #OrderBar {
-    text-align: center;
-    align-content: center;
-        background-color: white;
-                border-radius: 25px;
-
-
-}
-#col_1_back {
-    margin-left: 10%;
-    background-color: white;
-                border-radius: 25px;
-    padding-bottom: 10%;
-    width: 80%
-
-}
-#col_2_back {
-    background-color: white;
-    border-radius: 25px;
-        width: 80%;
-        padding-bottom: 10%;
+  padding-top: 0.1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  align-content: center;
+  background-color: var(--color-4);
+  border-radius: 25px;
 }
 
+#bartenders {
+  padding-top: 0.1rem;
+  background-color: var(--color-4);
+  text-align: center;
+  border-radius: 25px;
+}
+
+#bar_ten {
+  font-family: var(--p-font);
+  font-size: 1.4rem;
+  color: white;
+}
 
 /* Next & previous buttons */
 .prev,
@@ -186,40 +234,6 @@ color: white;
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: relative;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-    font-size: 1.6rem;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-    margin-bottom: 30px;
 }
 
 .active,
@@ -252,63 +266,50 @@ color: white;
     opacity: 1;
   }
 }
-.column {
-  float: left;
-  width: 50%;
-    text-align: center;
-    align-content: center;
-    display:block;
-    padding-bottom: 2%;
-    border-radius: 25px;
-    overflow: hidden;
-    
-}
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-
-      .column {
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .column {
     width: 100%;
-  }        
- 
+  }
 }
 @media screen and (max-width: 700px) {
+  #section_3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "col1"
+      "col2";
+  }
+
+  .column_1 {
+    grid-area: col1;
+  }
+
+  .column_2 {
+    grid-area: col2;
+  }
+
   .column {
     width: 100%;
     text-align: center;
     align-content: center;
-      
   }
-    #order_1 {
-        width: 70%;
-        text-align: center;
-    align-content: center;
-    }
-    #order_2 {
-        width: 20rem;
-        text-align: center;
-    align-content: center;
-    }#order_3 {
-        width: 20rem;
-        text-align: center;
-    align-content: center;
-    }  
-    
-    #order_text {
+  #order_1 {
+    width: 20rem;
+  }
+  #order_2 {
+    width: 20rem;
+  }
+  #order_3 {
+    width: 20rem;
+  }
+  #order_text {
     float: right;
-}
-    #order_img {
+  }
+  #order_img {
     float: left;
     margin-left: 7rem;
-    width: 30%;    
-
-}
+    width: 30%;
+  }
 }
