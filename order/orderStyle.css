@@ -1,412 +1,400 @@
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-
-    .column {
-        width: 100%;
-    }
-}
-
-
-body {
-    background-color: var(--color-2);
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .column {
+    width: 100%;
+  }
 }
 
 #header {
-    margin-inline: 1rem;
+  margin-inline: 2rem;
 }
 
 #main {
-    z-index: 1;
+  z-index: 1;
 }
 
 #header #container {
-    float: right;
+  float: right;
 }
-#header #container #selection{
-    margin-right: 1rem;
+
+#header #container #selection {
+  margin-right: 1rem;
 }
+
 #header #container #beerIcon {
-    background-image: url('images/icon_beer.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    vertical-align: middle;
-    display: inline-block;
-    height: 3rem;
-    width: 2rem;
-    margin-right: 3rem;
+  background-image: url("images/icon_beer.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  height: 3rem;
+  width: 2rem;
+  margin-right: 3rem;
 }
+
+#header h1 a {
+  color: var(--color-0);
+  font-family: var(--header-font);
+  font-size: var(--header-size);
+  list-style: none;
+  text-decoration: none;
+  line-height: 1.5rem;
+}
+
+#header a {
+  font-family: var(--p-font);
+}
+
 #beerPanel {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
 }
 
 .beerType {
-    height: 30rem;
-    background-color: var(--color-4);
-    color: var(--color-1);
-    border-radius: 25px;
-    text-align: center;
+  height: 30rem;
+  background-color: var(--color-4);
+  color: var(--color-1);
+  border-radius: 25px;
+  text-align: center;
 }
 
 .beerType h2 {
-    white-space: normal; 
-    font-family: var(--h2-font);
-    font-size: var(--h2-size);
+  white-space: normal;
+  font-family: var(--h2-font);
+  font-size: var(--h2-size);
 }
 
 .beerType img {
-    width: 70%;
-    height: 55%;
+  width: 65%;
+  height: 45%;
 }
 
 .beerType .price {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-family: var(--p-font);
-    font-size: var(--p-size);
-    font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+  font-size: 1.3rem;
 }
 
 .beerType .num {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    font-family: var(--h2-font);
-    font-size: var(--h2-size);
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  font-family: var(--h2-font);
+  font-size: var(--h2-size);
 }
 
 .beerType button {
-    height: 2.5rem;
-    width: 2.5rem;
-    background-color: var(--color-5);
-    border: none;
-    border-radius: 5px;
-    font-family: var(--p-font);
-    font-size: 1.7rem;
-    transition: background-color 1s, color 1.5s ease;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: var(--color-5);
+  border: none;
+  border-radius: 5px;
+  font-family: var(--p-font);
+  font-size: 1.7rem;
+  transition: background-color 1s, color 1.5s ease;
 }
 .beerType button:hover {
-    background-color: var(--color-6);
-    color: var(--color-4);
+  background-color: var(--color-6);
+  color: var(--color-4);
 }
 
 .secondaryPage {
-    margin-bottom: 2rem;
-    z-index: 1;
-    position: absolute;
-    margin-top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--color-4);
-    color: var(--color-1);
-    width: 30rem;
-    padding-left: 12rem;
-    padding-right: 10rem;
-    padding-bottom: 2rem;
-    border-radius: 25px;
+  margin-bottom: 2rem;
+  z-index: 1;
+  position: absolute;
+  margin-top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-4);
+  color: var(--color-1);
+  width: 30rem;
+  padding-left: 12rem;
+  padding-right: 10rem;
+  padding-bottom: 2rem;
+  border-radius: 25px;
 }
 
 .secondaryPage .title {
-    margin-top: 3rem;
-    width: 100%;
+  margin-top: 3rem;
+  width: 100%;
 }
 
 .secondaryPage .title h1 {
-    font-family: var(--header-font);
-    font-size: 3rem;
-    text-align: center;
+  font-family: var(--header-font);
+  font-size: 3rem;
+  text-align: center;
 }
 
 .secondaryPage .title button {
-    float: right;
+  float: right;
 }
 
-.secondaryPage input, select {
-    font-family: var(--p-font);
-    font-size: var(--p-size);
-    padding-inline: 1rem;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
+.secondaryPage input,
+select {
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+  padding-inline: 1rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
 }
 
-.secondaryPage input[type=text]:not(.cardSecurityNumber) {
-    height: 2rem;
-    width: 20rem;
+.secondaryPage input[type="text"]:not(.cardSecurityNumber) {
+  height: 2rem;
+  width: 20rem;
 }
 
 .secondaryPage select {
-    -moz-appearance:none;
-    -webkit-appearance:none;
-    appearance:none;
-    height: 2.1rem;
-    width: 22rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2.1rem;
+  width: 22rem;
 }
 
-.secondaryPage input[type=number], .secondaryPage .cardSecurityNumber {
-    height: 2rem;
-    width: 5rem;
+.secondaryPage input[type="number"],
+.secondaryPage .cardSecurityNumber {
+  height: 2rem;
+  width: 5rem;
 }
 
-.secondaryPage input[type=checkbox] {
-    height: 1.5rem;
-    width: 1.5rem;
-    vertical-align: middle;
+.secondaryPage input[type="checkbox"] {
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: middle;
 }
 
 .secondaryPage h2 {
-    font-family: var(--p-bold-font);
-    font-size: var(--p-bold-size);
+  font-family: var(--p-bold-font);
+  font-size: var(--p-bold-size);
 }
 
 .secondaryPage .error {
-    padding-inline: 5px;
-    visibility: hidden;
-    color: var(--color-5);
-    display: block;
-    margin-top: 0.3rem;
-    font-family: var(--p-font);
-    font-size: var(--p-size);
+  padding-inline: 5px;
+  visibility: hidden;
+  color: var(--color-5);
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--p-font);
+  font-size: var(--p-size);
 }
 
 #order #orderPanel {
-    font-family: var(--p-font);
-    font-size: var(--p-size);
+  font-family: var(--p-font);
+  font-size: var(--p-size);
 }
 
 #order .method {
-    margin-left: 0.5rem;
-    margin-right: 3rem;
-    vertical-align: middle;
-    font-family: var(--p-font);
-    font-size: var(--p-size);
+  margin-left: 0.5rem;
+  margin-right: 3rem;
+  vertical-align: middle;
+  font-family: var(--p-font);
+  font-size: var(--p-size);
 }
 
 #order #cardInfo {
-    display: none;
+  display: none;
 }
 
 #order #cardInfo #cards {
-    display: flex;
+  display: flex;
 }
 #order #cardInfo #cards div {
-    margin-top: 2vh;
-    margin-left: 2vh;
-    height: 3vh;
-    width: 3.5vw;
-    background-color: white;
-    
+  margin-top: 2vh;
+  margin-left: 2vh;
+  height: 3vh;
+  width: 3.5vw;
+  background-color: white;
 }
 
 #order #confirmMessage {
-    text-align: center;
+  text-align: center;
 }
 
 .btnPrimary {
-    margin-block: 1.5rem;
-    height: 3.5rem;
-    width: 7rem;
-    background-color: var(--color-5);
-    border: none;
-    border-radius: 20px;
-    font-family: var(--p-font);
-    font-size: var(--p-size);
-    transition: background-color 0.5s, color 1.5s ease;
+  margin-block: 1.5rem;
+  height: 3.5rem;
+  width: 7rem;
+  background-color: var(--color-5);
+  border: none;
+  border-radius: 25px;
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+  transition: background-color 0.5s, color 1.5s ease;
 }
+
 .btnPrimary:hover {
-    background-color: var(--color-6);
-    color: var(--color-4);
+  background-color: var(--color-6);
+  color: var(--color-2);
 }
+
 .btnPrimary:disabled {
-    background-color: var(--color-3);
+  background-color: var(--color-3);
 }
 
 .btnSecondary {
-    margin-bottom: 10px;
-    background-color: transparent;
-    border: none;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1rem;
-    vertical-align: middle;
-    color: var(--color-2);
-    font-family: var(--p-font);
-    font-size: var(--p-size);
-    transition: color 0.5s ease;
+  background: none;
+  border: none;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 1rem;
+  vertical-align: middle;
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+  transition: color 0.5s ease;
+  text-decoration: none;
 }
+
+.btnThird {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  vertical-align: middle;
+  font-family: var(--h2-font);
+  font-size: var(--p-size);
+  transition: color 0.5s ease;
+}
+
+.btnThird:hover {
+  text-decoration: underline;
+}
+
 .btnSecondary:hover {
-    color: var(--color-5);
-    text-decoration: underline;
-}
-#homeBtn {
-    color: var(--color-0);
+  text-decoration: underline;
 }
 
 .btnSymbol {
-    height: 2.5rem;
-    width: 2.5rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    background-color: transparent;
-    border: none;
-    vertical-align: middle;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: transparent;
+  border: none;
+  vertical-align: middle;
 }
 #copyBtn {
-    background-image: url('images/icon_copy.png');
+  background-image: url("images/icon_copy.png");
 }
 #pasteBtn {
-    background-image: url('images/icon_paste.png');
+  background-image: url("images/icon_paste.png");
 }
 
-
-
-
-footer {
-    font-family: var(--h2-font);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
-    padding: 1rem;
-    padding-bottom: 2rem;
-    color: white;
-    background-color: var(--color-4);
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
 }
-  
-footer h1 {
-    font-family: var(--header-font);
-}
-
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
- 
-}
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-      #orderForm {
-        width: 100%;
-    }
-    .secondaryPage .title {
-    margin-top: 3rem;
-    width: 100%;
-}
-    
-    #name {
-        width: 100%;
-    }
-    #table {
-        width: 100%;
-    }
-    #Payment {
-        width: 100%;
-    }
-    #cards {
-        width: 100%;
-    }
-    #cardNumber {
-        width: 100%;
-    }
-    #cardHolder {
-        width: 100%;
-    }
-    #cardExpiryMonth {
-        width: 100%;
-    } 
-    #cardExpiryYear {
-        width: 100%;
-    }
-    #cardSecurityNumber {
-        width: 100%;
-    }
-    #confirmMessage {
-        width: 90%;
-        margin-left: 1rem;
-    }
-      
-}
-      
-@media screen and (max-width: 736px) {
-    
-     .column {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  #orderForm {
     width: 100%;
   }
-      
-    #container {
-        position: relative;
-        margin-right: 20%;
-        overflow: hidden;
-}
-    #order {
-        width: 100%;
-        overflow: hidden;
-    }
-    #orderForm {
-        margin-left: 1.2rem;
-    }
-    
-    #beerPanel {
-        margin-top: 25%;
-        margin-left: 10%;
-    }
-    .secondaryPage {
-        width: 100%;
-        padding-bottom: 0rem;
-        padding-left: 0rem;
-        padding-right: 0rem;
-    }
-    #orderForm {
-        width: 75%;
-    }
-    .secondaryPage .title {
+  .secondaryPage .title {
     margin-top: 3rem;
     width: 100%;
-}
-    
-    #name {
-        width: 100%;
-    }
-    #table {
-        width: 100%;
-    }
-    #Payment {
-        width: 100%;
-    }
-    #cards {
-        width: 100%;
-    }
-    #cardNumber {
-        width: 100%;
-    }
-    #cardHolder {
-        width: 100%;
-    }
-    #cardExpiryMonth {
-        width: 100%;
-    } 
-    #cardExpiryYear {
-        width: 100%;
-    }
-    #cardSecurityNumber {
-        width: 100%;
-    }
-    #confirmMessage {
-        width: 90%;
-        margin-left: 1rem;
-    }
-    
-}
-  
- 
+  }
 
+  #name {
+    width: 100%;
+  }
+  #table {
+    width: 100%;
+  }
+  #Payment {
+    width: 100%;
+  }
+  #cards {
+    width: 100%;
+  }
+  #cardNumber {
+    width: 100%;
+  }
+  #cardHolder {
+    width: 100%;
+  }
+  #cardExpiryMonth {
+    width: 100%;
+  }
+  #cardExpiryYear {
+    width: 100%;
+  }
+  #cardSecurityNumber {
+    width: 100%;
+  }
+  #confirmMessage {
+    width: 90%;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .column {
+    width: 100%;
+  }
+
+  #container {
+    position: relative;
+    margin-right: 20%;
+    overflow: hidden;
+  }
+  #order {
+    width: 100%;
+    overflow: hidden;
+  }
+  #orderForm {
+    margin-left: 1.2rem;
+  }
+
+  #beerPanel {
+    margin-top: 25%;
+    margin-left: 10%;
+  }
+  .secondaryPage {
+    width: 100%;
+    padding-bottom: 0rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  #orderForm {
+    width: 75%;
+  }
+  .secondaryPage .title {
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  #name {
+    width: 100%;
+  }
+  #table {
+    width: 100%;
+  }
+  #Payment {
+    width: 100%;
+  }
+  #cards {
+    width: 100%;
+  }
+  #cardNumber {
+    width: 100%;
+  }
+  #cardHolder {
+    width: 100%;
+  }
+  #cardExpiryMonth {
+    width: 100%;
+  }
+  #cardExpiryYear {
+    width: 100%;
+  }
+  #cardSecurityNumber {
+    width: 100%;
+  }
+  #confirmMessage {
+    width: 90%;
+    margin-left: 1rem;
+  }
+}

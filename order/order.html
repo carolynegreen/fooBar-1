@@ -21,12 +21,13 @@
 
     <section id="main" class="column">
         <div id="header">
-            <a id="homeBtn" class="btnSecodary" href="/dashboard/dashboard.html">Home</a>
-            <button type="button" class="btnPrimary" onclick="showStatusForm()">STATUS</button>
+            <h1><a href="dashboard.html">FooBar</a></h1>
+            <a id="homeBtn" class="btnSecondary" href="/dashboard/dashboard.html">Home</a>
+            <button type="button" class="btnPrimary" onclick="showStatusForm()">Status</button>
             <div id="container">
                 <a id="selection">0</a>
                 <div id="beerIcon"></div>
-                <button type="button" id="orderBtn" class="btnPrimary" disabled onclick="showOrderForm()">ORDER</button>
+                <button type="button" id="orderBtn" class="btnPrimary" disabled onclick="showOrderForm()">Order</button>
             </div>
         </div>
 
@@ -53,8 +54,8 @@
     <div id="order" class="secondaryPage column">
         <form id="orderForm" autocomplete="off">
             <div class="title">
-                <button type="button" class="btnSecondary" onclick="editOrder()">Edit order</button>
-                <h1>ORDER DETAILS</h1>
+                <button type="button" class="btnThird" onclick="editOrder()">Edit Order</button>
+                <h1>Order Details</h1>
             </div>
 
             <template id="order-beerType-template">
@@ -125,12 +126,12 @@
                 </section>
             </div>
 
-            <button type="button" class="btnPrimary" onclick="confirmPayment()">CONFIRM</button>
+            <button type="button" class="btnPrimary" onclick="confirmPayment()">Confirm</button>
         </form>
 
         <section id="confirmMessage">
             <div class="title">
-                <h1>YOUR ORDER HAS BEEN CONFIRMED</h1>
+                <h1>Your Order Has Been Confirmed!</h1>
             </div>
             <div>
                 <a id="codeNumber"></a>
@@ -138,25 +139,25 @@
             </div>
 
             <div>Go back to order and log in the status form <br> to check the evolution of your order</div>
-            <button type="button" class="btnPrimary" onclick="start()">RETURN</button>
+            <button type="button" class="btnPrimary" onclick="start()">Return</button>
         </section>
     </div>
 
     <div id="status" class="secondaryPage column">
         <form id="statusForm" autocomplete="off">
             <div class="title">
-                <button type="button" class="btnSecondary" onclick="resetStatus()">Exit status</button>
-                <h1>STATUS LOGIN</h1>
+                <button type="button" class="btnThird" onclick="resetStatus()">Exit Status</button>
+                <h1>Status Login</h1>
             </div>
 
             <div>
                 <h2>Code Number</h2>
                 <input type="text" id="code" placeholder="Enter the provided code here" maxlength="4" oninput="onlyNumbers(this)">
                 <button type="button" class="btnSymbol" id="pasteBtn" onclick="pasteCode()"></button>
-                <span type="text" class="error codeError">Invalid code</span>
+                <span type="text" class="error codeError">Invalid Code</span>
             </div>
 
-            <button type="button" class="btnPrimary" onclick="logIn()">LOG IN</button>
+            <button type="button" class="btnPrimary" onclick="logIn()">Log In</button>
         </form>
 
         <section id="statusMessage">
@@ -170,7 +171,7 @@
                 <div class="timer"></div>
                 <div class="bartender"></div>
             </div>
-            <button type="button" class="btnPrimary" onclick="resetStatus()">EXIT</button>
+            <button type="button" class="btnPrimary" onclick="resetStatus()">Exit</button>
         </section>
     </div>
 
