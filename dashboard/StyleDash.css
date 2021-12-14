@@ -317,13 +317,7 @@ a#seeOurBeer.button:hover {
     text-align: center;
     align-content: center;
   }
-  #order_1 {
-    width: 20rem;
-  }
-  #order_2 {
-    width: 20rem;
-  }
-  #order_3 {
+  #orders {
     width: 20rem;
   }
   #order_text {
