@@ -16,7 +16,7 @@ fetch(url, options)
   .then((res) => res.json())
   .then((response) => {
     showProduct(response);
-    const data = setInterval(fetchData(), 60000);
+    setInterval(fetchData, 2000);
   })
   .catch((err) => {
     console.error(err);

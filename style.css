@@ -11,6 +11,7 @@
   --color-4: #6a3030;
   --color-5: #f5cf6b;
   --color-6: #dca413;
+  --color-7: #502424;
 
   --header-font: "Grenze Gotisch", cursive;
   --h2-font: "Special Elite", cursive;
@@ -39,11 +40,6 @@ nav {
   margin-left: 1rem;
 }
 
-#myNav,
-.openbtn {
-  display: none;
-}
-
 h1 a {
   color: var(--color-0);
   font-family: var(--header-font);
@@ -69,20 +65,18 @@ h1 a {
   text-decoration: none;
 }
 
-.nav_right a:hover,
-#bottombtn a:hover {
-  color: black;
+.nav_right a:hover {
   text-decoration: underline;
 }
 
-.ordernow {
+.button {
   background-color: var(--color-5);
   padding: 1rem 1rem 1rem 1rem;
   border-radius: 20px;
   transition: background-color 1s, color 1.5s ease;
 }
 
-.ordernow:hover {
+.button:hover {
   color: var(--color-2);
   background-color: var(--color-6);
 }
