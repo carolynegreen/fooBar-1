@@ -286,7 +286,7 @@ select {
   background-image: url("images/icon_paste.png");
 }
 
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen and (min-device-width: 414px) and (max-device-width: 800px) and (-webkit-min-device-pixel-ratio: 3) {
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   #orderForm {
@@ -330,10 +330,20 @@ select {
   }
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 800px) {
   .column {
     width: 100%;
   }
+    #header {
+        width: 90%;
+    }
+    footer {
+        width: 90%;
+    }
+    body {
+        width: 100%;
+    }
+    }
 
   #container {
     position: relative;

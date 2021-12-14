@@ -97,3 +97,11 @@ footer {
 footer h1 {
   font-family: var(--header-font);
 }
+
+@media screen and (max-width: 700px) {
+    nav {
+        width: 90%;
+        grid-template-columns: 1fr;
+        margin-bottom: 1rem;
+    }
+}
