@@ -284,17 +284,24 @@ color: white;
   .column {
     width: 100%;
     text-align: center;
-          align-content: center;
+    align-content: center;
       
   }
     #order_1 {
-        width: 20rem;
+        width: 70%;
+        text-align: center;
+    align-content: center;
     }
     #order_2 {
         width: 20rem;
+        text-align: center;
+    align-content: center;
     }#order_3 {
         width: 20rem;
+        text-align: center;
+    align-content: center;
     }  
+    
     #order_text {
     float: right;
 }

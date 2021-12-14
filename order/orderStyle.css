@@ -286,3 +286,83 @@ footer {
     font-family: var(--header-font);
   }
 
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+ 
+}
+      
+@media screen and (max-width: 736px) {
+    
+     .column {
+    width: 100%;
+  }
+      
+    #container {
+        position: relative;
+        margin-right: 20%;
+        overflow: hidden;
+}
+    #order {
+        width: 100%;
+        overflow: hidden;
+    }
+    #orderForm {
+        margin-left: 1.2rem;
+    }
+    
+    #beerPanel {
+        margin-top: 25%;
+        margin-left: 10%;
+    }
+    .secondaryPage {
+        width: 100%;
+        padding-bottom: 0rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+    #orderForm {
+        width: 75%;
+    }
+    .secondaryPage .title {
+    margin-top: 3rem;
+    width: 100%;
+}
+    
+    #name {
+        width: 100%;
+    }
+    #table {
+        width: 100%;
+    }
+    #Payment {
+        width: 100%;
+    }
+    #cards {
+        width: 100%;
+    }
+    #cardNumber {
+        width: 100%;
+    }
+    #cardHolder {
+        width: 100%;
+    }
+    #cardExpiryMonth {
+        width: 100%;
+    } 
+    #cardExpiryYear {
+        width: 100%;
+    }
+    #cardSecurityNumber {
+        width: 100%;
+    }
+    #confirmMessage {
+        width: 90%;
+        margin-left: 1rem;
+    }
+    
+}
+  
+ 
+
