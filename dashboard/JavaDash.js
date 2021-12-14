@@ -8,9 +8,12 @@ function showSlides() {
     slides[i].style.display = "none";
   }
   slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 4000); // Change image every 2 seconds
+<<<<<<< HEAD
 } 
 
 start();
@@ -61,4 +64,6 @@ function getActiveBartenders(bartenders) {
           active.innerHTML += bartenders[i].name + "<br>";
       }
   }
+=======
+>>>>>>> a5d388876c4c0ae69e68b265adfc52e0595c820c
 }
