@@ -13,8 +13,8 @@ function showSlides() {
   }
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 4000); // Change image every 2 seconds
-<<<<<<< HEAD
-} 
+}
+
 
 start();
 function start() {
@@ -36,7 +36,8 @@ async function fetchData() {
 }
 
 function getOrderContent(serving) {
-  removeAllNodes(document.getElementById("order_back"));
+  const orders = document.getElementById("orders");
+  removeAllNodes(orders);
   for(let i=0; i<serving.length; i++) {
       const order = document.createElement("div");
       order.classList.add("order");
@@ -46,7 +47,7 @@ function getOrderContent(serving) {
           div.style.backgroundImage = 'url(/images/' + serving[i].order[j].split(' ').join('').toLowerCase() + '.png)';
           order.appendChild(div);
       }
-      document.getElementById("order_back").appendChild(order);
+      orders.appendChild(order);
   }
 }
 
@@ -64,6 +65,4 @@ function getActiveBartenders(bartenders) {
           active.innerHTML += bartenders[i].name + "<br>";
       }
   }
-=======
->>>>>>> a5d388876c4c0ae69e68b265adfc52e0595c820c
 }
