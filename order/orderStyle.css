@@ -365,36 +365,49 @@ select {
     margin-top: 3rem;
     width: 100%;
   }
-
-  #name {
-    width: 100%;
-  }
-  #table {
-    width: 100%;
-  }
-  #Payment {
-    width: 100%;
-  }
-  #cards {
-    width: 100%;
-  }
-  #cardNumber {
-    width: 100%;
-  }
-  #cardHolder {
-    width: 100%;
-  }
-  #cardExpiryMonth {
-    width: 100%;
-  }
-  #cardExpiryYear {
-    width: 100%;
-  }
-  #cardSecurityNumber {
-    width: 100%;
-  }
-  #confirmMessage {
-    width: 90%;
-    margin-left: 1rem;
-  }
+    
+    #name {
+        width: 100%;
+    }
+    #table {
+        width: 100%;
+    }
+    #Payment {
+        width: 100%;
+    }
+    #cards {
+        width: 100%;
+    }
+    #cardNumber {
+        width: 100%;
+    }
+    #cardHolder {
+        width: 100%;
+    }
+    #cardExpiryMonth {
+        width: 100%;
+    } 
+    #cardExpiryYear {
+        width: 100%;
+    }
+    #cardSecurityNumber {
+        width: 100%;
+    }
+    #confirmMessage {
+        width: 90%;
+        margin-left: 1rem;
+    }
+    #statusForm {
+        width: 90%;
+        margin-left: 1rem;
+    }
+    #statusMessage {
+        width: 80%;
+        margin-left: 2rem;
+    }
+    #code {
+        width: 80%;
+    }
+    
 }
+  
