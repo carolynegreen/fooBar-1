@@ -290,6 +290,52 @@ footer h1 {
   and (-webkit-min-device-pixel-ratio: 3) { 
  
 }
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+      #orderForm {
+        width: 100%;
+    }
+    .secondaryPage .title {
+    margin-top: 3rem;
+    width: 100%;
+}
+    
+    #name {
+        width: 100%;
+    }
+    #table {
+        width: 100%;
+    }
+    #Payment {
+        width: 100%;
+    }
+    #cards {
+        width: 100%;
+    }
+    #cardNumber {
+        width: 100%;
+    }
+    #cardHolder {
+        width: 100%;
+    }
+    #cardExpiryMonth {
+        width: 100%;
+    } 
+    #cardExpiryYear {
+        width: 100%;
+    }
+    #cardSecurityNumber {
+        width: 100%;
+    }
+    #confirmMessage {
+        width: 90%;
+        margin-left: 1rem;
+    }
+      
+}
       
 @media screen and (max-width: 736px) {
     
