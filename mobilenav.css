@@ -73,3 +73,21 @@
     right: 35px;
   }
 }
+
+
+#myNav,
+.openbtn {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav_right {
+    display: none;
+  }
+
+  #myNav,
+    .openbtn {
+    display: block;
+  }
+}
+

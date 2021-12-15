@@ -4,29 +4,41 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
+    <link rel="stylesheet" href="/mobilenav.css" />
     <link rel="stylesheet" href="StyleDash.css" />
     <link rel="stylesheet" href="/style.css" />
   </head>
-  <header>
+  <body>
     <nav>
       <div class="nav_left">
         <h1><a href="index.html">FooBar</a></h1>
       </div>
 
-      <div class="nav_right">
+      <div class="nav_right ">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="beers.html" class="ourbeers">Our Beers</a></li>
-          <li>
-            <a href="/order/order.html" id="ordernow" class="button"
-              >Order Now</a
-            >
-          </li>
+          <li><a href="/order/order.html" id="ordernow" class="button">Order Now</a></li>
         </ul>
       </div>
+
+      <!-- The overlay -->
+      <div id="myNav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="beers.html" class="ourbeers">Our Beers</a></li>
+          <li><a href="/order/order.html" id="ordernow" class="button">Order Now</a></li>
+        </div>
+      </div>
+      <!-- Use any element to open/show the overlay navigation menu -->
+      <div class="openbtn" onclick="openNav()">
+        &times;
+      </div>
     </nav>
-  </header>
-  <body>
+
     <section id="section_1">
       <div class="coverimg">
         <img src="/assets/foobar_bartender.png" />
@@ -86,94 +98,6 @@
       <div class="column_1">
         <h2>Currently Pouring</h2>
         <div id="orders"></div>
-
-        <!-- <div class="orders" id="order_1">
-          <img
-            id="order_img"
-            alt=""
-            width=""
-            height=""
-            src="/images/elhefe.png"
-          />
-          <p id="order_text">
-            El Hefe <br />
-            Hefeweizen <br />
-            IBV 13.2
-          </p>
-          <br /><br />
-          <img
-            id="order_img"
-            alt=""
-            width="40px"
-            height="40px"
-            src="/images/fairytaleale.png"
-          />
-          <p id="order_text">
-            Fairy Tale Ale <br />
-            IPA <br />
-            7.9 ABV
-          </p>
-        </div>
-        <br /><br /><br />
-        <div class="orders" id="order_2">
-          <img
-            id="order_img"
-            alt=""
-            width="40px"
-            height="40px"
-            src="/images/elhefe.png"
-          />
-          <p id="order_text">
-            El Hefe <br />
-            Hefeweizen <br />
-            IBV 13.2
-          </p>
-          <br />
-        </div>
-        <br /><br /><br />
-        <div class="orders" id="order_3">
-          <img
-            id="order_img"
-            alt=""
-            width="40px"
-            height="40px"
-            src="/images/elhefe.png"
-          />
-          <p id="order_text">
-            El Hefe <br />
-            Hefeweizen <br />
-            IBV 13.2
-          </p>
-          <br /><br />
-          <img
-            id="order_img"
-            alt=""
-            width="40px"
-            height="40px"
-            src="/images/fairytaleale.png"
-          />
-          <p id="order_text">
-            Fairy Tale Ale <br />
-            IPA <br />
-            7.9 ABV
-          </p>
-          <br /><br />
-          <img
-            id="order_img"
-            alt=""
-            width="40px"
-            height="40px"
-            src="/images/githop.png"
-          />
-          <p id="order_text">
-            Githop <br />
-            Venom Ale <br />
-            IBV 14
-          </p>
-          <br />
-          <br />
-        </div> -->
-
         <a href="beers.html" id="ordernow" class="button">Order Now</a>
       </div>
 
@@ -201,5 +125,6 @@
       </div>
     </footer>
     <script src="JavaDash.js"></script>
+    <script src="/mobilenav.js"></script>
   </body>
 </html>
