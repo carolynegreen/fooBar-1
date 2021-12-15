@@ -68,24 +68,24 @@ function getOrderInfo() {
 function showOrderInfo(order) {
   // Display the user order info
   const userInfo = document.getElementById("userInfo");
-  userInfo.querySelector(".name").innerHTML = order.name;
+  userInfo.querySelector(".name").innerHTML = "Welcome to Foobar<br>" + order.name + "!";
 
   if (compareDates(order.date)) {
-    let beers = "Your Order";
+    userInfo.querySelector(".message").innerHTML = "Your order is being prepared";
+    let beers = "Your have ordered";
     for (let i = 0; i < order.beers.length; i++) {
       beers += "<br>" + order.beers[i].type + " x " + order.beers[i].number;
     }
     userInfo.querySelector(".order").innerHTML = beers;
-    userInfo.querySelector(".table").innerHTML = "Table Number " + order.table;
-    userInfo.querySelector(".bartender").innerHTML =
-      "Your order is being prepared by: " + order.bartender;
+    userInfo.querySelector(".table").innerHTML = "For Table " + order.table;
+    userInfo.querySelector(".bartender").innerHTML = "Your order is being prepared by " + order.bartender;
     showTimeDifference(order);
   } else {
+    userInfo.querySelector(".message").innerHTML = "This order information is unavailable, place an order to receive a new code";
     userInfo.querySelector(".order").innerHTML = "";
     userInfo.querySelector(".table").innerHTML = "";
     userInfo.querySelector(".bartender").innerHTML = "";
     userInfo.querySelector(".timer").innerHTML = "";
-    userInfo.querySelector("h1").innerHTML = "RETURN ANOTHER TIME";
   }
 }
 
@@ -117,20 +117,30 @@ function compareDates(date) {
 }
 
 function showTimeDifference(order) {
+  const estimate = getOrderTime(order.beers);
   timer = setInterval(function () {
     const currentTime = getCurrentTime();
-    const finalTime = calculateFinalTime(order.time);
+    const finalTime = calculateFinalTime(order.time, estimate);
+    console.log(finalTime);
     calculateTimeDifference(currentTime, finalTime);
   }, 1000);
 }
 
-function calculateFinalTime(time) {
+function getOrderTime(beers) {
+  let estimate = 5;
+  for(let i=0; i<beers.length; i++) {
+    estimate += beers[i].number * 3;
+  }
+  return estimate;
+}
+
+function calculateFinalTime(time, estimate) {
   const split = time.split(":");
   let hh = parseInt(split[0]);
   let mm = parseInt(split[1]);
   let ss = parseInt(split[2]);
 
-  mm = mm + 50;
+  mm = mm + estimate;
   if (mm >= 60) {
     hh = hh + 1;
     mm = mm - 60;
@@ -149,29 +159,42 @@ function calculateTimeDifference(current, final) {
   let mm2 = parseInt(fin[1]);
   let ss2 = parseInt(fin[2]);
 
-  let mm3 = 0;
-  let ss3 = 0;
-
-  if (hh1 > hh2 || hh1 < hh2 - 1) {
-    mm3 = 0;
-    ss3 = 0;
-    document.getElementById("userInfo").querySelector("h1").innerHTML =
-      "Your Order Has Already Been Served";
+  let served = false;
+  if (hh1 > hh2) {
+    served = true;
   } else {
-    if (mm1 > mm2) {
-      mm2 = mm2 + 60;
+    if(mm1 > mm2) {
+      if(hh1 === hh2) {
+        served = true;
+      }else {
+        mm2 = mm2 + 60;
+      }
     }
-    if (ss1 > ss2) {
-      ss2 = ss2 + 60;
-      mm2 = mm2 - 1;
+
+    if(mm1 <= mm2) {
+      if(ss1 > ss2) {
+        if(mm1 === mm2) {
+          served = true;
+        }else {
+          ss2 = ss2 + 60;
+          mm2 = mm2 - 1;
+        }
+      }
     }
-    mm3 = mm2 - mm1;
-    ss3 = ss2 - ss1;
-    document.getElementById("userInfo").querySelector("h1").innerHTML =
-      "Your Order is Being Prepared";
   }
 
-  let difference = leadingZero(mm3) + ":" + leadingZero(ss3);
-  document.getElementById("userInfo").querySelector(".timer").innerHTML =
-    difference;
+  if(served) {
+    document.getElementById("userInfo").querySelector(".timer").innerHTML = "00:00";
+    document.getElementById("userInfo").querySelector(".message").innerHTML = "Your order has already been served";
+  }else {
+    let mm3 = mm2 - mm1;
+    let ss3 = ss2 - ss1;
+    document.getElementById("userInfo").querySelector(".timer").innerHTML = leadingZero(mm3) + ":" + leadingZero(ss3);
+    document.getElementById("userInfo").querySelector(".message").innerHTML = "Your order is being prepared";
+  }
 }
+
+
+
+
+

@@ -194,7 +194,6 @@ a#seeOurBeer.button:hover {
   margin: 5%;
 }
 
-
 .order_text {
   grid-area: txt;
 }
@@ -289,12 +288,44 @@ a#seeOurBeer.button:hover {
   }
 }
 
+/* Progress bar */
+#container {
+  position: relative;
+  height: 5rem;
+  width: 80%;
+  border-radius: 50px;
+  overflow: hidden;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #1eff00 0%, #fffb29 50%, #eb002b 100%);
+}
+
+#progress {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background: #a0a0a0;
+  transition: width .5s ease-in;
+}
+
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
   .column {
     width: 100%;
   }
 }
 @media screen and (max-width: 700px) {
+
+  #section_2 {
+    width: 75%;
+  }
+
   #section_3 {
     display: grid;
     grid-template-columns: 1fr;
@@ -328,33 +359,26 @@ a#seeOurBeer.button:hover {
     margin-left: 7rem;
     width: 30%;
   }
-    
+}
+@media screen and (max-width: 500px) {
+  #section_1 img {
+    width: 100%;
+  }
 }
 
-/* Progress bar */
-#container {
-  position: relative;
-  height: 5rem;
-  width: 80%;
-  border-radius: 50px;
-  overflow: hidden;
-  left: 50%;
-  transform: translateX(-50%);
+@media screen and (max-width: 400px) {
+  #section_2 {
+    width: 75%;
+  }
+
+  #section_3 {
+    margin-left: 5%;
+  }
+
+  #orders {
+    width: 18rem;
+  }
 }
 
-#bar {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to right, #1eff00 0%, #fffb29 50%, #eb002b 100%);
-}
 
-#progress {
-  position: absolute;
-  right: 0;
-  height: 100%;
-  width: 50%;
-  background: #a0a0a0;
-  transition: width .5s ease-in;
-}
 

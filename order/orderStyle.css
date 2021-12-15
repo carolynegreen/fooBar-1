@@ -200,6 +200,7 @@ select {
 #order #cardInfo #cards {
   display: flex;
 }
+
 #order #cardInfo #cards div {
   margin-top: 2vh;
   margin-left: 2vh;
@@ -210,6 +211,41 @@ select {
 
 #order #confirmMessage {
   text-align: center;
+}
+
+#statusMessage .name {
+  overflow-wrap: break-word;
+}
+
+#statusMessage .message {
+  font-family: var(--h2-font);
+  font-size: var(--p-size);
+  margin-bottom: 2rem;
+}
+
+#statusMessage .timer {
+  font-family: var(--h2-font);
+  font-size: var(--h2-size);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#statusMessage .order {
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+  margin-bottom: 2rem;
+}
+
+#statusMessage .table {
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+  margin-bottom: 2rem;
+}
+
+#statusMessage .bartender {
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+  margin-bottom: 2rem;
 }
 
 .btn {
@@ -363,17 +399,12 @@ select {
   }
   #statusMessage {
     width: 80%;
-    margin-left: 2rem;
+    margin-left: 10%;
   }
   #code {
     width: 50%;
   }
 }
-  
-
-
-
-
 
 @media screen and (max-width: 350px) {
   .column {
@@ -388,7 +419,7 @@ select {
   }
   
   #container div {
-    margin-right: 10%;
+    margin-right: 5%;
   }
 
   #beerPanel {
