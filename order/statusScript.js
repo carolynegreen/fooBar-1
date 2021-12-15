@@ -71,7 +71,7 @@ function showOrderInfo(order) {
   userInfo.querySelector(".name").innerHTML = "Welcome to Foobar<br>" + order.name + "!";
 
   if (compareDates(order.date)) {
-    userInfo.querySelector(".message").innerHTML = "Your order is being prepared";
+    userInfo.querySelector(".message").innerHTML = "Your order is being prepared, estimated time:";
     let beers = "Your have ordered";
     for (let i = 0; i < order.beers.length; i++) {
       beers += "<br>" + order.beers[i].type + " x " + order.beers[i].number;
