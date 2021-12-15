@@ -275,6 +275,7 @@ select {
   #orderForm {
     width: 100%;
   }
+
   .secondaryPage .title {
     margin-top: 3rem;
     width: 100%;
@@ -302,12 +303,9 @@ select {
       width: 100%;
   }
 
-  #container div {
-    margin-right: 5%;
-  }
-
   #beerPanel {
-    margin-left: 10%;
+    margin-left: 5%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   .secondaryPage {
@@ -328,29 +326,47 @@ select {
   }
 
   #orderForm {
-    width: 75%;
-    margin-left: 1.2rem;
+    width: 90%;
+    margin-left: 10%;
   }
     
-  .field {
-    width: 100%;
+  #name {
+    width: 75%;
+  }
+  #table {
+    width: 75%;
+  }
+  #cardNumber {
+    width: 75%;
+  }
+  #cardHolder {
+    width: 75%;
+  }
+  #cardExpiryMonth {
+    width: 25%;
+  }
+  #cardExpiryYear {
+    width: 25%;
+  }
+  #cardSecurityNumber {
+    width: 25%;
   }
 
   #confirmMessage {
-      width: 90%;
-      margin-left: 1rem;
+    width: 90%;
+    margin-left: 1rem;
   }
 
   #statusForm {
-      width: 90%;
-      margin-left: 10%;
+    width: 90%;
+    margin-left: 10%;
   }
   #statusMessage {
-      width: 80%;
-      margin-left: 2rem;
+    width: 80%;
+    margin-left: 2rem;
   }
   #code {
-      width: 50%;
+    width: 50%;
   }
 }
   
@@ -359,7 +375,7 @@ select {
 
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 350px) {
   .column {
     width: 100%;
   }
@@ -369,6 +385,14 @@ select {
   }
   body {
       width: 100%;
+  }
+  
+  #container div {
+    margin-right: 10%;
+  }
+
+  #beerPanel {
+    margin-left: 10%;
   }
 
   .secondaryPage {
@@ -381,23 +405,6 @@ select {
   }
 }
 
-
-@media screen and (max-width: 300px) {
-  .column {
-    width: 100%;
-  }
-
-  footer {
-      width: 100%;
-  }
-  body {
-      width: 100%;
-  }
-
-  #beerPanel {
-    margin-left: 2%;
-  }
-}
 
 
 
