@@ -215,6 +215,11 @@ select {
   text-align: center;
 }
 
+#order #confirmMessage p {
+   font-family: var(--p-font);
+   margin-bottom: 2rem;
+}
+
 #statusMessage .name {
   overflow-wrap: break-word;
 }
@@ -441,3 +446,4 @@ select {
     border-radius: 0;
   }
 }
+
