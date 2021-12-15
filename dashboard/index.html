@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>FooBar</title>
     <link rel="stylesheet" href="/mobilenav.css" />
     <link rel="stylesheet" href="StyleDash.css" />
     <link rel="stylesheet" href="/style.css" />
@@ -14,29 +14,37 @@
         <h1><a href="index.html">FooBar</a></h1>
       </div>
 
-      <div class="nav_right ">
+      <div class="nav_right">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="beers.html" class="ourbeers">Our Beers</a></li>
-          <li><a href="/order/order.html" id="ordernow" class="button">Order Now</a></li>
+          <li>
+            <a href="/order/order.html" id="ordernow" class="button"
+              >Order Now</a
+            >
+          </li>
         </ul>
       </div>
 
       <!-- The overlay -->
       <div id="myNav" class="overlay">
         <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
         <!-- Overlay content -->
         <div class="overlay-content">
           <li><a href="index.html">Home</a></li>
           <li><a href="beers.html" class="ourbeers">Our Beers</a></li>
-          <li><a href="/order/order.html" id="ordernow" class="button">Order Now</a></li>
+          <li>
+            <a href="/order/order.html" id="ordernow" class="button"
+              >Order Now</a
+            >
+          </li>
         </div>
       </div>
       <!-- Use any element to open/show the overlay navigation menu -->
-      <div class="openbtn" onclick="openNav()">
-        &times;
-      </div>
+      <div class="openbtn" onclick="openNav()">&times;</div>
     </nav>
 
     <section id="section_1">

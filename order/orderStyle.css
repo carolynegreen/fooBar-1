@@ -13,6 +13,7 @@
   justify-content: flex-end;
   width: 100%;
 }
+
 #container div {
   font-family: var(--p-font);
   display: flex;
@@ -96,6 +97,7 @@
   font-size: 1.7rem;
   transition: background-color 1s, color 1.5s ease;
 }
+
 .beerType button:hover {
   background-color: var(--color-6);
   color: var(--color-1);
@@ -248,6 +250,10 @@ select {
   margin-bottom: 2rem;
 }
 
+#confirmMessage p {
+  font-family: var(--p-font);
+}
+
 .btn {
   margin-top: 1.5rem;
   margin-bottom: 3rem;
@@ -333,10 +339,10 @@ select {
   }
 
   footer {
-      width: 100%;
+    width: 100%;
   }
   body {
-      width: 100%;
+    width: 100%;
   }
 
   #beerPanel {
@@ -365,7 +371,7 @@ select {
     width: 90%;
     margin-left: 10%;
   }
-    
+
   #name {
     width: 75%;
   }
@@ -412,12 +418,12 @@ select {
   }
 
   footer {
-      width: 100%;
+    width: 100%;
   }
   body {
-      width: 100%;
+    width: 100%;
   }
-  
+
   #container div {
     margin-right: 5%;
   }
@@ -435,10 +441,3 @@ select {
     border-radius: 0;
   }
 }
-
-
-
-
-
-
-

@@ -74,7 +74,6 @@
   }
 }
 
-
 #myNav,
 .openbtn {
   display: none;
@@ -86,8 +85,7 @@
   }
 
   #myNav,
-    .openbtn {
+  .openbtn {
     display: block;
   }
 }
-
