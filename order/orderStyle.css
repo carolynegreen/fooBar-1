@@ -343,7 +343,7 @@ select {
 
   #statusForm {
       width: 90%;
-      margin-left: 1rem;
+      margin-left: 10%;
   }
   #statusMessage {
       width: 80%;
@@ -354,5 +354,53 @@ select {
   }
 }
   
+
+
+
+
+
+@media screen and (max-width: 450px) {
+  .column {
+    width: 100%;
+  }
+
+  footer {
+      width: 100%;
+  }
+  body {
+      width: 100%;
+  }
+
+  .secondaryPage {
+    margin-bottom: 0;
+    margin-top: 0;
+    left: 0;
+    transform: translateX(0%);
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+
+@media screen and (max-width: 300px) {
+  .column {
+    width: 100%;
+  }
+
+  footer {
+      width: 100%;
+  }
+  body {
+      width: 100%;
+  }
+
+  #beerPanel {
+    margin-left: 2%;
+  }
+}
+
+
+
+
 
 
