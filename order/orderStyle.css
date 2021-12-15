@@ -4,23 +4,33 @@
   }
 }
 
-#header {
-  margin-inline: 2rem;
-}
-
 #main {
   z-index: 1;
 }
 
-#header #container {
-  float: right;
+#container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
-
-#header #container #selection {
+#container div {
+  font-family: var(--p-font);
+  display: flex;
+  gap: 1rem;
   margin-right: 1rem;
 }
 
-#header #container #beerIcon {
+.disabled {
+  background-color: var(--color-3);
+  pointer-events: none;
+  cursor: default;
+}
+
+#selection {
+  vertical-align: middle;
+}
+
+#beerIcon {
   background-image: url("images/icon_beer.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -29,25 +39,13 @@
   display: inline-block;
   height: 3rem;
   width: 2rem;
-  margin-right: 3rem;
-}
-
-#header h1 a {
-  color: var(--color-0);
-  font-family: var(--header-font);
-  font-size: var(--header-size);
-  list-style: none;
-  text-decoration: none;
-  line-height: 1.5rem;
-}
-
-#header a {
-  font-family: var(--p-font);
+  margin-right: 1rem;
 }
 
 #beerPanel {
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-top: 1rem;
   margin-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -100,7 +98,7 @@
 }
 .beerType button:hover {
   background-color: var(--color-6);
-  color: var(--color-4);
+  color: var(--color-1);
 }
 
 .secondaryPage {
@@ -120,18 +118,16 @@
 }
 
 .secondaryPage .title {
+  display: block;
   margin-top: 3rem;
   width: 100%;
 }
 
 .secondaryPage .title h1 {
   font-family: var(--header-font);
-  font-size: 3rem;
+  font-size: 3em;
+  margin-top: 1rem;
   text-align: center;
-}
-
-.secondaryPage .title button {
-  float: right;
 }
 
 .secondaryPage input,
@@ -216,25 +212,12 @@ select {
   text-align: center;
 }
 
-.btnPrimary {
-  margin-block: 1.5rem;
-  height: 3.5rem;
-  width: 7rem;
-  background-color: var(--color-5);
-  border: none;
-  border-radius: 25px;
-  font-family: var(--p-font);
-  font-size: var(--p-size);
-  transition: background-color 0.5s, color 1.5s ease;
+.btn {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
-
-.btnPrimary:hover {
-  background-color: var(--color-6);
-  color: var(--color-2);
-}
-
-.btnPrimary:disabled {
-  background-color: var(--color-3);
+.btn a {
+  text-decoration: none;
 }
 
 .btnSecondary {
@@ -297,33 +280,10 @@ select {
     width: 100%;
   }
 
-  #name {
+  .field {
     width: 100%;
   }
-  #table {
-    width: 100%;
-  }
-  #Payment {
-    width: 100%;
-  }
-  #cards {
-    width: 100%;
-  }
-  #cardNumber {
-    width: 100%;
-  }
-  #cardHolder {
-    width: 100%;
-  }
-  #cardExpiryMonth {
-    width: 100%;
-  }
-  #cardExpiryYear {
-    width: 100%;
-  }
-  #cardSecurityNumber {
-    width: 100%;
-  }
+
   #confirmMessage {
     width: 90%;
     margin-left: 1rem;
@@ -334,90 +294,65 @@ select {
   .column {
     width: 100%;
   }
-    #header {
-        width: 90%;
-    }
-    footer {
-        width: 90%;
-    }
-    body {
-        width: 100%;
-    }
-    }
 
-  #container {
-    position: relative;
-    margin-right: 20%;
-    overflow: hidden;
+  footer {
+      width: 100%;
   }
-  #order {
-    width: 100%;
-    overflow: hidden;
+  body {
+      width: 100%;
   }
-  #orderForm {
-    margin-left: 1.2rem;
+
+  #container div {
+    margin-right: 5%;
   }
 
   #beerPanel {
-    margin-top: 25%;
     margin-left: 10%;
   }
+
   .secondaryPage {
     width: 100%;
     padding-bottom: 0rem;
     padding-left: 0rem;
     padding-right: 0rem;
   }
-  #orderForm {
-    width: 75%;
-  }
+
   .secondaryPage .title {
     margin-top: 3rem;
     width: 100%;
   }
+
+  #order {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #orderForm {
+    width: 75%;
+    margin-left: 1.2rem;
+  }
     
-    #name {
-        width: 100%;
-    }
-    #table {
-        width: 100%;
-    }
-    #Payment {
-        width: 100%;
-    }
-    #cards {
-        width: 100%;
-    }
-    #cardNumber {
-        width: 100%;
-    }
-    #cardHolder {
-        width: 100%;
-    }
-    #cardExpiryMonth {
-        width: 100%;
-    } 
-    #cardExpiryYear {
-        width: 100%;
-    }
-    #cardSecurityNumber {
-        width: 100%;
-    }
-    #confirmMessage {
-        width: 90%;
-        margin-left: 1rem;
-    }
-    #statusForm {
-        width: 90%;
-        margin-left: 1rem;
-    }
-    #statusMessage {
-        width: 80%;
-        margin-left: 2rem;
-    }
-    #code {
-        width: 80%;
-    }
-    
+  .field {
+    width: 100%;
+  }
+
+  #confirmMessage {
+      width: 90%;
+      margin-left: 1rem;
+  }
+
+  #statusForm {
+      width: 90%;
+      margin-left: 1rem;
+  }
+  #statusMessage {
+      width: 80%;
+      margin-left: 2rem;
+  }
+  #code {
+      width: 50%;
+  }
 }
   
+
+
