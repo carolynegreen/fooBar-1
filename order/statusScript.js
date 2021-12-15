@@ -121,7 +121,6 @@ function showTimeDifference(order) {
   timer = setInterval(function () {
     const currentTime = getCurrentTime();
     const finalTime = calculateFinalTime(order.time, estimate);
-    console.log(finalTime);
     calculateTimeDifference(currentTime, finalTime);
   }, 1000);
 }

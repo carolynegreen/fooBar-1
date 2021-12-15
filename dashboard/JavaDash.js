@@ -1,9 +1,10 @@
-var slideIndex = 0;
+let slideIndex = 0;
 showSlides();
+fetchData();
 
 function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
@@ -15,15 +16,7 @@ function showSlides() {
   setTimeout(showSlides, 4000); // Change image every 2 seconds
 }
 
-
-start();
-function start() {
-  fetchData();
-  setInterval(fetchData, 2000);
-}
-
 async function fetchData() {
-  // Fetch data
   const response = await fetch('https://foo-bar-3.herokuapp.com/');
   const data = await response.json();
 
@@ -33,6 +26,8 @@ async function fetchData() {
 
   getOrderContent(data.serving);
   getActiveBartenders(data.bartenders);
+
+  setTimeout(fetchData, 2000); // Fetch data every 2 seconds
 }
 
 function getOrderContent(serving) {
@@ -66,4 +61,3 @@ function getActiveBartenders(bartenders) {
       }
   }
 }
-
