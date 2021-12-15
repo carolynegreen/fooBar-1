@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Order Beers</title>
     <link rel="stylesheet" href="orderStyle.css">
+=======
+    <title>Document</title>
+>>>>>>> b409a6f9bfa234700c12d950957daaf3a34ef8fc
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="mynav.css">
+    <link rel="stylesheet" href="orderStyle.css">
 </head>
 <body>
     <div id="waiting" class="column">
@@ -20,14 +26,48 @@
     </div>
 
     <section id="main" class="column">
+<<<<<<< HEAD
         <div id="header">
             <h1><a href="/dashboard/index.html">FooBar</a></h1>
             <a id="homeBtn" class="btnSecondary" href="/dashboard/index.html">Home</a>
             <button type="button" class="btnPrimary" onclick="showStatusForm()">Status</button>
             <div id="container">
                 <a id="selection">0</a>
+=======
+        <nav>
+            <div class="nav_left">
+                <h1><a href="/dashboard/index.html">FooBar</a></h1>
+            </div>
+
+            <div class="nav_right">
+                <ul>
+                    <li><a href="/dashboard/index.html">Home</a></li>
+                    <li><a class="button" onclick="showStatusForm()">Status</a></li>
+                </ul>
+            </div>
+
+            <!-- The overlay -->
+            <div id="myNav" class="overlay">
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                <li><a href="/dashboard/index.html">Home</a></li>
+                <li><a onclick="showStatusForm()" onclick="closeNav()">Status</a></li>
+                </div>
+            </div>
+            <!-- Use any element to open/show the overlay navigation menu -->
+            <div class="openbtn" onclick="openNav()">
+                &times;
+            </div>
+        </nav>
+    
+        <div id="container">
+            <div>
+                <p id="selection">0</p>
+>>>>>>> b409a6f9bfa234700c12d950957daaf3a34ef8fc
                 <div id="beerIcon"></div>
-                <button type="button" id="orderBtn" class="btnPrimary" disabled onclick="showOrderForm()">Order</button>
+                <a id="orderBtn" class="button disabled" onclick="showOrderForm()">Order</a>
             </div>
         </div>
 
@@ -126,7 +166,7 @@
                 </section>
             </div>
 
-            <button type="button" class="btnPrimary" onclick="confirmPayment()">Confirm</button>
+            <div class="btn"><a class="button" onclick="confirmPayment()">Confirm</a></div>
         </form>
 
         <section id="confirmMessage">
@@ -139,7 +179,7 @@
             </div>
 
             <div>Go back to order and log in the status form <br> to check the evolution of your order</div>
-            <button type="button" class="btnPrimary" onclick="start()">Return</button>
+            <div class="btn"><a class="button" onclick="start()">Return</a></div>
         </section>
     </div>
 
@@ -157,7 +197,7 @@
                 <span type="text" class="error codeError">Invalid Code</span>
             </div>
 
-            <button type="button" class="btnPrimary" onclick="logIn()">Log In</button>
+            <div class="btn"><a class="button" onclick="logIn()">Log In</a></div>
         </form>
 
         <section id="statusMessage">
@@ -171,12 +211,13 @@
                 <div class="timer"></div>
                 <div class="bartender"></div>
             </div>
-            <button type="button" class="btnPrimary" onclick="resetStatus()">Exit</button>
+            <div class="btn" style="text-align:center;"><a class="button" onclick="resetStatus()">Exit</a></div>
         </section>
     </div>
 
     <script src="statusScript.js"></script>
     <script src="orderValidate.js"></script>
     <script src="orderScript.js"></script>
+    <script src="mynav.js"></script>
 </body>
 </html>

@@ -166,9 +166,9 @@ function changeBeerAmount() {
     document.getElementById("selection").innerHTML = total;
     // Able and disable the order button
     if(total === 0) {
-        document.getElementById("orderBtn").disabled = true;
+        document.getElementById("orderBtn").classList.add("disabled");
     }else {
-        document.getElementById("orderBtn").disabled = false;
+        document.getElementById("orderBtn").classList.remove("disabled");
     }
 }
 
@@ -392,7 +392,7 @@ function post(order) {
  function reset() {
     // Reset the number of beers selected
     document.getElementById("selection").innerHTML = "0";
-    document.getElementById("orderBtn").disabled = true;
+    document.getElementById("orderBtn").classList.add("disabled");
 
     // Reset form inputs
     document.querySelectorAll(".field").forEach(function(e) {

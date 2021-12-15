@@ -17,6 +17,7 @@ function resetStatus() {
 function showStatusForm() {
   document.getElementById("status").style.display = "block";
   document.getElementById("main").style.display = "none";
+  closeNav();
 }
 
 function logIn() {
