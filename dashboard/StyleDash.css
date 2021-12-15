@@ -1,3 +1,8 @@
+#myNav,
+.openbtn {
+  display: none;
+}
+
 #section_1 {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -194,7 +199,6 @@ a#seeOurBeer.button:hover {
   margin: 5%;
 }
 
-
 .order_text {
   grid-area: txt;
 }
@@ -295,6 +299,13 @@ a#seeOurBeer.button:hover {
   }
 }
 @media screen and (max-width: 700px) {
+  #myNav,
+  .openbtn {
+    display: block;
+  }
+  .nav_right {
+    display: none;
+  }
   #section_3 {
     display: grid;
     grid-template-columns: 1fr;
@@ -328,7 +339,6 @@ a#seeOurBeer.button:hover {
     margin-left: 7rem;
     width: 30%;
   }
-    
 }
 
 /* Progress bar */
@@ -355,6 +365,5 @@ a#seeOurBeer.button:hover {
   height: 100%;
   width: 50%;
   background: #a0a0a0;
-  transition: width .5s ease-in;
+  transition: width 0.5s ease-in;
 }
-
