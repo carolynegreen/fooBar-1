@@ -25,11 +25,7 @@ function showProduct(items) {
   //grab the template
   const template = document.getElementById("slides-template").content;
   //loop through data.comments
-<<<<<<< HEAD:js/JavaDash.js
-  for(let i=0; i<2; i++) {
-=======
-  for (let i = 0; i < items.length; i++) {
->>>>>>> d90369015a9cdaf764107d21316050eed1bee3ef:dashboard/JavaDash.js
+  for (let i = 0; i < 2; i++) {
     const copy = template.cloneNode(true);
     copy.querySelector(".numbertext").innerHTML = i + 1 + " / " + items.length;
     copy.querySelector("img").src = items[i].BeerImg;
