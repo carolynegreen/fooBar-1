@@ -55,8 +55,8 @@ function start() {
 }
 
 function getCodeNumbers() {
-  // Get all code number from the database
   let usedCodeNumbers = [];
+  // Loop through the database
   for(let i=0; i < database.length; i++) {
       usedCodeNumbers.push(database[i].codeNumber);
   }
@@ -72,7 +72,7 @@ async function manageOrder() {
     // Reset everything
     reset();
 
-    // Fetch data
+    // Fetch data from heroku app
     const response = await fetch('https://foo-bar-3.herokuapp.com/');
     const data = await response.json();
 
@@ -85,7 +85,6 @@ async function manageOrder() {
 }
 
 function createBeerTypeObject(data) {
-    // Create a beer type object with the fetched data
     const beerType = Object.create(BeerType);
     beerType.name = data.name;
     beerType.image = 'https://raw.githubusercontent.com/siragabari/fooBar/master/assets/images/' + data.name.split(' ').join('').toLowerCase() + '.png';
@@ -98,6 +97,7 @@ function createBeerPannel() {
     removeAllNodes(document.getElementById("beerPanel"));
     // Fill the beerPanel section with a template
     const template = document.getElementById("beerType-template").content;
+    // Fill through the beer types
     for(let i=0; i < beerTypes.length; i++) {
         const panel = template.cloneNode(true);
         panel.querySelector("h2").innerHTML = beerTypes[i].name;
@@ -123,11 +123,12 @@ function removeAllNodes(parent) {
 }
 
 function decreaseBeers(panel) {
-    // On click decrease the number of beers in the correct array position while it is over 0
     const input = panel.getElementById("decreaseBtn");
     const numBeers = panel.querySelector("a");
+    // On click decrease beers
     input.addEventListener('click', function() {
         for(let i=0; i < beerTypes.length; i++) {
+            // Get the coppect beerType and check that the number is over 0
             if(parseInt(input.value) === i && beerTypes[i].selected > 0) {
                 beerTypes[i].selected--;
                 numBeers.innerHTML = beerTypes[i].selected;
@@ -138,11 +139,12 @@ function decreaseBeers(panel) {
 }
 
 function increaseBeers(panel) {
-    // On click increase the number of beers in the correct array position
     const input = panel.getElementById("increaseBtn");
     const numBeers = panel.querySelector("a");
+    // On click increase beers
     input.addEventListener('click', function() {
         for(let i=0; i < beerTypes.length; i++) {
+            // Get the coppect beerType
             if(parseInt(input.value) === i) {
                 beerTypes[i].selected++;
                 numBeers.innerHTML = beerTypes[i].selected;
@@ -166,8 +168,8 @@ function changeBeerAmount() {
 }
 
 function sumSelectedBeers() {
-    // Sum all the selected beers
     let total = 0;
+    // Loop through beer types
     for(let i=0; i < beerTypes.length; i++) {
         total += beerTypes[i].selected;
     }
@@ -179,7 +181,7 @@ function sumSelectedBeers() {
  */
 
 function showOrderForm() {
-    // Hide the main page and show the form
+    // Hide the main page and show the order form
     document.getElementById("main").style.display = "none";
     document.getElementById("order").style.display = "block";
     // Get and show the selected beers
@@ -220,7 +222,7 @@ function editOrder() {
 }
 
 function confirmPayment() {
-    // Check the form values
+    // Check the order form values
     if(orderValidation()) {
         manageConfirmMessage(beerOrder);
     }
