@@ -29,7 +29,6 @@ function showProduct(product) {
   //loop through data.comments
   product.forEach((product) => {
     const copy = template.cloneNode(true);
-    console.log(product);
     copy.querySelector("img").src = `${product.BeerImg}`;
     copy.querySelector("h2").textContent = `${product.BeerName}`;
     copy.querySelector("p").textContent = `${product.BeerDescription}`;
