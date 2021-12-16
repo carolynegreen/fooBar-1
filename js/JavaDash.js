@@ -92,7 +92,7 @@ async function fetchData() {
   getOrderContent(data.serving);
   getActiveBartenders(data.bartenders);
 
-  setTimeout(fetchData, 2000); // Fetch data every 2 seconds
+  setTimeout(fetchData, 20000); // Fetch data every 2 seconds
 }
 
 function getOrderContent(serving) {
