@@ -1,9 +1,43 @@
-var slideIndex = 0;
-showSlides();
+"use strict";
+let url = "https://kea2sem-4cc6.restdb.io/rest/foobar";
+
+const options = {
+  method: "GET",
+  headers: {
+    "x-apikey": "61aa0b02c7048f219d10f8de",
+  },
+};
+
+let slideIndex = 0;
+
+fetch(url, options)
+  .then((res) => res.json())
+  .then((response) => {
+    showProduct(response);
+    showSlides();
+    setInterval(fetchData, 2000);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
+function showProduct(items) {
+  //grab the template
+  const template = document.getElementById("slides-template").content;
+  //loop through data.comments
+  for (let i = 0; i < items.length; i++) {
+    const copy = template.cloneNode(true);
+    copy.querySelector(".numbertext").innerHTML = i + 1 + " / " + items.length;
+    copy.querySelector("img").src = items[i].BeerImg;
+    copy.querySelector("h2").innerHTML = items[i].BeerName;
+    copy.querySelector(".text").innerHTML = items[i].BeerDescription;
+    document.querySelector(".slideshow-container").appendChild(copy);
+  }
+}
 
 function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
@@ -33,6 +67,8 @@ async function fetchData() {
 
   getOrderContent(data.serving);
   getActiveBartenders(data.bartenders);
+
+  setTimeout(fetchData, 2000); // Fetch data every 2 seconds
 }
 
 function getOrderContent(serving) {

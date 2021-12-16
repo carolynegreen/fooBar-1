@@ -72,7 +72,7 @@
 .slideshow-container {
   background-color: #6a3030;
   max-width: 600px;
-  height: 250px;
+  height: 350px;
   position: relative;
   text-align: center;
   align-content: center;
@@ -154,6 +154,10 @@ a#seeOurBeer.button:hover {
   color: white;
 }
 
+.column_1 .button {
+  margin-bottom: 1rem;
+}
+
 .column_2 {
   grid-area: col2;
 }
@@ -204,11 +208,16 @@ a#seeOurBeer.button:hover {
 #OrderBar {
   padding-top: 0.1rem;
   padding-bottom: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
   align-content: center;
   background-color: var(--color-4);
   border-radius: 25px;
+}
+
+#OrderBar .numOrders {
+  font-family: var(--p-font);
+  font-size: var(--p-size);
 }
 
 #bartenders {
@@ -290,12 +299,43 @@ a#seeOurBeer.button:hover {
   }
 }
 
+/* Progress bar */
+#container {
+  position: relative;
+  height: 5rem;
+  width: 80%;
+  border-radius: 50px;
+  overflow: hidden;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #1eff00 0%, #fffb29 50%, #eb002b 100%);
+}
+
+#progress {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background: #a0a0a0;
+  transition: width 0.5s ease-in;
+}
+
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
   .column {
     width: 100%;
   }
 }
 @media screen and (max-width: 700px) {
+  #section_2 {
+    width: 75%;
+  }
+
   #section_3 {
     display: grid;
     grid-template-columns: 1fr;
@@ -330,30 +370,26 @@ a#seeOurBeer.button:hover {
     width: 30%;
   }
 }
+@media screen and (max-width: 500px) {
+  #section_1 img {
+    width: 100%;
+  }
 
-/* Progress bar */
-#container {
-  position: relative;
-  height: 5rem;
-  width: 80%;
-  border-radius: 50px;
-  overflow: hidden;
-  left: 50%;
-  transform: translateX(-50%);
+  .slideshow-container {
+    height: 430px;
+  }
 }
 
-#bar {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to right, #1eff00 0%, #fffb29 50%, #eb002b 100%);
-}
+@media screen and (max-width: 400px) {
+  #section_2 {
+    width: 75%;
+  }
 
-#progress {
-  position: absolute;
-  right: 0;
-  height: 100%;
-  width: 50%;
-  background: #a0a0a0;
-  transition: width 0.5s ease-in;
+  #section_3 {
+    margin-left: 5%;
+  }
+
+  #orders {
+    width: 18rem;
+  }
 }
