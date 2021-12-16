@@ -15,7 +15,7 @@ fetch(url, options)
   .then((response) => {
     showProduct(response);
     showSlides();
-    setInterval(fetchData, 2000);
+    fetchData();
   })
   .catch((err) => {
     console.error(err);
@@ -58,7 +58,7 @@ function showSlides() {
     slideIndex = 1;
   }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000); // Change image every 2 seconds
+  setTimeout(showSlides, 4000); // Change image every 4 seconds
 }
 
 start();
@@ -92,7 +92,7 @@ async function fetchData() {
   getOrderContent(data.serving);
   getActiveBartenders(data.bartenders);
 
-  setTimeout(fetchData, 20000); // Fetch data every 2 seconds
+  setTimeout(fetchData, 20000); // Fetch data every 20 seconds
 }
 
 function getOrderContent(serving) {
@@ -104,7 +104,7 @@ function getOrderContent(serving) {
     for(let j=0; j<serving[i].order.length; j++) {
         const div = document.createElement("div");
         div.classList.add("image");
-        div.style.backgroundImage = 'url("/assets/images/' + serving[i].order[j].split(' ').join('').toLowerCase() + '.png")';
+        div.style.backgroundImage = 'url("https://raw.githubusercontent.com/siragabari/fooBar/master/assets/images/' + serving[i].order[j].split(' ').join('').toLowerCase() + '.png")';
         order.appendChild(div);
     }
     orders.appendChild(order);

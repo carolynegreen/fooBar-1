@@ -12,7 +12,7 @@
 
 .coverimg img {
   object-fit: cover;
-  width: 80%;
+  width: 85%;
   height: 50vh;
   filter: brightness(60%);
 }
@@ -371,7 +371,7 @@ a#seeOurBeer.button:hover {
   }
 }
 @media screen and (max-width: 500px) {
-  #section_1 img {
+  .coverimg img {
     width: 100%;
   }
 

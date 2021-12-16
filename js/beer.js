@@ -16,7 +16,7 @@ fetch(url, options)
   .then((res) => res.json())
   .then((response) => {
     showProduct(response);
-    setTimeout(fetchData, 20000);
+    fetchData();
   })
   .catch((err) => {
     console.error(err);
@@ -48,16 +48,18 @@ async function fetchData() {
   for (let i = 0; i < data.storage.length; i++) {
     kegs[i].style.backgroundImage = setBeerPercentage(data.storage[i].amount);
   }
+
+  setTimeout(fetchData, 20000); // Fetch data every 20 seconds
 }
 
 function setBeerPercentage(numBeers) {
   if (numBeers > 8) {
-    return "url('/assets/keg_full.png')";
+    return "url('https://raw.githubusercontent.com/siragabari/fooBar/master/assets/keg_full.png')";
   } else if (numBeers > 6) {
-    return "url('/assets/keg_1.png')";
+    return "url('https://raw.githubusercontent.com/siragabari/fooBar/master/assets/keg_1.png')";
   } else if (numBeers > 4) {
-    return "url('/assets/keg_2.png')";
+    return "url('https://raw.githubusercontent.com/siragabari/fooBar/master/assets/keg_2.png')";
   } else {
-    return "url('/assets/keg_empty.png')";
+    return "url('https://raw.githubusercontent.com/siragabari/fooBar/master/assets/keg_empty.png')";
   }
 }
