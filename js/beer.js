@@ -16,7 +16,7 @@ fetch(url, options)
   .then((res) => res.json())
   .then((response) => {
     showProduct(response);
-    setTimeout(fetchData, 20000);
+    fetchData();
   })
   .catch((err) => {
     console.error(err);
@@ -49,6 +49,8 @@ async function fetchData() {
   for (let i = 0; i < data.storage.length; i++) {
     kegs[i].style.backgroundImage = setBeerPercentage(data.storage[i].amount);
   }
+
+  setTimeout(fetchData, 20000); // Fetch data every 20 seconds
 }
 
 function setBeerPercentage(numBeers) {
