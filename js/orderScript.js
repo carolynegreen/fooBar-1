@@ -31,11 +31,11 @@ function start() {
     // Get the data from the database
     get();
 
-    // Manage the ordering process
-    manageOrder();
-
     // Reset the status
     resetStatus();
+
+    // Manage the ordering process
+    manageOrder();
 }
 
 /**
