@@ -28,9 +28,6 @@ let beerOrder = [];
 let database;
 
 function start() {
-    // Trigger waiting animation
-    waitingAnimation();
-
     // Get the data from the database
     get();
 
@@ -230,9 +227,6 @@ function confirmPayment() {
 }
 
 function manageConfirmMessage() {
-    // Show waiting animation
-    waitingAnimation();
-
     // Hide the order form and show the confirm message
     document.getElementById("orderForm").style.display = "none";
     document.getElementById("confirmMessage").style.display = "block";

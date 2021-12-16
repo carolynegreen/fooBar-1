@@ -44,9 +44,6 @@ function statusValidation() {
 }
 
 function manageStatusMessage() {
-  // Show waiting animation
-  // waitingAnimation();
-
   // Show the status message
   document.getElementById("statusMessage").style.display = "block";
   document.getElementById("statusForm").style.display = "none";
