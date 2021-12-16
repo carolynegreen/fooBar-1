@@ -28,11 +28,12 @@ let beerOrder = [];
 let database;
 
 function start() {
+    // Reset everything
+    reset();
+    resetStatus();
+
     // Get the data from the database
     get();
-
-    // Reset the status
-    resetStatus();
 
     // Manage the ordering process
     manageOrder();
@@ -69,9 +70,6 @@ function getCodeNumbers() {
  */
 
 async function manageOrder() {
-    // Reset everything
-    reset();
-
     // Fetch data from heroku app
     const response = await fetch('https://foo-bar-3.herokuapp.com/');
     const data = await response.json();
