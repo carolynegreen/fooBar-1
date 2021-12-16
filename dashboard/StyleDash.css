@@ -72,7 +72,7 @@
 .slideshow-container {
   background-color: #6a3030;
   max-width: 600px;
-  height: 275px;
+  height: 350px;
   position: relative;
   text-align: center;
   align-content: center;
@@ -154,7 +154,7 @@ a#seeOurBeer.button:hover {
 }
 
 .column_1 .button {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .column_2 {
@@ -375,7 +375,7 @@ a#seeOurBeer.button:hover {
   }
 
   .slideshow-container {
-    height: 300px;
+    height: 430px;
   }
 }
 
