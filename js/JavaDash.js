@@ -25,9 +25,9 @@ function showProduct(items) {
   //grab the template
   const template = document.getElementById("slides-template").content;
   //loop through data.comments
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     const copy = template.cloneNode(true);
-    copy.querySelector(".numbertext").innerHTML = i + 1 + " / " + items.length;
+    copy.querySelector(".numbertext").innerHTML = i + 1 + " / 3";
     copy.querySelector("img").src = items[i].BeerImg;
     copy.querySelector("h2").innerHTML = items[i].BeerName;
     copy.querySelector(".text").innerHTML = items[i].BeerDescription;
