@@ -25,7 +25,7 @@ function showProduct(items) {
   //grab the template
   const template = document.getElementById("slides-template").content;
   //loop through data.comments
-  for(let i=0; i<items.length; i++) {
+  for(let i=0; i<2; i++) {
     const copy = template.cloneNode(true);
     copy.querySelector(".numbertext").innerHTML = (i+1) + " / " +  items.length;
     copy.querySelector("img").src = items[i].BeerImg;
@@ -96,7 +96,7 @@ function getOrderContent(serving) {
       for(let j=0; j<serving[i].order.length; j++) {
           const div = document.createElement("div");
           div.classList.add("image");
-          div.style.backgroundImage = 'url(/images/' + serving[i].order[j].split(' ').join('').toLowerCase() + '.png)';
+          div.style.backgroundImage = 'url(assets/images/' + serving[i].order[j].split(' ').join('').toLowerCase() + '.png)';
           order.appendChild(div);
       }
       orders.appendChild(order);
