@@ -24,7 +24,7 @@
 }
 
 #waiting #glass {
-    background-image: url('beers/glass.png');
+    background-image: url('assets/glass.png');
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 50%;
@@ -34,7 +34,7 @@
 }
 
 #waiting #beer {
-    background-image: url('beers/beer0.png');
+    background-image: url('assets/beer0.png');
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 50%;
@@ -47,17 +47,17 @@
 }
 
 @keyframes fill {
-    0% {background-image: url('beers/beer0.png')}
-    10% {background-image: url('beers/beer1.png')}
-    20% {background-image: url('beers/beer2.png')}
-    30% {background-image: url('beers/beer3.png')}
-    40% {background-image: url('beers/beer4.png')}
-    50% {background-image: url('beers/beer5.png')}
-    60% {background-image: url('beers/beer6.png')}
-    70% {background-image: url('beers/beer7.png')}
-    80% {background-image: url('beers/beer8.png')}
-    90% {background-image: url('beers/beer9.png')}
-    100% {background-image: url('beers/beer10.png')}
+    0% {background-image: url('assets/beer0.png')}
+    10% {background-image: url('assets/beer1.png')}
+    20% {background-image: url('assets/beer2.png')}
+    30% {background-image: url('assets/beer3.png')}
+    40% {background-image: url('assets/beer4.png')}
+    50% {background-image: url('assets/beer5.png')}
+    60% {background-image: url('assets/beer6.png')}
+    70% {background-image: url('assets/beer7.png')}
+    80% {background-image: url('assets/beer8.png')}
+    90% {background-image: url('assets/beer9.png')}
+    100% {background-image: url('assets/beer10.png')}
 }
 
 #waiting h2 {

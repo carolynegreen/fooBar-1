@@ -95,7 +95,7 @@ function createBeerTypeObject(data) {
     // Create a beer type object with the fetched data
     const beerType = Object.create(BeerType);
     beerType.name = data.name;
-    beerType.image = 'images/' + data.name.split(' ').join('').toLowerCase() + '.png';
+    beerType.image = '/images/' + data.name.split(' ').join('').toLowerCase() + '.png';
     beerType.price = 40;
     beerType.selected = 0;
     return beerType;
