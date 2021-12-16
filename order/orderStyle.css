@@ -32,7 +32,7 @@
 }
 
 #beerIcon {
-  background-image: url("images/icon_beer.png");
+  background-image: url("assets/icon_beer.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -203,12 +203,11 @@ select {
   display: flex;
 }
 
-#order #cardInfo #cards div {
-  margin-top: 2vh;
-  margin-left: 2vh;
-  height: 3vh;
-  width: 3.5vw;
-  background-color: white;
+#order #cardInfo #cards img {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  height: 2rem;
+  width: 3.5rem;
 }
 
 #order #confirmMessage {
@@ -310,10 +309,10 @@ select {
   vertical-align: middle;
 }
 #copyBtn {
-  background-image: url("images/icon_copy.png");
+  background-image: url("assets/icon_copy.png");
 }
 #pasteBtn {
-  background-image: url("images/icon_paste.png");
+  background-image: url("assets/icon_paste.png");
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 800px) and (-webkit-min-device-pixel-ratio: 3) {
@@ -414,6 +413,17 @@ select {
   }
   #code {
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #order #cardInfo #cards {
+    width: 50%;
+  }
+  #order #cardInfo #cards img {
+    height: 2rem;
+    width: 2.75rem;
+    margin-right: 0.3rem;
   }
 }
 
