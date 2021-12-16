@@ -72,7 +72,7 @@
 }
 
 .keg {
-  background-image: url('./assets/keg_full.png');
+  background-image: url('https://raw.githubusercontent.com/siragabari/fooBar/master/assets/keg_full.png');
   background-size: 100%;
   background-repeat: no-repeat;
   grid-area: keg;
@@ -127,9 +127,6 @@
   }
 
   .keg {
-    background-image: url('./assets/keg_full.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
     grid-area: keg;
     width: 45%;
     height: auto;
@@ -155,9 +152,6 @@
       "keg";
   }
   .keg {
-    background-image: url('./assets/keg_full.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
     grid-area: keg;
     width: 40%;
     height: auto;
