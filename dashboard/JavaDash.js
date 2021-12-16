@@ -32,7 +32,19 @@ function showProduct(items) {
     copy.querySelector("h2").innerHTML = items[i].BeerName;
     copy.querySelector(".text").innerHTML = items[i].BeerDescription;
     document.querySelector(".slideshow-container").appendChild(copy);
+
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.value = i;
+    document.querySelector(".slides-dots").appendChild(dot);
   }
+  
+  const dots = document.querySelectorAll(".dot");
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      currentSlide(dot.value)
+    });
+  });
 }
 
 function showSlides() {
@@ -47,6 +59,18 @@ function showSlides() {
   }
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+
+function currentSlide(value) {
+  slideIndex = value;
+  let slides = document.getElementsByClassName("mySlides");
+  for (let i=0; i < slides.length; i++) {
+    if(value === i) {
+      slides[i].style.display = "block";
+    }else {
+      slides[i].style.display = "none";
+    }
+  }
 }
 
 async function fetchData() {
