@@ -28,12 +28,8 @@ let beerOrder = [];
 let database;
 
 function start() {
-    // Hide waiting animation
-    // setTimeout(function() {
-        document.getElementById("waiting").style.display = "none";
-        document.getElementById("waiting").style.pointerEvents = "none";
-        document.getElementById("beer").classList.remove("beerAni");
-    // }, 6000);
+    // Trigger waiting animation
+    waitingAnimation();
 
     // Get the data from the database
     get();
@@ -95,7 +91,7 @@ function createBeerTypeObject(data) {
     // Create a beer type object with the fetched data
     const beerType = Object.create(BeerType);
     beerType.name = data.name;
-    beerType.image = 'assets/images/' + data.name.split(' ').join('').toLowerCase() + '.png';
+    beerType.image = '/assets/images/' + data.name.split(' ').join('').toLowerCase() + '.png';
     beerType.price = 40;
     beerType.selected = 0;
     return beerType;
@@ -235,7 +231,7 @@ function confirmPayment() {
 
 function manageConfirmMessage() {
     // Show waiting animation
-    // waitingAnimation();
+    waitingAnimation();
 
     // Hide the order form and show the confirm message
     document.getElementById("orderForm").style.display = "none";
@@ -423,13 +419,13 @@ function post(order) {
  */
 
 function waitingAnimation() {
-    document.getElementById("waiting").style.display = "block";
-    document.getElementById("waiting").style.pointerEvents = "all";
-    document.getElementById("beer").classList.add("beerAni");
+    document.querySelector(".waiting").style.display = "block";
+    document.querySelector(".waiting").style.pointerEvents = "all";
+    document.querySelector(".beerIcon").classList.add("beerAni");
     setTimeout(function() {
-        document.getElementById("waiting").style.display = "none";
-        document.getElementById("waiting").style.pointerEvents = "none";
-        document.getElementById("beer").classList.remove("beerAni");
+        document.querySelector(".waiting").style.display = "none";
+        document.querySelector(".waiting").style.pointerEvents = "none";
+        document.querySelector(".beerIcon").classList.remove("beerAni");
     }, 6000);
 }
 

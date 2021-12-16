@@ -1,19 +1,20 @@
-#waiting {
-    z-index: 2;
+.waiting {
+    display: none;
     pointer-events: all;
+    z-index: 2;
     height: 100%;
     width: 100%;
     position: absolute;
 }
 
-#waiting #background {
+.waiting .background {
     height: 100%;
     width: 100%;
     background-color: #ECE8E3;
     opacity: 80%;
 }
 
-#waiting section {
+.waiting section {
     height: 300px;
     width: 250px;
     position: absolute;
@@ -23,8 +24,8 @@
     text-align: center;
 }
 
-#waiting #glass {
-    background-image: url('assets/beers/glass.png');
+.waiting .glass {
+    background-image: url('/assets/beers/glass.png');
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 50%;
@@ -33,8 +34,8 @@
     width: 250px;
 }
 
-#waiting #beer {
-    background-image: url('assets/beers/beer0.png');
+.waiting .beerIcon {
+    background-image: url('/assets/beers/beer0.png');
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 50%;
@@ -47,21 +48,22 @@
 }
 
 @keyframes fill {
-    0% {background-image: url('assets/beers/beer0.png')}
-    10% {background-image: url('assets/beers/beer1.png')}
-    20% {background-image: url('assets/beers/beer2.png')}
-    30% {background-image: url('assets/beers/beer3.png')}
-    40% {background-image: url('assets/beers/beer4.png')}
-    50% {background-image: url('assets/beers/beer5.png')}
-    60% {background-image: url('assets/beers/beer6.png')}
-    70% {background-image: url('assets/beers/beer7.png')}
-    80% {background-image: url('assets/beers/beer8.png')}
-    90% {background-image: url('assets/beers/beer9.png')}
-    100% {background-image: url('assets/beers/beer10.png')}
+    0% {background-image: url('/assets/beers/beer0.png')}
+    10% {background-image: url('/assets/beers/beer1.png')}
+    20% {background-image: url('/assets/beers/beer2.png')}
+    30% {background-image: url('/assets/beers/beer3.png')}
+    40% {background-image: url('/assets/beers/beer4.png')}
+    50% {background-image: url('/assets/beers/beer5.png')}
+    60% {background-image: url('/assets/beers/beer6.png')}
+    70% {background-image: url('/assets/beers/beer7.png')}
+    80% {background-image: url('/assets/beers/beer8.png')}
+    90% {background-image: url('/assets/beers/beer9.png')}
+    100% {background-image: url('/assets/beers/beer10.png')}
 }
 
-#waiting h2 {
-    color: #fbbc35;
+.waiting h2 {
+    font-family: var(--p-font);
+    font-size: 2rem;
 }
 
 

@@ -104,7 +104,7 @@ function getOrderContent(serving) {
     for(let j=0; j<serving[i].order.length; j++) {
         const div = document.createElement("div");
         div.classList.add("image");
-        div.style.backgroundImage = 'url(assets/images/' + serving[i].order[j].split(' ').join('').toLowerCase() + '.png)';
+        div.style.backgroundImage = 'url("/assets/images/' + serving[i].order[j].split(' ').join('').toLowerCase() + '.png")';
         order.appendChild(div);
     }
     orders.appendChild(order);
