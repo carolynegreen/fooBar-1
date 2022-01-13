@@ -30,9 +30,9 @@
                 <!-- Button to close the overlay navigation -->
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <!-- Overlay content -->
-                <div class="overlay-content">
+                <div class="overlay-content"><ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a onclick="showStatusForm()" onclick="closeNav()" class="button">Status</a></li>
+                    <li><a onclick="showStatusForm()" onclick="closeNav()" id="statusbtn" class="button">Status</a></li></ul>
                 </div>
             </div>
             <!-- Use any element to open/show the overlay navigation menu -->
@@ -45,7 +45,7 @@
             <div>
                 <p id="selection">0</p>
                 <div id="beerIcon"></div>
-                <a id="orderBtn" class="button disabled" onclick="showOrderForm()">Order</a>
+                <a id="orderBtn" class="button disabled" onclick="showOrderForm()">Place Order</a>
             </div>
         </div>
 

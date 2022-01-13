@@ -34,11 +34,23 @@
   transition: 0.3s; /* Transition effects on hover (color) */
 }
 
+.overlay-content ul {
+  list-style: none;
+}
+
 /* When you mouse over the navigation links, change their color */
-.overlay a:hover,
-.overlay a:focus {
+.overlay ul a:hover,
+.overlay ul a:focus {
   color: var(--color-4);
   text-decoration: underline;
+}
+
+.overlay #ordernow:hover {
+  color: var(--color-2);
+}
+
+.overlay #statusbtn:hover {
+  color: var(--color-2);
 }
 
 .openbtn {
@@ -51,7 +63,6 @@
 
 .openbtn:hover {
   color: var(--color-4);
-  text-decoration: underline;
 }
 
 /* Position the close button (top right corner) */
